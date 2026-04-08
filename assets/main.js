@@ -366,6 +366,20 @@
     document.head.appendChild(styleEl);
   };
 
+  // Lazy load hCaptcha when form is focused
+  const loadHCaptcha = () => {
+    if (document.querySelector('script[src*="hcaptcha"]')) return;
+    const script = document.createElement('script');
+    script.src = 'https://js.hcaptcha.com/1/api.js?render=explicit';
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
+    document.removeEventListener('focus', loadHCaptcha);
+    document.removeEventListener('click', loadHCaptcha);
+  };
+  document.addEventListener('focus', loadHCaptcha, { once: true });
+  document.addEventListener('click', loadHCaptcha, { once: true });
+
   // Initialize everything
   document.addEventListener('DOMContentLoaded', () => {
     injectStyles();
@@ -376,16 +390,6 @@
     HeaderScroll.init();
     FAQAccordion.init();
     ScrollAnimations.init();
-    
-    // Initialize AOS (Animate On Scroll)
-    if (typeof AOS !== 'undefined') {
-      AOS.init({
-        duration: 800,
-        easing: 'ease-out-cubic',
-        once: true,
-        offset: 50
-      });
-    }
     
     // Register Service Worker for PWA/Offline
     if ('serviceWorker' in navigator) {
