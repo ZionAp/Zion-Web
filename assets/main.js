@@ -152,39 +152,36 @@
         btn.disabled = true;
         
         const formData = new FormData(this.form);
+        const accessKey = this.form.querySelector('[name="access_key"]').value;
+        
+        const payload = {
+          access_key: accessKey,
+          name: formData.get('name'),
+          email: formData.get('email'),
+          phone: formData.get('phone'),
+          appliance: formData.get('appliance'),
+          message: formData.get('message'),
+          subject: 'New Booking - Zion Appliance Solutions'
+        };
         
         fetch('https://api.web3forms.com/submit', {
           method: 'POST',
-          body: formData
-        }).then(response => response.json())
-        .then(data => {
-          if (data.success) {
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
+        }).then(response => {
+          btn.innerHTML = originalText;
+          btn.disabled = false;
+          if (response.ok) {
             this.showSuccess();
             this.form.reset();
           } else {
-            console.warn('Web3Forms limit reached, falling back to Formspree');
-            this.submitToFormspree(formData);
+            this.showToast('Submission failed. Please call us directly.', 'error');
           }
         }).catch((error) => {
-          console.warn('Web3Forms failed, falling back to Formspree');
-          this.submitToFormspree(formData);
+          btn.innerHTML = originalText;
+          btn.disabled = false;
+          this.showToast('Submission failed. Please call us directly.', 'error');
         });
-      });
-    },
-    
-    submitToFormspree(formData) {
-      fetch('https://formspree.io/f/mlgovqbe', {
-        method: 'POST',
-        body: formData,
-        mode: 'no-cors'
-      }).then(() => {
-        this.showSuccess();
-        this.form.reset();
-      }).catch(() => {
-        this.showToast('Submission failed. Please call us directly.', 'error');
-        const btn = this.form.querySelector('button[type="submit"]');
-        btn.innerHTML = 'Book Appointment';
-        btn.disabled = false;
       });
     },
     
