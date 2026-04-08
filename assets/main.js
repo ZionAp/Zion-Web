@@ -161,12 +161,6 @@
         const btn = this.form.querySelector('button[type="submit"]');
         if (btn.disabled) return;
         
-        const hCaptchaResponse = this.form.querySelector('textarea[name="h-captcha-response"]');
-        if (hCaptchaResponse && !hCaptchaResponse.value) {
-          this.showToast('Please complete the captcha.', 'error');
-          return;
-        }
-        
         btn.disabled = true;
         btn.innerHTML = 'Sending...';
         
