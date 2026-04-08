@@ -155,11 +155,9 @@
     async handleSubmit(e) {
       e.preventDefault();
       
-      if (!this.validate()) return;
-      
       const submitBtn = this.form.querySelector('button[type="submit"]');
       const originalText = submitBtn.innerHTML;
-      submitBtn.classList.add('loading');
+      submitBtn.innerHTML = 'Sending...';
       submitBtn.disabled = true;
       
       const formData = new FormData(this.form);
@@ -170,22 +168,17 @@
           body: formData
         });
         
-        console.log('Form response status:', response.status);
-        console.log('Form response headers:', response.headers.get('content-type'));
-        
-        if (response.ok || response.redirected || response.status === 200) {
-          this.showToast('Booking submitted successfully! We\'ll contact you shortly.', 'success');
+        if (response.ok || response.redirected || response.status === 200 || response.status === 302) {
+          this.showToast('Booking submitted! We\'ll contact you shortly.', 'success');
           this.form.reset();
         } else {
-          this.showToast('Failed to submit. Please call us at (505) 508-8203.', 'error');
+          this.showToast('Failed. Call (505) 508-8203.', 'error');
         }
       } catch (error) {
-        console.error('Form submission error:', error);
-        this.showToast('Failed to submit. Please call us at (505) 508-8203.', 'error');
+        this.showToast('Failed. Call (505) 508-8203.', 'error');
       } finally {
-        submitBtn.classList.remove('loading');
-        submitBtn.disabled = false;
         submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
       }
     },
     
