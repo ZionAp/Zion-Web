@@ -152,13 +152,22 @@
         
         fetch(this.form.action, {
           method: 'POST',
-          body: new FormData(this.form)
-        }).then(() => {
-          this.showSuccess();
-          this.form.reset();
-        }).catch(() => {
+          body: new FormData(this.form),
+          headers: {
+            'Accept': 'application/json'
+          }
+        }).then(response => {
+          if (response.ok) {
+            this.showSuccess();
+            this.form.reset();
+          } else {
+            throw new Error('Form submission failed');
+          }
+        }).catch((error) => {
+          console.error('Form error:', error);
           btn.innerHTML = 'Book Appointment';
           btn.disabled = false;
+          this.showToast('Failed to submit. Please try calling us directly.', 'error');
         });
       });
     },

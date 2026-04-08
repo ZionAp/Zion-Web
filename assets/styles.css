@@ -857,6 +857,26 @@ body.dark-mode .service-areas {
   padding: 8px 16px;
 }
 
+body.dark-mode .success-overlay {
+  background: rgba(0,0,0,0.7);
+}
+
+body.dark-mode .success-modal {
+  background: #1e293b;
+}
+
+body.dark-mode .success-modal h3 {
+  color: #f1f5f9;
+}
+
+body.dark-mode .success-modal p {
+  color: #94a3b8;
+}
+
+body.dark-mode .success-modal button {
+  color: #94a3b8;
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
