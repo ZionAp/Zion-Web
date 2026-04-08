@@ -147,17 +147,6 @@
       this.form.addEventListener('submit', (e) => {
         e.preventDefault();
         
-        const botField = this.form.querySelector('input[name="website"]');
-        if (botField && botField.value) {
-          return;
-        }
-        
-        const lastSubmit = localStorage.getItem('lastSubmit');
-        if (lastSubmit && Date.now() - parseInt(lastSubmit) < 60000) {
-          this.showToast('Please wait 60 seconds before submitting again.', 'error');
-          return;
-        }
-        
         const btn = this.form.querySelector('button[type="submit"]');
         if (btn.disabled) return;
         
@@ -172,17 +161,12 @@
           mode: 'no-cors'
         }).catch(() => {});
         
-        if (typeof hcaptcha !== 'undefined') {
-          hcaptcha.reset();
-        }
-        
         setTimeout(() => {
           btn.innerHTML = 'Book Appointment';
           btn.disabled = false;
           this.showSuccess();
           this.form.reset();
-          localStorage.setItem('lastSubmit', Date.now());
-        }, 1000);
+        }, 1500);
       });
     },
     
