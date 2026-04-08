@@ -428,13 +428,13 @@ body.dark-mode .theme-toggle .sun-icon {
 }
 
 .btn-primary {
-  background: var(--accent);
+  background: #c73d15;
   color: white;
   box-shadow: 0 4px 14px rgba(255, 108, 53, 0.4);
 }
 
 .btn-primary:hover {
-  background: var(--accent-light);
+  background: #b83512;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(255, 108, 53, 0.5);
 }
@@ -444,14 +444,14 @@ body.dark-mode .theme-toggle .sun-icon {
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.25);
   color: white;
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.35);
 }
 
 .btn-full {
