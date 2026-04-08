@@ -164,8 +164,7 @@
       const formData = new FormData(this.form);
       
       try {
-        // Submit to Cloudflare Pages Function
-        const response = await fetch('/api/submit-booking', {
+        const response = await fetch('/functions/api/submit-booking', {
           method: 'POST',
           body: formData
         });

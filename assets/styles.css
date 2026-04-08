@@ -660,67 +660,50 @@ body.dark-mode .services {
    =================================== */
 
 .why-us {
-  background: var(--bg);
+  background: var(--bg-secondary);
 }
 
 body.dark-mode .why-us {
-  background: var(--bg-secondary);
+  background: var(--bg);
 }
 
-.why-list {
-  max-width: 700px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
 .why-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  padding: 16px 20px;
-  background: var(--bg-secondary);
-  border-radius: var(--radius);
+  background: var(--bg);
   border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-align: center;
   transition: all var(--transition);
 }
 
 body.dark-mode .why-item {
-  background: var(--bg);
+  background: var(--bg-secondary);
 }
 
 .why-item:hover {
   border-color: var(--primary);
-}
-
-.why-check {
-  flex-shrink: 0;
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--primary);
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
-  border-radius: 50%;
-}
-
-body.dark-mode .why-check {
-  background: var(--success);
+  box-shadow: var(--shadow);
 }
 
 .why-item h3 {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--text);
-  margin-bottom: 4px;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+body.dark-mode .why-item h3 {
+  color: var(--success);
 }
 
 .why-item p {
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   color: var(--text-secondary);
   line-height: 1.5;
   margin: 0;
@@ -731,59 +714,69 @@ body.dark-mode .why-check {
    =================================== */
 
 .service-areas {
-  background: var(--bg-secondary);
-}
-
-body.dark-mode .service-areas {
   background: var(--bg);
 }
 
-.areas-map-container {
-  max-width: 900px;
-  margin: 0 auto 40px;
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow);
+body.dark-mode .service-areas {
+  background: var(--bg-secondary);
 }
 
-.areas-map-container iframe {
-  display: block;
+.areas-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 32px;
+  margin-bottom: 24px;
 }
 
-.areas-simple {
-  max-width: 700px;
-  margin: 0 auto 24px;
-}
-
-.areas-row {
+.areas-info {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 12px 8px;
-  padding: 16px 0;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.area-group h3 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+.area-group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.area-group li {
+  padding: 8px 0;
+  font-size: 1rem;
+  color: var(--text);
+  font-weight: 500;
   border-bottom: 1px solid var(--border);
 }
 
-.areas-row:last-child {
+.area-group li:last-child {
   border-bottom: none;
 }
 
-.area-name {
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--text);
-}
-
-.area-sep {
-  color: var(--text-secondary);
-  font-size: 0.75rem;
+.areas-map {
+  border-radius: var(--radius);
+  overflow: hidden;
+  min-height: 300px;
+  background: var(--bg-tertiary);
 }
 
 .areas-note {
   text-align: center;
   color: var(--text-secondary);
   font-size: 0.9375rem;
+  padding: 16px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 /* ===================================
@@ -1097,6 +1090,18 @@ body.dark-mode .footer {
     grid-template-columns: 1fr 1fr;
     gap: 40px;
   }
+  
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .areas-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .areas-map {
+    min-height: 250px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1139,12 +1144,8 @@ body.dark-mode .footer {
     padding: 32px;
   }
   
-  .why-item {
-    padding: 14px 16px;
-  }
-  
-  .areas-map-container iframe {
-    height: 280px;
+  .why-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1169,8 +1170,8 @@ body.dark-mode .footer {
     font-size: 0.8125rem;
   }
   
-  .areas-map-container iframe {
-    height: 220px;
+  .areas-map {
+    min-height: 200px;
   }
 }
 
