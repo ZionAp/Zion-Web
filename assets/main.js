@@ -153,16 +153,10 @@
         fetch(this.form.action, {
           method: 'POST',
           body: new FormData(this.form),
-          headers: {
-            'Accept': 'application/json'
-          }
-        }).then(response => {
-          if (response.ok) {
-            this.showSuccess();
-            this.form.reset();
-          } else {
-            throw new Error('Form submission failed');
-          }
+          mode: 'no-cors'
+        }).then(() => {
+          this.showSuccess();
+          this.form.reset();
         }).catch((error) => {
           console.error('Form error:', error);
           btn.innerHTML = 'Book Appointment';
