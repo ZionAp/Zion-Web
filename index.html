@@ -438,19 +438,19 @@
                 </a>
               </div>
             </div>
-            <form id="booking-form" class="booking-form" action="/api/submit-booking" method="POST">
+            <form id="booking-form" class="booking-form" action="https://formspree.io/f/mlgovqbe" method="POST">
               <div class="form-group">
                 <label for="fullName">Full Name *</label>
-                <input type="text" id="fullName" name="fullName" required placeholder="John Smith">
+                <input type="text" id="fullName" name="name" required placeholder="John Smith">
               </div>
               <div class="form-row">
                 <div class="form-group">
                   <label for="emailAddress">Email *</label>
-                  <input type="email" id="emailAddress" name="emailAddress" required placeholder="john@example.com">
+                  <input type="email" id="emailAddress" name="email" required placeholder="john@example.com">
                 </div>
                 <div class="form-group">
                   <label for="phoneNumber">Phone *</label>
-                  <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="(505) 555-0123">
+                  <input type="tel" id="phoneNumber" name="phone" required placeholder="(505) 555-0123">
                 </div>
               </div>
               <div class="form-group">
@@ -469,7 +469,7 @@
               </div>
               <div class="form-group">
                 <label for="serviceDetails">Describe the Problem</label>
-                <textarea id="serviceDetails" name="serviceDetails" rows="4" placeholder="Tell us what's happening with your appliance..."></textarea>
+                <textarea id="serviceDetails" name="message" rows="4" placeholder="Tell us what's happening with your appliance..."></textarea>
               </div>
               <button type="submit" class="btn btn-primary btn-full">
                 <span class="btn-text">Book Appointment</span>
