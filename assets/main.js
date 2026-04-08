@@ -153,13 +153,17 @@
         
         const formData = new FormData(this.form);
         
-        fetch(this.form.action, {
+        fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           body: formData
-        }).then(response => {
-          console.log('Form submitted, status:', response.status);
-          this.showSuccess();
-          this.form.reset();
+        }).then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            this.showSuccess();
+            this.form.reset();
+          } else {
+            throw new Error(data.message || 'Submission failed');
+          }
         }).catch((error) => {
           console.error('Form error:', error);
           btn.innerHTML = originalText;
