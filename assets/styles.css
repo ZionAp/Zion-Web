@@ -714,7 +714,6 @@ body.dark-mode .service-price {
   border: 1px solid var(--border);
   transition: all var(--transition);
   position: relative;
-  overflow: hidden;
 }
 
 .feature-card::before {
@@ -722,9 +721,10 @@ body.dark-mode .service-price {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--primary), var(--accent));
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--primary), var(--accent));
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
   opacity: 0;
   transition: opacity var(--transition);
 }
@@ -734,39 +734,9 @@ body.dark-mode .service-price {
 }
 
 .feature-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
   border-color: var(--primary);
-}
-
-.feature-icon {
-  width: 48px;
-  height: 48px;
-  margin-bottom: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--bg-secondary);
-  border-radius: var(--radius-sm);
-  color: var(--primary);
-  transition: all var(--transition);
-  border: 2px solid var(--border);
-}
-
-.feature-card:hover .feature-icon {
-  background: var(--primary);
-  color: white;
-  border-color: var(--primary);
-}
-
-.feature-icon svg {
-  width: 24px;
-  height: 24px;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  fill: none;
 }
 
 .feature-card h3 {
