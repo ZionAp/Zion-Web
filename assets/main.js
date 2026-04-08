@@ -148,7 +148,27 @@
         const btn = this.form.querySelector('button[type="submit"]');
         btn.innerHTML = 'Sending...';
         btn.disabled = true;
+        
+        setTimeout(() => {
+          this.showSuccess();
+        }, 1000);
       });
+    },
+    
+    showSuccess() {
+      const overlay = document.createElement('div');
+      overlay.className = 'success-overlay';
+      overlay.innerHTML = `
+        <div class="success-modal">
+          <div class="success-icon">✓</div>
+          <h3>Booking Submitted!</h3>
+          <p>We'll contact you within 30 minutes during business hours.</p>
+          <a href="tel:5055088203" class="success-call">Call us now: (505) 508-8203</a>
+          <button onclick="this.closest('.success-overlay').remove()">Close</button>
+        </div>
+      `;
+      document.body.appendChild(overlay);
+      this.form.reset();
     },
     
     validate() {
