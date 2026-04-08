@@ -542,7 +542,10 @@
               <input type="hidden" name="subject" value="New Booking - Zion Appliance Solutions">
               <input type="hidden" name="botcheck" class="botcheck">
               <input type="text" name="website" class="bot-field" tabindex="-1" autocomplete="off">
-              <div class="h-captcha" data-sitekey="6a0ab7f4-b800-4a92-a0b6-22468b9aa45e"></div>
+              <div class="form-group">
+                <label for="hcaptcha-response" class="sr-only">Captcha verification</label>
+                <div id="hcaptcha" class="h-captcha" data-sitekey="6a0ab7f4-b800-4a92-a0b6-22468b9aa45e"></div>
+              </div>
               <div class="form-group">
                 <label for="fullName">Full Name *</label>
                 <input type="text" id="fullName" name="name" required placeholder="John Smith" autocomplete="name">
