@@ -1,12 +1,15 @@
-const CACHE_NAME = 'zion-appliance-v1';
+const CACHE_NAME = 'zion-appliance-v2';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
-  '/assets/styles.css',
-  '/assets/main.js',
+  '/assets/styles.min.css',
+  '/assets/main.min.js',
+  '/assets/particles.js',
   '/favicon.svg',
   '/manifest.json',
-  '/robots.txt'
+  '/robots.txt',
+  '/sitemap.xml',
+  '/browserconfig.xml'
 ];
 
 self.addEventListener('install', (event) => {
