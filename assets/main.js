@@ -160,24 +160,20 @@
       submitBtn.innerHTML = 'Sending...';
       submitBtn.disabled = true;
       
-      const formData = new FormData(this.form);
-      
       try {
         const response = await fetch(this.form.action, {
           method: 'POST',
-          body: formData
+          body: new FormData(this.form)
         });
         
-        console.log('Status:', response.status);
-        
-        if (response.status >= 200 && response.status < 400) {
+        if (response.ok || response.redirected) {
           this.showToast('Booking submitted! We\'ll contact you shortly.', 'success');
           this.form.reset();
         } else {
-          this.showToast('Failed. Call (505) 508-8203.', 'error');
+          const data = await response.json().catch(() => ({}));
+          this.showToast(data.error || 'Failed. Call (505) 508-8203.', 'error');
         }
-      } catch (error) {
-        console.log('Error:', error);
+      } catch (err) {
         this.showToast('Failed. Call (505) 508-8203.', 'error');
       } finally {
         submitBtn.innerHTML = originalText;
