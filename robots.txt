@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zionappliancesolutions.com/sitemap.xml
+Sitemap: https://zionappliance.com/sitemap.xml
