@@ -7,8 +7,8 @@
   --primary: #1e3a5f;
   --primary-light: #2d5a87;
   --primary-dark: #152a45;
-  --accent: #a32a0a;
-  --accent-light: #b83512;
+  --accent: #8B1A0A;
+  --accent-light: #a32a0a;
   --success: #4ade80;
   --success-dark: #22c55e;
   
@@ -292,7 +292,7 @@ body.dark-mode .theme-toggle .sun-icon {
 .nav-phone:hover {
   background: var(--accent-light);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(255, 108, 53, 0.4);
+  box-shadow: 0 4px 12px rgba(163, 42, 10, 0.4);
 }
 
 .mobile-menu-btn {
@@ -364,8 +364,10 @@ body.dark-mode .theme-toggle .sun-icon {
 }
 
 #particles-canvas {
-  position: absolute;
+  position: fixed;
   inset: 0;
+  width: 100%;
+  height: 100%;
   z-index: -1;
   pointer-events: none;
 }
@@ -506,13 +508,13 @@ body.dark-mode .theme-toggle .sun-icon {
 }
 
 .btn-primary {
-  background: #a32a0a;
+  background: #8B1A0A;
   color: white;
-  box-shadow: 0 4px 14px rgba(163, 42, 10, 0.4);
+  box-shadow: 0 4px 14px rgba(139, 26, 10, 0.4);
 }
 
 .btn-primary:hover {
-  background: #8f2409;
+  background: #6B1508;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(143, 36, 9, 0.5);
 }
