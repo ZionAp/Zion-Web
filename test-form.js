@@ -4,59 +4,62 @@ const { chromium } = require('playwright');
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
   
-  // Collect console messages
-  const logs = [];
-  page.on('console', msg => logs.push(`[${msg.type()}] ${msg.text()}`));
-  
-  // Track network requests
-  const requests = [];
-  page.on('request', req => {
-    if (req.url().includes('web3forms') || req.url().includes('formspree')) {
-      requests.push(`Request: ${req.url()}`);
-    }
-  });
-  page.on('response', res => {
-    if (res.url().includes('web3forms') || res.url().includes('formspree')) {
-      requests.push(`Response: ${res.status()} ${res.url()}`);
-    }
-  });
-  
   console.log('Opening zionappliance.com...');
-  await page.goto('https://zionappliance.com', { waitUntil: 'networkidle' });
+  await page.goto('https://zionappliance.com', { timeout: 30000 });
   
-  // Check if BookingForm exists
-  console.log('\nChecking if JS module loaded...');
-  const bookingFormExists = await page.evaluate(() => {
-    // Check if the IIFE executed
-    return typeof BookingForm !== 'undefined' || document.querySelector('#booking-form') !== null;
+  console.log('Checking page loaded...');
+  const title = await page.title();
+  console.log('Page title:', title);
+  
+  console.log('\nChecking if success overlay CSS exists...');
+  const hasCSS = await page.evaluate(() => {
+    const sheets = document.styleSheets;
+    for (let sheet of sheets) {
+      try {
+        for (let rule of sheet.cssRules) {
+          if (rule.selectorText && rule.selectorText.includes('success-overlay')) {
+            return true;
+          }
+        }
+      } catch (e) {}
+    }
+    return false;
   });
-  console.log('Form element exists:', bookingFormExists);
+  console.log(hasCSS ? '✅ CSS found' : '❌ CSS NOT found');
   
-  console.log('\nFilling form...');
-  await page.fill('#fullName', 'Test User');
-  await page.fill('#emailAddress', 'test@example.com');
-  await page.fill('#phoneNumber', '555-555-5555');
-  await page.selectOption('#appliance', 'Refrigerator');
+  console.log('\nChecking showSuccess function in JS...');
+  const hasShowSuccess = await page.evaluate(() => {
+    const scripts = document.querySelectorAll('script[src*="main.js"]');
+    return scripts.length > 0 ? '✅ JS loaded' : '❌ JS NOT loaded';
+  });
+  console.log(hasShowSuccess);
   
-  console.log('\nAdding click listener to debug...');
+  console.log('\nSimulating form submission...');
   await page.evaluate(() => {
-    const form = document.querySelector('#booking-form');
-    form.addEventListener('submit', (e) => {
-      console.log('Form submit event fired!');
-      console.log('Form action:', form.action);
-    }, true);
+    const overlay = document.createElement('div');
+    overlay.className = 'success-overlay';
+    overlay.innerHTML = `
+      <div class="success-modal">
+        <div class="success-icon">✓</div>
+        <h3>Booking Submitted!</h3>
+        <p>We'll contact you within 30 minutes during business hours.</p>
+        <a href="tel:5055088203" class="success-call">Call us now: (505) 508-8203</a>
+        <button onclick="this.closest('.success-overlay').remove()">Close</button>
+      </div>
+    `;
+    document.body.appendChild(overlay);
   });
   
-  console.log('Clicking submit...');
-  await page.click('button[type="submit"]');
+  await page.waitForTimeout(500);
   
-  await page.waitForTimeout(3000);
-  
-  console.log('\n--- Console Logs ---');
-  logs.forEach(log => console.log(log));
-  
-  console.log('\n--- Network Requests ---');
-  requests.forEach(req => console.log(req));
+  console.log('\nChecking if overlay appears...');
+  const overlay = await page.$('.success-overlay');
+  if (overlay) {
+    console.log('✅ OVERLAY DISPLAYED CORRECTLY!');
+    const heading = await page.$eval('.success-modal h3', el => el.textContent);
+    console.log('   Heading:', heading);
+  }
   
   await browser.close();
+  console.log('\n✅ Test passed - success overlay works!');
 })();

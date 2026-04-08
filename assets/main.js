@@ -428,6 +428,21 @@
     HeaderScroll.init();
     FAQAccordion.init();
     ScrollAnimations.init();
+    
+    // Initialize AOS (Animate On Scroll)
+    if (typeof AOS !== 'undefined') {
+      AOS.init({
+        duration: 800,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 50
+      });
+    }
+    
+    // Register Service Worker for PWA/Offline
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    }
   });
 
 })();
