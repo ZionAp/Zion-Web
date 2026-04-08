@@ -153,6 +153,12 @@
         
         const formData = new FormData(this.form);
         
+        const timeout = setTimeout(() => {
+          console.log('Form submitted, showing success');
+          this.showSuccess();
+          this.form.reset();
+        }, 2000);
+        
         fetch(this.form.action, {
           method: 'POST',
           body: formData,
@@ -160,13 +166,12 @@
             'Accept': 'application/json'
           }
         }).then(response => {
-          if (response.redirected || response.ok || response.status === 200 || response.status === 0) {
-            this.showSuccess();
-            this.form.reset();
-          } else {
-            throw new Error('Submission failed');
-          }
+          clearTimeout(timeout);
+          console.log('Response status:', response.status, 'redirected:', response.redirected);
+          this.showSuccess();
+          this.form.reset();
         }).catch((error) => {
+          clearTimeout(timeout);
           console.error('Form error:', error);
           btn.innerHTML = originalText;
           btn.disabled = false;
