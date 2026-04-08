@@ -660,90 +660,41 @@ body.dark-mode .services {
    =================================== */
 
 .why-us {
-  background: var(--bg);
+  background: var(--bg-secondary);
 }
 
 body.dark-mode .why-us {
-  background: var(--bg-secondary);
+  background: var(--bg);
 }
 
 .why-grid {
   display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 64px;
-  align-items: start;
-}
-
-.why-left {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-  border-radius: var(--radius-lg);
-  padding: 40px;
-  text-align: center;
-}
-
-body.dark-mode .why-left {
-  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
-}
-
-.why-stat {
-  padding: 24px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.why-stat:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.why-stat:first-child {
-  padding-top: 0;
-}
-
-.stat-number {
-  display: block;
-  font-size: 3rem;
-  font-weight: 800;
-  color: white;
-  line-height: 1;
-  margin-bottom: 8px;
-}
-
-.stat-label {
-  display: block;
-  font-size: 0.9375rem;
-  color: rgba(255, 255, 255, 0.8);
-  font-weight: 500;
-}
-
-.why-right {
-  display: flex;
-  flex-direction: column;
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
-.why-item {
-  display: flex;
-  gap: 20px;
-  padding: 24px;
-  background: var(--bg-secondary);
-  border-radius: var(--radius);
+.why-card {
+  background: var(--bg);
   border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-align: center;
   transition: all var(--transition);
 }
 
-body.dark-mode .why-item {
-  background: var(--bg);
-}
-
-.why-item:hover {
+.why-card:hover {
   border-color: var(--primary);
   box-shadow: var(--shadow);
 }
 
+body.dark-mode .why-card {
+  background: var(--bg-secondary);
+}
+
 .why-icon {
-  flex-shrink: 0;
   width: 48px;
   height: 48px;
+  margin: 0 auto 16px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -753,7 +704,7 @@ body.dark-mode .why-item {
 }
 
 body.dark-mode .why-icon {
-  background: rgba(74, 222, 128, 0.1);
+  background: rgba(74, 222, 128, 0.15);
   color: var(--success);
 }
 
@@ -762,17 +713,17 @@ body.dark-mode .why-icon {
   height: 24px;
 }
 
-.why-content h3 {
-  font-size: 1.125rem;
+.why-card h3 {
+  font-size: 1rem;
   font-weight: 700;
   color: var(--text);
   margin-bottom: 8px;
 }
 
-.why-content p {
+.why-card p {
+  font-size: 0.875rem;
   color: var(--text-secondary);
-  font-size: 0.9375rem;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 /* ===================================
@@ -780,138 +731,47 @@ body.dark-mode .why-icon {
    =================================== */
 
 .service-areas {
-  background: var(--bg-secondary);
-}
-
-body.dark-mode .service-areas {
   background: var(--bg);
 }
 
-.areas-hero {
+body.dark-mode .service-areas {
+  background: var(--bg-secondary);
+}
+
+.areas-simple {
+  max-width: 700px;
+  margin: 0 auto 24px;
+}
+
+.areas-row {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 32px;
-  margin-bottom: 48px;
   flex-wrap: wrap;
-}
-
-.areas-content {
-  flex: 1;
-  min-width: 280px;
-}
-
-.areas-content .section-tag {
-  margin-bottom: 12px;
-}
-
-.areas-content h2 {
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 12px;
-}
-
-.areas-content p {
-  color: var(--text-secondary);
-  font-size: 1.0625rem;
-}
-
-.areas-phone {
-  flex-shrink: 0;
-}
-
-.phone-link {
-  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 12px;
-  padding: 16px 28px;
-  background: var(--primary);
-  color: white;
-  font-weight: 700;
-  font-size: 1.25rem;
-  border-radius: var(--radius);
-  transition: all var(--transition);
+  gap: 12px 8px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
 }
 
-.phone-link:hover {
-  background: var(--primary-light);
-  transform: scale(1.02);
+.areas-row:last-child {
+  border-bottom: none;
 }
 
-.phone-link svg {
-  width: 24px;
-  height: 24px;
-}
-
-.areas-two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  margin-bottom: 32px;
-}
-
-.areas-col h3 {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 20px;
-  padding-bottom: 12px;
-  border-bottom: 2px solid var(--border);
-}
-
-.areas-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.areas-list li {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+.area-name {
   font-size: 1rem;
-  color: var(--text);
   font-weight: 500;
+  color: var(--text);
 }
 
-.areas-list .dot {
-  width: 8px;
-  height: 8px;
-  background: var(--primary);
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-body.dark-mode .areas-list .dot {
-  background: var(--success);
+.area-sep {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
 }
 
 .areas-note {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 20px;
-  background: rgba(30, 58, 95, 0.05);
-  border-radius: var(--radius);
+  text-align: center;
   color: var(--text-secondary);
   font-size: 0.9375rem;
-}
-
-body.dark-mode .areas-note {
-  background: rgba(74, 222, 128, 0.1);
-}
-
-.areas-note svg {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-  color: var(--primary);
-}
-
-body.dark-mode .areas-note svg {
-  color: var(--success);
 }
 
 /* ===================================
@@ -1227,28 +1087,7 @@ body.dark-mode .footer {
   }
   
   .why-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-  
-  .why-left {
-    display: flex;
-    justify-content: space-around;
-    padding: 32px;
-  }
-  
-  .why-stat {
-    padding: 0;
-    border-bottom: none;
-    text-align: center;
-  }
-  
-  .why-stat:first-child {
-    padding-top: 0;
-  }
-  
-  .stat-number {
-    font-size: 2.5rem;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -1292,28 +1131,8 @@ body.dark-mode .footer {
     padding: 32px;
   }
   
-  .why-item {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .why-icon {
-    margin: 0 auto;
-  }
-  
-  .areas-two-col {
+  .why-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
-  }
-  
-  .areas-hero {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .phone-link {
-    width: 100%;
-    justify-content: center;
   }
 }
 
@@ -1331,11 +1150,6 @@ body.dark-mode .footer {
     right: 16px;
     width: 44px;
     height: 44px;
-  }
-  
-  .why-left {
-    flex-direction: column;
-    gap: 24px;
   }
   
   .brands-list span {
