@@ -164,14 +164,15 @@
       const formData = new FormData(this.form);
       
       try {
-        const response = await fetch(this.form.action, {
+        // Submit to Cloudflare Pages Function
+        const response = await fetch('/api/submit-booking', {
           method: 'POST',
           body: formData
         });
         
         const data = await response.json();
         
-        if (data.ok) {
+        if (response.ok && data.ok) {
           this.showToast('Booking submitted successfully! We\'ll contact you shortly.', 'success');
           this.form.reset();
         } else {
@@ -301,7 +302,7 @@
         rootMargin: '0px 0px -50px 0px'
       });
       
-      document.querySelectorAll('.service-card, .feature-card, .faq-item').forEach(el => {
+      document.querySelectorAll('.service-card, .feature-card, .faq-item, .area-card').forEach(el => {
         el.classList.add('animate-ready');
         observer.observe(el);
       });

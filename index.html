@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
     <meta name="theme-color" content="#1e3a5f" />
     <meta name="description" content="Zion Appliance — same‑day appliance repair in Albuquerque. Fast, affordable service for washers, dryers, ovens, refrigerators, and dishwashers. Call (505) 508‑8203.">
-    <meta name="keywords" content="appliance repair Albuquerque, washer repair, dryer repair, refrigerator repair, oven repair, dishwasher repair, same day repair, emergency appliance service">
+    <meta name="keywords" content="appliance repair Albuquerque, washer repair, dryer repair, refrigerator repair, oven repair, dishwasher repair, same day repair, Miele repair, Viking repair, Sub-Zero repair, Wolf repair, emergency appliance service">
     <meta name="author" content="Zion Appliance Solutions">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://zionappliancesolutions.com/">
@@ -70,13 +70,18 @@
         {"@type": "City", "name": "Sandia Park"},
         {"@type": "City", "name": "Cedar Crest"},
         {"@type": "City", "name": "South Valley"},
-        {"@type": "City", "name": "Paradise Hills"}
+        {"@type": "City", "name": "Paradise Hills"},
+        {"@type": "City", "name": "Placitas"},
+        {"@type": "City", "name": "Bernalillo"},
+        {"@type": "City", "name": "Kirtland AFB"}
       ],
       "openingHoursSpecification": [
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "07:00", "closes": "19:00"},
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "17:00"}
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "18:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "18:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "description": "By appointment only"}
       ],
       "serviceType": ["Washer Repair", "Dryer Repair", "Oven Repair", "Refrigerator Repair", "Dishwasher Repair"],
+      "brand": ["Whirlpool", "GE", "Samsung", "LG", "Maytag", "Kenmore", "Frigidaire", "Bosch", "KitchenAid", "Amana", "Miele", "Viking", "Sub-Zero", "Wolf", "Thermador", "JennAir"],
       "image": "https://zionappliancesolutions.com/opengraph.jpg"
     }
     </script>
@@ -112,7 +117,7 @@
           "name": "Do you charge for diagnosis?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We offer free in-home diagnosis. You only pay if you approve the repair."
+            "text": "Our service call fee covers the diagnosis. We'll identify the problem and give you an upfront price before any work begins."
           }
         },
         {
@@ -121,6 +126,14 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Yes, all our repairs come with a 90-day parts and labor warranty."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What brands do you service?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We service all major brands including Whirlpool, GE, Samsung, LG, Maytag, Kenmore, Frigidaire, Bosch, KitchenAid, Amana, Miele, Viking, Sub-Zero, Wolf, Thermador, and JennAir."
           }
         }
       ]
@@ -166,8 +179,9 @@
         <div class="nav-links">
           <a href="#services" class="nav-link">Services</a>
           <a href="#why-us" class="nav-link">Why Us</a>
+          <a href="#areas" class="nav-link">Service Areas</a>
           <a href="#faq" class="nav-link">FAQ</a>
-          <a href="#contact" class="nav-link">Contact</a>
+          <a href="#booking" class="nav-link">Contact</a>
         </div>
 
         <a href="tel:5055088203" class="nav-phone">
@@ -188,13 +202,14 @@
     <main id="main-content">
       <section class="hero">
         <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
         <div class="container hero-content">
           <div class="hero-badge">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
             <span>4.9/5 Customer Rating</span>
           </div>
           <h1>Fast & Reliable<br>Appliance Repair<br>in Albuquerque</h1>
-          <p class="hero-subtitle">Same-day service for washers, dryers, ovens, refrigerators & dishwashers. Free diagnosis, upfront pricing, and 90-day warranty.</p>
+          <p class="hero-subtitle">Same-day service for washers, dryers, ovens, refrigerators & dishwashers. Service call includes diagnosis, upfront pricing, and 90-day warranty.</p>
           <div class="hero-actions">
             <a href="#booking" class="btn btn-primary">Book Appointment</a>
             <a href="tel:5055088203" class="btn btn-secondary">
@@ -239,7 +254,6 @@
               </div>
               <h3>Washer Repair</h3>
               <p>Fixes for all brands - won't spin, draining issues, leaks, strange noises, and more.</p>
-              <span class="service-price">From $79</span>
             </article>
             <article class="service-card">
               <div class="service-icon">
@@ -253,7 +267,6 @@
               </div>
               <h3>Dryer Repair</h3>
               <p>Not heating, taking too long, making noise? We'll get your dryer working again.</p>
-              <span class="service-price">From $79</span>
             </article>
             <article class="service-card">
               <div class="service-icon">
@@ -268,7 +281,6 @@
               </div>
               <h3>Oven & Range</h3>
               <p>Gas or electric, conventional or convection. Temperature issues, igniters, and more.</p>
-              <span class="service-price">From $89</span>
             </article>
             <article class="service-card">
               <div class="service-icon">
@@ -282,7 +294,6 @@
               </div>
               <h3>Refrigerator</h3>
               <p>Keeping food fresh is crucial. We fix cooling issues, ice makers, and more.</p>
-              <span class="service-price">From $99</span>
             </article>
             <article class="service-card">
               <div class="service-icon">
@@ -297,7 +308,6 @@
               </div>
               <h3>Dishwasher</h3>
               <p>Not cleaning dishes? Leaking? We'll diagnose and fix any dishwasher problem.</p>
-              <span class="service-price">From $79</span>
             </article>
             <article class="service-card">
               <div class="service-icon">
@@ -311,8 +321,28 @@
               </div>
               <h3>Freezer & Ice Maker</h3>
               <p>From chest freezers to built-in ice makers, we repair all cold storage appliances.</p>
-              <span class="service-price">From $89</span>
             </article>
+          </div>
+          <div class="brands-section">
+            <p>We service all major brands including</p>
+            <div class="brands-list">
+              <span>Whirlpool</span>
+              <span>GE</span>
+              <span>Samsung</span>
+              <span>LG</span>
+              <span>Maytag</span>
+              <span>Kenmore</span>
+              <span>Frigidaire</span>
+              <span>Bosch</span>
+              <span>KitchenAid</span>
+              <span>Miele</span>
+              <span>Viking</span>
+              <span>Sub-Zero</span>
+              <span>Wolf</span>
+              <span>Thermador</span>
+              <span>JennAir</span>
+              <span>Amana</span>
+            </div>
           </div>
         </div>
       </section>
@@ -325,32 +355,66 @@
           </div>
           <div class="features-grid">
             <div class="feature-card">
-              <div class="feature-number">1</div>
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
               <h3>Same-Day Service</h3>
               <p>Call before noon and we'll be there the same day. We understand appliance problems can't wait.</p>
             </div>
             <div class="feature-card">
-              <div class="feature-number">2</div>
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="1" x2="12" y2="23"/>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                </svg>
+              </div>
               <h3>Upfront Pricing</h3>
               <p>No surprises. We give you an exact quote before we start any work. You approve everything.</p>
             </div>
             <div class="feature-card">
-              <div class="feature-number">3</div>
-              <h3>Free Diagnosis</h3>
-              <p>Our in-home diagnosis is free. You only pay if you approve the repair. No pressure.</p>
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="16" y1="13" x2="8" y2="13"/>
+                  <line x1="16" y1="17" x2="8" y2="17"/>
+                </svg>
+              </div>
+              <h3>Service Call Includes Diagnosis</h3>
+              <p>Our service call covers the diagnosis. We'll explain the problem and give you a clear price upfront.</p>
             </div>
             <div class="feature-card">
-              <div class="feature-number">4</div>
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <polyline points="9 12 11 14 15 10"/>
+                </svg>
+              </div>
               <h3>90-Day Warranty</h3>
               <p>All repairs are backed by our comprehensive 90-day parts and labor warranty.</p>
             </div>
             <div class="feature-card">
-              <div class="feature-number">5</div>
-              <h3>Experienced Techs</h3>
-              <p>Our certified technicians have over 15 years of combined experience with all major brands.</p>
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </div>
+              <h3>10+ Years Experience</h3>
+              <p>Our certified technicians have over 10 years of combined experience with all major brands and models.</p>
             </div>
             <div class="feature-card">
-              <div class="feature-number">6</div>
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                  <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+              </div>
               <h3>Clean & Professional</h3>
               <p>We wear booties, clean up after ourselves, and treat your home with respect.</p>
             </div>
@@ -360,35 +424,62 @@
 
       <section id="areas" class="service-areas">
         <div class="container">
-          <div class="areas-content">
-            <div class="areas-text">
-              <span class="section-tag">Service Areas</span>
-              <h2>Proudly Serving Albuquerque & Surrounding Areas</h2>
-              <p>We've been helping residents across the Duke City keep their appliances running smoothly. From the Foothills to the West Side, we're never far away.</p>
-              <div class="areas-list">
-                <span>Albuquerque</span>
-                <span>Rio Rancho</span>
-                <span>Corrales</span>
-                <span>Los Ranchos</span>
-                <span>Edgewood</span>
-                <span>Sandia Park</span>
-                <span>Cedar Crest</span>
-                <span>Tijeras</span>
+          <div class="section-header">
+            <span class="section-tag">Service Areas</span>
+            <h2>Proudly Serving Albuquerque & Surrounding Areas</h2>
+            <p>From the Foothills to the West Side, we're never far away. Fast response times across the Duke City.</p>
+          </div>
+          <div class="areas-grid">
+            <div class="area-card main-area">
+              <div class="area-marker">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
               </div>
+              <h3>Albuquerque</h3>
+              <p>Fastest Response</p>
             </div>
-            <div class="areas-map">
-              <svg viewBox="0 0 400 300" fill="none">
-                <rect x="50" y="80" width="300" height="180" rx="8" stroke="currentColor" stroke-width="2" opacity="0.3"/>
-                <circle cx="200" cy="160" r="60" stroke="currentColor" stroke-width="2" opacity="0.5"/>
-                <circle cx="200" cy="160" r="100" stroke="currentColor" stroke-width="1" opacity="0.3"/>
-                <circle cx="200" cy="160" r="8" fill="currentColor"/>
-                <text x="215" y="145" fill="currentColor" font-size="10" font-weight="600">ABQ</text>
-                <circle cx="150" cy="120" r="4" fill="currentColor" opacity="0.6"/>
-                <circle cx="260" cy="140" r="4" fill="currentColor" opacity="0.6"/>
-                <circle cx="180" cy="200" r="4" fill="currentColor" opacity="0.6"/>
-                <circle cx="240" cy="180" r="4" fill="currentColor" opacity="0.6"/>
-              </svg>
+            <div class="area-card">
+              <h3>Rio Rancho</h3>
             </div>
+            <div class="area-card">
+              <h3>Corrales</h3>
+            </div>
+            <div class="area-card">
+              <h3>Los Ranchos</h3>
+            </div>
+            <div class="area-card">
+              <h3>Edgewood</h3>
+            </div>
+            <div class="area-card">
+              <h3>Sandia Park</h3>
+            </div>
+            <div class="area-card">
+              <h3>Cedar Crest</h3>
+            </div>
+            <div class="area-card">
+              <h3>Tijeras</h3>
+            </div>
+            <div class="area-card">
+              <h3>Bernalillo</h3>
+            </div>
+            <div class="area-card">
+              <h3>Placitas</h3>
+            </div>
+            <div class="area-card">
+              <h3>South Valley</h3>
+            </div>
+            <div class="area-card">
+              <h3>Kirtland AFB</h3>
+            </div>
+          </div>
+          <div class="areas-note">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="16" x2="12" y2="12"/>
+              <line x1="12" y1="8" x2="12.01" y2="8"/>
+            </svg>
+            <span>Don't see your area? Give us a call - we likely service your location!</span>
           </div>
         </div>
       </section>
@@ -405,8 +496,8 @@
               <p>We offer same-day service for most repairs. If you call before noon, we'll typically be there the same day. For urgent issues, just let us know and we'll prioritize your call.</p>
             </details>
             <details class="faq-item">
-              <summary>Do you charge for diagnosis?</summary>
-              <p>No! We offer free in-home diagnosis. We'll identify the problem, explain what's needed, and give you an exact price. You decide if you want to proceed - no obligation.</p>
+              <summary>What does the service call include?</summary>
+              <p>Our service call fee covers the diagnosis. We'll identify the problem, explain what's needed, and give you an exact price. You decide if you want to proceed - no obligation.</p>
             </details>
             <details class="faq-item">
               <summary>Are your repairs guaranteed?</summary>
@@ -414,7 +505,7 @@
             </details>
             <details class="faq-item">
               <summary>What brands do you service?</summary>
-              <p>We service all major brands including Whirlpool, GE, Samsung, LG, Maytag, Kenmore, Frigidaire, Bosch, KitchenAid, Amana, and more.</p>
+              <p>We service all major brands including Whirlpool, GE, Samsung, LG, Maytag, Kenmore, Frigidaire, Bosch, KitchenAid, Amana, Miele, Viking, Sub-Zero, Wolf, Thermador, and JennAir.</p>
             </details>
             <details class="faq-item">
               <summary>Do you offer emergency service?</summary>
@@ -422,7 +513,7 @@
             </details>
             <details class="faq-item">
               <summary>What are your hours?</summary>
-              <p>Monday-Friday: 7 AM - 7 PM<br>Saturday: 8 AM - 5 PM<br>Sunday: Closed (but you can leave a message and we'll call back)</p>
+              <p>Monday - Saturday: 8:00 AM - 6:00 PM<br>Sunday: By appointment only</p>
             </details>
           </div>
         </div>
@@ -446,7 +537,7 @@
                 </a>
               </div>
             </div>
-            <form id="booking-form" class="booking-form" action="/functions/api/submit-booking.js" method="POST">
+            <form id="booking-form" class="booking-form">
               <div class="form-group">
                 <label for="fullName">Full Name *</label>
                 <input type="text" id="fullName" name="fullName" required placeholder="John Smith">
@@ -514,6 +605,7 @@
             <h4>Quick Links</h4>
             <a href="#services">Services</a>
             <a href="#why-us">Why Choose Us</a>
+            <a href="#areas">Service Areas</a>
             <a href="#faq">FAQ</a>
             <a href="#booking">Book Now</a>
           </div>
@@ -525,9 +617,8 @@
           </div>
           <div class="footer-hours">
             <h4>Hours</h4>
-            <p>Mon-Fri: 7 AM - 7 PM</p>
-            <p>Saturday: 8 AM - 5 PM</p>
-            <p>Sunday: Closed</p>
+            <p>Mon - Sat: 8 AM - 6 PM</p>
+            <p>Sunday: By appointment</p>
           </div>
         </div>
         <div class="footer-bottom">
