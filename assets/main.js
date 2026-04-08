@@ -6,6 +6,23 @@
 (function() {
   'use strict';
 
+  // Cloudflare Turnstile callbacks
+  window.onTurnstileSuccess = function(token) {
+    document.getElementById('turnstile-response').value = token;
+    const btn = document.querySelector('button[type="submit"]');
+    if (btn && btn.innerHTML.includes('Verifying')) {
+      btn.innerHTML = 'Book Appointment';
+    }
+  };
+
+  window.onTurnstileError = function() {
+    const btn = document.querySelector('button[type="submit"]');
+    if (btn) {
+      btn.innerHTML = 'Book Appointment';
+      btn.disabled = false;
+    }
+  };
+
   // Theme Management
   const ThemeManager = {
     STORAGE_KEY: 'zion-theme-preference',
@@ -151,6 +168,18 @@
         if (btn.disabled) return;
         
         btn.disabled = true;
+        btn.innerHTML = 'Verifying...';
+        
+        const turnstileResponse = document.getElementById('turnstile-response');
+        const cfToken = turnstileResponse ? turnstileResponse.value : '';
+        
+        if (!cfToken) {
+          btn.innerHTML = 'Book Appointment';
+          btn.disabled = false;
+          this.showToast('Please wait for verification to complete.', 'error');
+          return;
+        }
+        
         btn.innerHTML = 'Sending...';
         
         const formData = new FormData(this.form);

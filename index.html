@@ -603,10 +603,12 @@
               <input type="hidden" name="access_key" value="1ae2e518-8851-4bee-8134-cff953eb7c0f">
               <input type="hidden" name="subject" value="New Booking - Zion Appliance Solutions">
               <input type="hidden" name="botcheck" class="botcheck">
+              <input type="hidden" name="cf-turnstile-response" id="turnstile-response">
               <div class="form-group bot-field" style="position:absolute;left:-9999px;top:-9999px;">
                 <label for="website-field">Website (leave empty)</label>
                 <input type="text" name="website" id="website-field" tabindex="-1" autocomplete="off">
               </div>
+              <div class="cf-turnstile" data-sitekey="0x4AAAAAAC2WzoI9fwmhe3xn" data-callback="onTurnstileSuccess" data-error="onTurnstileError"></div>
               <div class="form-group">
                 <label for="fullName">Full Name *</label>
                 <input type="text" id="fullName" name="name" required placeholder="John Smith" autocomplete="name">
@@ -698,6 +700,7 @@
 
     <div id="toast" class="toast" role="alert" aria-live="polite"></div>
 
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <script src="/assets/main.min.js"></script>
   </body>
 </html>
