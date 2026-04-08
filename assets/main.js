@@ -147,26 +147,20 @@
       this.form.addEventListener('submit', (e) => {
         e.preventDefault();
         const btn = this.form.querySelector('button[type="submit"]');
+        const originalText = btn.innerHTML;
         btn.innerHTML = 'Sending...';
         btn.disabled = true;
         
-        const formData = {
-          name: document.getElementById('fullName').value,
-          email: document.getElementById('emailAddress').value,
-          phone: document.getElementById('phoneNumber').value,
-          appliance: document.getElementById('appliance').value,
-          message: document.getElementById('serviceDetails').value
-        };
+        const formData = new FormData(this.form);
         
         fetch(this.form.action, {
           method: 'POST',
+          body: formData,
           headers: {
-            'Content-Type': 'application/json',
             'Accept': 'application/json'
-          },
-          body: JSON.stringify(formData)
+          }
         }).then(response => {
-          if (response.ok) {
+          if (response.redirected || response.ok || response.status === 200 || response.status === 0) {
             this.showSuccess();
             this.form.reset();
           } else {
@@ -174,7 +168,7 @@
           }
         }).catch((error) => {
           console.error('Form error:', error);
-          btn.innerHTML = 'Book Appointment';
+          btn.innerHTML = originalText;
           btn.disabled = false;
           this.showToast('Failed to submit. Please try calling us directly.', 'error');
         });
