@@ -170,17 +170,14 @@
           body: formData
         });
         
-        if (response.ok) {
+        console.log('Form response status:', response.status);
+        console.log('Form response headers:', response.headers.get('content-type'));
+        
+        if (response.ok || response.redirected || response.status === 200) {
           this.showToast('Booking submitted successfully! We\'ll contact you shortly.', 'success');
           this.form.reset();
         } else {
-          const data = await response.json();
-          if (data.errors) {
-            const errorMsg = data.errors.map(err => err.message).join(', ');
-            this.showToast('Error: ' + errorMsg, 'error');
-          } else {
-            this.showToast('Failed to submit. Please call us at (505) 508-8203.', 'error');
-          }
+          this.showToast('Failed to submit. Please call us at (505) 508-8203.', 'error');
         }
       } catch (error) {
         console.error('Form submission error:', error);
