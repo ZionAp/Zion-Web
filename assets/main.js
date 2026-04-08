@@ -168,13 +168,16 @@
           body: formData
         });
         
-        if (response.ok || response.redirected || response.status === 200 || response.status === 302) {
+        console.log('Status:', response.status);
+        
+        if (response.status >= 200 && response.status < 400) {
           this.showToast('Booking submitted! We\'ll contact you shortly.', 'success');
           this.form.reset();
         } else {
           this.showToast('Failed. Call (505) 508-8203.', 'error');
         }
       } catch (error) {
+        console.log('Error:', error);
         this.showToast('Failed. Call (505) 508-8203.', 'error');
       } finally {
         submitBtn.innerHTML = originalText;
