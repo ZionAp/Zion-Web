@@ -150,13 +150,28 @@
         btn.innerHTML = 'Sending...';
         btn.disabled = true;
         
+        const formData = {
+          name: document.getElementById('fullName').value,
+          email: document.getElementById('emailAddress').value,
+          phone: document.getElementById('phoneNumber').value,
+          appliance: document.getElementById('appliance').value,
+          message: document.getElementById('serviceDetails').value
+        };
+        
         fetch(this.form.action, {
           method: 'POST',
-          body: new FormData(this.form),
-          mode: 'no-cors'
-        }).then(() => {
-          this.showSuccess();
-          this.form.reset();
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        }).then(response => {
+          if (response.ok) {
+            this.showSuccess();
+            this.form.reset();
+          } else {
+            throw new Error('Submission failed');
+          }
         }).catch((error) => {
           console.error('Form error:', error);
           btn.innerHTML = 'Book Appointment';
