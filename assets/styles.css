@@ -453,6 +453,27 @@ body.dark-mode .theme-toggle .sun-icon {
   fill: #fbbf24;
 }
 
+.hero-local-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, rgba(217, 74, 30, 0.2), rgba(74, 222, 128, 0.2));
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  backdrop-filter: blur(8px);
+}
+
+.hero-local-badge svg {
+  width: 18px;
+  height: 18px;
+  stroke: #4ade80;
+}
+
 .hero h1 {
   font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 800;

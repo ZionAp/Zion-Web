@@ -1,57 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
   <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#1e3a5f"/>
       <stop offset="100%" style="stop-color:#2d5a87"/>
     </linearGradient>
-    <linearGradient id="aliaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#c41e3a"/>
-      <stop offset="100%" style="stop-color:#d94a1e"/>
+    <linearGradient id="screenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e3a5f"/>
     </linearGradient>
   </defs>
   
   <!-- Background -->
-  <rect width="64" height="64" rx="12" fill="url(#bgGrad)"/>
+  <rect width="64" height="64" rx="12" fill="url(#bgGrad3)"/>
   
-  <!-- Zia Sun Symbol - New Mexico State Symbol -->
-  <g stroke="#d94a1e" stroke-width="4" stroke-linecap="round">
-    <!-- Top rays -->
-    <line x1="32" y1="8" x2="32" y2="18"/>
-    <line x1="32" y1="22" x2="32" y2="28"/>
-    <!-- Bottom rays -->
-    <line x1="32" y1="36" x2="32" y2="42"/>
-    <line x1="32" y1="46" x2="32" y2="56"/>
-    <!-- Left rays -->
-    <line x1="8" y1="32" x2="18" y2="32"/>
-    <line x1="22" y1="32" x2="28" y2="32"/>
-    <!-- Right rays -->
-    <line x1="36" y1="32" x2="42" y2="32"/>
-    <line x1="46" y1="32" x2="56" y2="32"/>
-    <!-- Diagonal rays -->
-    <line x1="17" y1="17" x2="21" y2="21"/>
-    <line x1="43" y1="43" x2="47" y2="47"/>
-    <line x1="47" y1="17" x2="43" y2="21"/>
-    <line x1="21" y1="43" x2="17" y2="47"/>
+  <!-- Zia Sun Symbol - New Mexico -->
+  <g stroke="#d94a1e" stroke-width="3" stroke-linecap="round">
+    <!-- Cardinal rays (North, South, East, West) -->
+    <line x1="32" y1="4" x2="32" y2="14"/>
+    <line x1="32" y1="18" x2="32" y2="28"/>
+    <line x1="32" y1="50" x2="32" y2="60"/>
+    <line x1="32" y1="36" x2="32" y2="46"/>
+    <line x1="4" y1="32" x2="14" y2="32"/>
+    <line x1="18" y1="32" x2="28" y2="32"/>
+    <line x1="50" y1="32" x2="60" y2="32"/>
+    <line x1="36" y1="32" x2="46" y2="32"/>
+    <!-- Intercardinal rays -->
+    <line x1="12" y1="12" x2="18" y2="18"/>
+    <line x1="46" y1="46" x2="52" y2="52"/>
+    <line x1="52" y1="12" x2="46" y2="18"/>
+    <line x1="18" y1="46" x2="12" y2="52"/>
   </g>
   
-  <!-- Center Circle with Multimeter -->
+  <!-- Center Circle - Multimeter -->
   <circle cx="32" cy="32" r="10" fill="#ffffff" stroke="#d94a1e" stroke-width="2"/>
   
-  <!-- Multimeter Display and Buttons -->
-  <g transform="translate(32, 32)">
-    <!-- Display screen -->
-    <rect x="-6" y="-4" width="12" height="4" rx="1" fill="#1e3a5f"/>
-    <line x1="-5" y1="-2" x2="-2" y2="-2" stroke="#4ade80" stroke-width="0.5"/>
-    <line x1="-4" y1="-3" x2="-4" y2="-1" stroke="#4ade80" stroke-width="0.5"/>
-    
-    <!-- Buttons -->
-    <circle cx="-4" cy="3" r="1.5" fill="#c41e3a"/>
-    <circle cx="0" cy="3" r="1.5" fill="#4ade80"/>
-    <circle cx="4" cy="3" r="1.5" fill="#22c55e"/>
-    
-    <!-- Dial/Knob -->
-    <circle cx="5" cy="-2" r="2" fill="#64748b" stroke="#1e3a5f" stroke-width="0.5"/>
-    <line x1="5" y1="-3.5" x2="5" y2="-2" stroke="#1e3a5f" stroke-width="0.5"/>
-  </g>
+  <!-- Multimeter Display -->
+  <rect x="24" y="26" width="16" height="7" rx="1" fill="url(#screenGrad)"/>
+  
+  <!-- Digital Display Content -->
+  <text x="27" y="31" font-family="monospace" font-size="4" fill="#4ade80">12.4</text>
+  <text x="33" y="31" font-family="sans-serif" font-size="2.5" fill="#64748b">V</text>
+  
+  <!-- Multimeter Buttons -->
+  <circle cx="26" cy="36" r="1.8" fill="#dc2626"/>
+  <circle cx="32" cy="36" r="1.8" fill="#22c55e"/>
+  <circle cx="38" cy="36" r="1.8" fill="#16a34a"/>
+  
+  <!-- Dial -->
+  <circle cx="35" cy="29" r="2.5" fill="#475569" stroke="#64748b" stroke-width="0.5"/>
+  <line x1="35" y1="27" x2="35" y2="29" stroke="#ffffff" stroke-width="0.5"/>
 </svg>
