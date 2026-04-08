@@ -158,6 +158,7 @@
       if (!this.validate()) return;
       
       const submitBtn = this.form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
       submitBtn.classList.add('loading');
       submitBtn.disabled = true;
       
@@ -183,6 +184,7 @@
       } finally {
         submitBtn.classList.remove('loading');
         submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
       }
     },
     
