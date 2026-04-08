@@ -7,8 +7,8 @@
   --primary: #1e3a5f;
   --primary-light: #2d5a87;
   --primary-dark: #152a45;
-  --accent: #b83512;
-  --accent-light: #c73d15;
+  --accent: #a32a0a;
+  --accent-light: #b83512;
   --success: #4ade80;
   --success-dark: #22c55e;
   
@@ -428,15 +428,15 @@ body.dark-mode .theme-toggle .sun-icon {
 }
 
 .btn-primary {
-  background: #b83512;
+  background: #a32a0a;
   color: white;
-  box-shadow: 0 4px 14px rgba(184, 53, 18, 0.4);
+  box-shadow: 0 4px 14px rgba(163, 42, 10, 0.4);
 }
 
 .btn-primary:hover {
-  background: #a62f10;
+  background: #8f2409;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(184, 53, 18, 0.5);
+  box-shadow: 0 6px 20px rgba(143, 36, 9, 0.5);
 }
 
 .btn-primary:active {
