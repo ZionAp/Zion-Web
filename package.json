@@ -1,0 +1,19 @@
+{
+  "name": "zion-web",
+  "version": "1.0.0",
+  "description": "Zion Appliance Solutions website",
+  "scripts": {
+    "optimize:css": "cssnano assets/styles.css assets/styles.min.css",
+    "optimize:html": "html-minifier --collapse-whitespace --remove-comments --minify-css --minify-js --input index.html --output index.min.html",
+    "audit": "npx lighthouse https://zionappliance.com --output=html --output-path=./lighthouse-report.html",
+    "audit:json": "npx lighthouse https://zionappliance.com --output=json --output-path=./lighthouse-report.json",
+    "svgo": "npx svgo --input assets/images --output assets/images/optimized --multipass"
+  },
+  "dependencies": {
+    "clean-css-cli": "^5.6.3",
+    "cssnano": "^7.1.4",
+    "html-minifier-terser": "^7.2.0",
+    "lighthouse": "^12.8.2",
+    "svgo": "^4.0.1"
+  }
+}
