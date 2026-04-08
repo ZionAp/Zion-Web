@@ -275,21 +275,24 @@ body.dark-mode .theme-toggle .sun-icon {
   align-items: center;
   gap: 8px;
   font-weight: 600;
-  color: var(--primary);
+  font-size: 0.9375rem;
+  color: white;
   padding: 10px 20px;
   border-radius: var(--radius);
-  background: rgba(30, 58, 95, 0.1);
+  background: var(--accent);
   transition: all var(--transition);
+  box-shadow: 0 2px 8px rgba(255, 108, 53, 0.3);
 }
 
 .nav-phone svg {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
 }
 
 .nav-phone:hover {
-  background: var(--primary);
-  color: white;
+  background: var(--accent-light);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 108, 53, 0.4);
 }
 
 .mobile-menu-btn {

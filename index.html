@@ -377,17 +377,15 @@
               </div>
             </div>
             <div class="areas-map">
-              <svg viewBox="0 0 400 300" fill="none">
-                <rect x="50" y="80" width="300" height="180" rx="8" stroke="currentColor" stroke-width="2" opacity="0.3"/>
-                <circle cx="200" cy="160" r="60" stroke="currentColor" stroke-width="2" opacity="0.5"/>
-                <circle cx="200" cy="160" r="100" stroke="currentColor" stroke-width="1" opacity="0.3"/>
-                <circle cx="200" cy="160" r="8" fill="currentColor"/>
-                <text x="215" y="145" fill="currentColor" font-size="10" font-weight="600">ABQ</text>
-                <circle cx="150" cy="120" r="4" fill="currentColor" opacity="0.6"/>
-                <circle cx="260" cy="140" r="4" fill="currentColor" opacity="0.6"/>
-                <circle cx="180" cy="200" r="4" fill="currentColor" opacity="0.6"/>
-                <circle cx="240" cy="180" r="4" fill="currentColor" opacity="0.6"/>
-              </svg>
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d209361.72662799608!2d-106.65042105!3d35.08449095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87220b3c27f8f52f%3A0x6e6f6b5e3e3e3e3e!2sAlbuquerque%2C%20NM!5e0!3m2!1sen!2sus!4v1704067200000" 
+                width="100%" 
+                height="300" 
+                style="border:0; border-radius: 12px;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
             </div>
           </div>
         </div>
@@ -446,7 +444,7 @@
                 </a>
               </div>
             </div>
-            <form id="booking-form" class="booking-form" action="/functions/api/submit-booking.js" method="POST">
+            <form id="booking-form" class="booking-form" action="/api/submit-booking" method="POST">
               <div class="form-group">
                 <label for="fullName">Full Name *</label>
                 <input type="text" id="fullName" name="fullName" required placeholder="John Smith">
