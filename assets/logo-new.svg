@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="nmGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d94a1e"/>
+      <stop offset="100%" style="stop-color:#8b1a0a"/>
+    </linearGradient>
+    <linearGradient id="toolGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4ade80"/>
+      <stop offset="100%" style="stop-color:#22c55e"/>
+    </linearGradient>
+    <filter id="logoShadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="rgba(0,0,0,0.2)"/>
+    </filter>
+  </defs>
+  
+  <!-- Background Circle - NM Desert Sun style -->
+  <circle cx="100" cy="100" r="95" fill="#1e3a5f" filter="url(#logoShadow)"/>
+  
+  <!-- Zia Sun Symbol (New Mexico State Symbol) -->
+  <g stroke="#d94a1e" stroke-width="6" stroke-linecap="round">
+    <!-- Top rays -->
+    <line x1="100" y1="30" x2="100" y2="50"/>
+    <line x1="100" y1="60" x2="100" y2="75"/>
+    
+    <!-- Bottom rays -->
+    <line x1="100" y1="125" x2="100" y2="140"/>
+    <line x1="100" y1="150" x2="100" y2="170"/>
+    
+    <!-- Left rays -->
+    <line x1="30" y1="100" x2="50" y2="100"/>
+    <line x1="60" y1="100" x2="75" y2="100"/>
+    
+    <!-- Right rays -->
+    <line x1="125" y1="100" x2="140" y2="100"/>
+    <line x1="150" y1="100" x2="170" y2="100"/>
+    
+    <!-- Diagonal rays -->
+    <line x1="55" y1="55" x2="68" y2="68"/>
+    <line x1="132" y1="132" x2="145" y2="145"/>
+    <line x1="145" y1="55" x2="132" y2="68"/>
+    <line x1="68" y1="132" x2="55" y2="145"/>
+  </g>
+  
+  <!-- Center Circle -->
+  <circle cx="100" cy="100" r="18" fill="#ffffff" stroke="#d94a1e" stroke-width="4"/>
+  
+  <!-- Wrench Icon -->
+  <g transform="translate(75, 78) rotate(-45)">
+    <rect x="0" y="0" width="8" height="30" rx="2" fill="url(#toolGrad)"/>
+    <path d="M -2,30 L 4,42 L 10,30 Z" fill="url(#toolGrad)"/>
+  </g>
+  
+  <!-- Screwdriver Icon -->
+  <g transform="translate(115, 82)">
+    <rect x="0" y="0" width="4" height="22" rx="1" fill="#d94a1e"/>
+    <rect x="-1" y="22" width="6" height="8" rx="1" fill="url(#toolGrad)"/>
+  </g>
+  
+  <!-- Brand Text - Wrapped around -->
+  <text x="100" y="188" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#ffffff">
+    ZION APPLIANCE
+  </text>
+</svg>

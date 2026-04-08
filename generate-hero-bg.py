@@ -1,0 +1,136 @@
+#!/usr/bin/env python3
+import subprocess
+import os
+
+def create_hero_background():
+    """Create hero background with appliance silhouettes using SVG patterns"""
+    
+    svg_content = '''<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <!-- Washer Symbol -->
+    <symbol id="washer" viewBox="0 0 100 100">
+      <rect x="5" y="5" width="90" height="90" rx="8" stroke="rgba(74,222,128,0.05)" stroke-width="2" fill="none"/>
+      <circle cx="50" cy="55" r="30" stroke="rgba(74,222,128,0.08)" stroke-width="2" fill="none"/>
+      <rect x="15" y="10" width="70" height="8" rx="2" fill="rgba(74,222,128,0.04)"/>
+    </symbol>
+    
+    <!-- Dryer Symbol -->
+    <symbol id="dryer" viewBox="0 0 100 100">
+      <rect x="5" y="5" width="90" height="90" rx="8" stroke="rgba(74,222,128,0.05)" stroke-width="2" fill="none"/>
+      <circle cx="50" cy="55" r="30" stroke="rgba(74,222,128,0.08)" stroke-width="2" fill="none"/>
+      <circle cx="50" cy="55" r="5" fill="rgba(74,222,128,0.04)"/>
+    </symbol>
+    
+    <!-- Refrigerator Symbol -->
+    <symbol id="fridge" viewBox="0 0 80 100">
+      <rect x="5" y="5" width="70" height="90" rx="6" stroke="rgba(74,222,128,0.05)" stroke-width="2" fill="none"/>
+      <line x1="5" y1="40" x2="75" y2="40" stroke="rgba(74,222,128,0.06)" stroke-width="2"/>
+      <rect x="10" y="10" width="55" height="25" rx="2" fill="rgba(74,222,128,0.03)"/>
+      <rect x="10" y="45" width="55" height="40" rx="2" fill="rgba(74,222,128,0.03)"/>
+    </symbol>
+    
+    <!-- Oven Symbol -->
+    <symbol id="oven" viewBox="0 0 100 80">
+      <rect x="5" y="5" width="90" height="70" rx="6" stroke="rgba(74,222,128,0.05)" stroke-width="2" fill="none"/>
+      <rect x="15" y="15" width="70" height="40" rx="3" stroke="rgba(74,222,128,0.06)" stroke-width="1.5" fill="none"/>
+      <circle cx="25" cy="65" r="4" fill="rgba(74,222,128,0.05)"/>
+      <circle cx="50" cy="65" r="4" fill="rgba(74,222,128,0.05)"/>
+      <circle cx="75" cy="65" r="4" fill="rgba(74,222,128,0.05)"/>
+    </symbol>
+    
+    <!-- Dishwasher Symbol -->
+    <symbol id="dishwasher" viewBox="0 0 100 80">
+      <rect x="5" y="5" width="90" height="70" rx="6" stroke="rgba(74,222,128,0.05)" stroke-width="2" fill="none"/>
+      <rect x="10" y="12" width="80" height="25" rx="2" fill="rgba(74,222,128,0.04)"/>
+      <rect x="10" y="40" width="80" height="28" rx="2" fill="rgba(74,222,128,0.04)"/>
+      <circle cx="35" cy="45" r="3" fill="rgba(74,222,128,0.06)"/>
+      <circle cx="65" cy="50" r="3" fill="rgba(74,222,128,0.06)"/>
+    </symbol>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="#0a0f1a"/>
+  
+  <!-- Gradient Overlay -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a5f;stop-opacity:1"/>
+      <stop offset="50%" style="stop-color:#0f172a;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#152a45;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bgGrad)"/>
+  
+  <!-- Appliance Silhouettes Grid - Scattered -->
+  <g opacity="0.15">
+    <!-- Row 1 -->
+    <use href="#washer" x="50" y="80" width="120" height="120"/>
+    <use href="#dryer" x="300" y="150" width="100" height="100"/>
+    <use href="#fridge" x="600" y="100" width="80" height="100"/>
+    <use href="#oven" x="900" y="80" width="120" height="96"/>
+    <use href="#dishwasher" x="1200" y="120" width="120" height="96"/>
+    <use href="#washer" x="1500" y="90" width="110" height="110"/>
+    <use href="#fridge" x="1750" y="100" width="90" height="112"/>
+    
+    <!-- Row 2 -->
+    <use href="#fridge" x="100" y="350" width="90" height="112"/>
+    <use href="#washer" x="350" y="380" width="130" height="130"/>
+    <use href="#oven" x="650" y="400" width="140" height="112"/>
+    <use href="#dryer" x="950" y="370" width="120" height="120"/>
+    <use href="#dishwasher" x="1250" y="390" width="140" height="112"/>
+    <use href="#washer" x="1550" y="350" width="115" height="115"/>
+    <use href="#fridge" x="1800" y="370" width="85" height="106"/>
+    
+    <!-- Row 3 -->
+    <use href="#dryer" x="80" y="650" width="110" height="110"/>
+    <use href="#dishwasher" x="280" y="680" width="130" height="104"/>
+    <use href="#washer" x="530" y="700" width="140" height="140"/>
+    <use href="#fridge" x="830" y="670" width="95" height="118"/>
+    <use href="#oven" x="1050" y="690" width="150" height="120"/>
+    <use href="#dryer" x="1350" y="680" width="125" height="125"/>
+    <use href="#washer" x="1600" y="650" width="120" height="120"/>
+    
+    <!-- Row 4 -->
+    <use href="#oven" x="150" y="920" width="130" height="104"/>
+    <use href="#fridge" x="400" y="900" width="88" height="110"/>
+    <use href="#dishwasher" x="600" y="930" width="145" height="116"/>
+    <use href="#washer" x="850" y="950" width="135" height="135"/>
+    <use href="#dryer" x="1100" y="920" width="115" height="115"/>
+    <use href="#oven" x="1350" y="940" width="140" height="112"/>
+    <use href="#fridge" x="1650" y="900" width="92" height="115"/>
+  </g>
+  
+  <!-- Radial Gradient Overlay for Focus -->
+  <defs>
+    <radialGradient id="centerFade" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" style="stop-color:#1e3a5f;stop-opacity:0"/>
+      <stop offset="100%" style="stop-color:#0f172a;stop-opacity:0.7"/>
+    </radialGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#centerFade)"/>
+  
+  <!-- Subtle grid pattern -->
+  <defs>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(74,222,128,0.03)" stroke-width="1"/>
+    </pattern>
+    <mask id="gridMask">
+      <radialGradient cx="50%" cy="50%" r="60%">
+        <stop offset="0%" style="stop-color:white;stop-opacity:0"/>
+        <stop offset="100%" style="stop-color:white;stop-opacity:1"/>
+      </radialGradient>
+    </mask>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#grid)" mask="url(#gridMask)"/>
+</svg>'''
+    
+    output_path = '/home/codeuser/workspace/Zion-Web/assets/hero-background.svg'
+    with open(output_path, 'w') as f:
+        f.write(svg_content)
+    
+    print(f"Created hero background: {output_path}")
+    return output_path
+
+if __name__ == '__main__':
+    create_hero_background()
