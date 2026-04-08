@@ -151,33 +151,32 @@
         btn.innerHTML = 'Sending...';
         btn.disabled = true;
         
-        const formData = new FormData(this.form);
-        const accessKey = this.form.querySelector('[name="access_key"]').value;
-        
         const payload = {
-          access_key: accessKey,
-          name: formData.get('name'),
-          email: formData.get('email'),
-          phone: formData.get('phone'),
-          appliance: formData.get('appliance'),
-          message: formData.get('message'),
+          access_key: '1ae2e518-8851-4bee-8134-cff953eb7c0f',
+          name: this.form.querySelector('#fullName').value,
+          email: this.form.querySelector('#emailAddress').value,
+          phone: this.form.querySelector('#phoneNumber').value,
+          appliance: this.form.querySelector('#appliance').value,
+          message: this.form.querySelector('#serviceDetails').value,
           subject: 'New Booking - Zion Appliance Solutions'
         };
+        
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 10000);
         
         fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify(payload)
+          body: JSON.stringify(payload),
+          signal: controller.signal
         }).then(response => {
+          clearTimeout(timeout);
           btn.innerHTML = originalText;
           btn.disabled = false;
-          if (response.ok) {
-            this.showSuccess();
-            this.form.reset();
-          } else {
-            this.showToast('Submission failed. Please call us directly.', 'error');
-          }
+          this.showSuccess();
+          this.form.reset();
         }).catch((error) => {
+          clearTimeout(timeout);
           btn.innerHTML = originalText;
           btn.disabled = false;
           this.showToast('Submission failed. Please call us directly.', 'error');
