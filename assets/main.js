@@ -153,29 +153,18 @@
         
         const formData = new FormData(this.form);
         
-        const timeout = setTimeout(() => {
-          console.log('Form submitted, showing success');
-          this.showSuccess();
-          this.form.reset();
-        }, 2000);
-        
         fetch(this.form.action, {
           method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
+          body: formData
         }).then(response => {
-          clearTimeout(timeout);
-          console.log('Response status:', response.status, 'redirected:', response.redirected);
+          console.log('Form submitted, status:', response.status);
           this.showSuccess();
           this.form.reset();
         }).catch((error) => {
-          clearTimeout(timeout);
           console.error('Form error:', error);
           btn.innerHTML = originalText;
           btn.disabled = false;
-          this.showToast('Failed to submit. Please try calling us directly.', 'error');
+          this.showToast('Submission failed. Please call us directly.', 'error');
         });
       });
     },
