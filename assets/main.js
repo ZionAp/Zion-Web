@@ -170,7 +170,20 @@
           body: formData
         });
         
-        const data = await response.json();
+        console.log('Response status:', response.status);
+        console.log('Response headers:', response.headers);
+        
+        const text = await response.text();
+        console.log('Response text:', text);
+        
+        let data;
+        try {
+          data = JSON.parse(text);
+        } catch (e) {
+          console.error('Failed to parse JSON:', e);
+          this.showToast('Server error: ' + text.substring(0, 100), 'error');
+          return;
+        }
         
         if (data.ok) {
           this.showToast('Booking submitted successfully! We\'ll contact you shortly.', 'success');
@@ -180,7 +193,7 @@
         }
       } catch (error) {
         console.error('Form submission error:', error);
-        this.showToast('Failed to submit. Please call us at (505) 508-8203.', 'error');
+        this.showToast('Network error: ' + error.message + '. Please call us at (505) 508-8203.', 'error');
       } finally {
         submitBtn.classList.remove('loading');
         submitBtn.disabled = false;
