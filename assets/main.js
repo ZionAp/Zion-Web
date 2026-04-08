@@ -144,40 +144,11 @@
     },
     
     bind() {
-      this.form.addEventListener('submit', (e) => this.handleSubmit(e));
-      
-      this.form.querySelectorAll('input, select, textarea').forEach(field => {
-        field.addEventListener('invalid', (e) => this.showFieldError(e), true);
-        field.addEventListener('input', () => this.clearFieldError(field));
+      this.form.addEventListener('submit', () => {
+        const btn = this.form.querySelector('button[type="submit"]');
+        btn.innerHTML = 'Sending...';
+        btn.disabled = true;
       });
-    },
-    
-    async handleSubmit(e) {
-      e.preventDefault();
-      
-      const submitBtn = this.form.querySelector('button[type="submit"]');
-      const originalText = submitBtn.innerHTML;
-      submitBtn.innerHTML = 'Sending...';
-      submitBtn.disabled = true;
-      
-      try {
-        const response = await fetch(this.form.action, {
-          method: 'POST',
-          body: new FormData(this.form)
-        });
-        
-        if (response.status >= 200 && response.status < 400) {
-          this.showToast('Booking submitted! We\'ll contact you shortly.', 'success');
-          this.form.reset();
-        } else {
-          this.showToast('Failed. Call (505) 508-8203.', 'error');
-        }
-      } catch (err) {
-        this.showToast('Failed. Call (505) 508-8203.', 'error');
-      } finally {
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-      }
     },
     
     validate() {
