@@ -166,12 +166,11 @@
           body: new FormData(this.form)
         });
         
-        if (response.ok || response.redirected) {
+        if (response.status >= 200 && response.status < 400) {
           this.showToast('Booking submitted! We\'ll contact you shortly.', 'success');
           this.form.reset();
         } else {
-          const data = await response.json().catch(() => ({}));
-          this.showToast(data.error || 'Failed. Call (505) 508-8203.', 'error');
+          this.showToast('Failed. Call (505) 508-8203.', 'error');
         }
       } catch (err) {
         this.showToast('Failed. Call (505) 508-8203.', 'error');
