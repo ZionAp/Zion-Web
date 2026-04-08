@@ -22,17 +22,17 @@ function validateName(name) {
   return name && name.trim().length >= 2 && /^[a-zA-Z\s'-]+$/.test(name.trim());
 }
 
-export async function onRequestPost(context) {
+export async function onRequest(context) {
   const headers = {
     "Content-Type": "application/json",
     "X-Content-Type-Options": "nosniff"
   };
 
-  try {
-    if (context.request.method !== "POST") {
-      return new Response(JSON.stringify({ ok: false, error: "Method not allowed." }), { status: 405, headers });
-    }
+  if (context.request.method !== "POST") {
+    return new Response(JSON.stringify({ ok: false, error: "Method not allowed." }), { status: 405, headers });
+  }
 
+  try {
     const contentType = context.request.headers.get("content-type") || "";
     if (!contentType.includes("application/x-www-form-urlencoded") && !contentType.includes("multipart/form-data")) {
       return new Response(JSON.stringify({ ok: false, error: "Invalid content type." }), { status: 400, headers });
