@@ -332,44 +332,46 @@
   // Add CSS for mobile menu and animations
   const injectStyles = () => {
     const styles = `
-      .nav-links {
-        position: fixed;
-        top: 80px;
-        left: 0;
-        right: 0;
-        background: var(--bg);
-        border-bottom: 1px solid var(--border);
-        padding: 24px;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 99;
-      }
-      
-      body.dark-mode .nav-links {
-        background: var(--bg-secondary);
-      }
-      
-      .nav-links.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-      }
-      
-      .nav-links a {
-        padding: 12px 0;
-        font-size: 1.125rem;
-        font-weight: 500;
-        color: var(--text);
-        border-bottom: 1px solid var(--border);
-      }
-      
-      .nav-links a:last-child {
-        border-bottom: none;
+      @media (max-width: 1024px) {
+        .nav-links {
+          position: fixed;
+          top: 80px;
+          left: 0;
+          right: 0;
+          background: var(--bg);
+          border-bottom: 1px solid var(--border);
+          padding: 24px;
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          transform: translateY(-100%);
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.3s ease;
+          z-index: 99;
+        }
+        
+        body.dark-mode .nav-links {
+          background: var(--bg-secondary);
+        }
+        
+        .nav-links.active {
+          transform: translateY(0);
+          opacity: 1;
+          visibility: visible;
+        }
+        
+        .nav-links a {
+          padding: 12px 0;
+          font-size: 1.125rem;
+          font-weight: 500;
+          color: var(--text);
+          border-bottom: 1px solid var(--border);
+        }
+        
+        .nav-links a:last-child {
+          border-bottom: none;
+        }
       }
       
       .mobile-menu-btn.active span:nth-child(1) {
