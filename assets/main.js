@@ -146,41 +146,21 @@
     bind() {
       this.form.addEventListener('submit', (e) => {
         e.preventDefault();
+        
         const btn = this.form.querySelector('button[type="submit"]');
-        const originalText = btn.innerHTML;
         btn.innerHTML = 'Sending...';
-        btn.disabled = true;
         
-        const payload = {
-          access_key: '1ae2e518-8851-4bee-8134-cff953eb7c0f',
-          name: this.form.querySelector('#fullName').value,
-          email: this.form.querySelector('#emailAddress').value,
-          phone: this.form.querySelector('#phoneNumber').value,
-          appliance: this.form.querySelector('#appliance').value,
-          message: this.form.querySelector('#serviceDetails').value,
-          subject: 'New Booking - Zion Appliance Solutions'
-        };
+        const formData = new FormData(this.form);
         
-        const controller = new AbortController();
-        const timeout = setTimeout(() => controller.abort(), 10000);
-        
-        fetch('https://api.web3forms.com/submit', {
+        fetch(this.form.action, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify(payload),
-          signal: controller.signal
-        }).then(response => {
-          clearTimeout(timeout);
-          btn.innerHTML = originalText;
-          btn.disabled = false;
-          this.showSuccess();
-          this.form.reset();
-        }).catch((error) => {
-          clearTimeout(timeout);
-          btn.innerHTML = originalText;
-          btn.disabled = false;
-          this.showToast('Submission failed. Please call us directly.', 'error');
-        });
+          body: formData,
+          mode: 'no-cors'
+        }).catch(() => {});
+        
+        btn.innerHTML = 'Book Appointment';
+        this.showSuccess();
+        this.form.reset();
       });
     },
     
