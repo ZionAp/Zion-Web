@@ -10,11 +10,13 @@
     "svgo": "npx svgo --input assets/images --output assets/images/optimized --multipass"
   },
   "dependencies": {
+    "canvas": "^3.2.3",
     "clean-css-cli": "^5.6.3",
     "cssnano": "^7.1.4",
     "html-minifier-terser": "^7.2.0",
     "jimp": "^1.6.1",
     "lighthouse": "^12.8.2",
+    "particles.js": "^2.0.0",
     "playwright": "^1.59.1",
     "qrcode": "^1.5.4",
     "sharp": "^0.34.5",
