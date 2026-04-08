@@ -162,14 +162,29 @@
             this.showSuccess();
             this.form.reset();
           } else {
-            throw new Error(data.message || 'Submission failed');
+            console.warn('Web3Forms limit reached, falling back to Formspree');
+            this.submitToFormspree(formData);
           }
         }).catch((error) => {
-          console.error('Form error:', error);
-          btn.innerHTML = originalText;
-          btn.disabled = false;
-          this.showToast('Submission failed. Please call us directly.', 'error');
+          console.warn('Web3Forms failed, falling back to Formspree');
+          this.submitToFormspree(formData);
         });
+      });
+    },
+    
+    submitToFormspree(formData) {
+      fetch('https://formspree.io/f/mlgovqbe', {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors'
+      }).then(() => {
+        this.showSuccess();
+        this.form.reset();
+      }).catch(() => {
+        this.showToast('Submission failed. Please call us directly.', 'error');
+        const btn = this.form.querySelector('button[type="submit"]');
+        btn.innerHTML = 'Book Appointment';
+        btn.disabled = false;
       });
     },
     
