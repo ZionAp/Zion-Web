@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60">
+        <rect width="200" height="60" rx="12" fill="#1e3a5f"/>
+        <circle cx="30" cy="30" r="20" fill="#4ade80"/>
+        <path d="M22 30 L28 36 L38 24" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <text x="60" y="28" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">LICENSED & INSURED</text>
+        <text x="60" y="46" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">Zion Appliance Solutions</text>
+      </svg>
