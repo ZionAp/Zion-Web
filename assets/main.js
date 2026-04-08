@@ -144,14 +144,22 @@
     },
     
     bind() {
-      this.form.addEventListener('submit', () => {
+      this.form.addEventListener('submit', (e) => {
+        e.preventDefault();
         const btn = this.form.querySelector('button[type="submit"]');
         btn.innerHTML = 'Sending...';
         btn.disabled = true;
         
-        setTimeout(() => {
+        fetch(this.form.action, {
+          method: 'POST',
+          body: new FormData(this.form)
+        }).then(() => {
           this.showSuccess();
-        }, 1000);
+          this.form.reset();
+        }).catch(() => {
+          btn.innerHTML = 'Book Appointment';
+          btn.disabled = false;
+        });
       });
     },
     
@@ -168,7 +176,6 @@
         </div>
       `;
       document.body.appendChild(overlay);
-      this.form.reset();
     },
     
     validate() {
