@@ -208,10 +208,14 @@
           <h3>Booking Submitted!</h3>
           <p>We'll contact you within 30 minutes during business hours.</p>
           <a href="tel:5054563046" class="success-call">Call us now: (505) 456-3046</a>
-          <button onclick="this.closest('.success-overlay').remove()">Close</button>
+          <button class="close-btn">Close</button>
         </div>
       `;
       document.body.appendChild(overlay);
+      overlay.querySelector('.close-btn').addEventListener('click', () => overlay.remove());
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) overlay.remove();
+      });
     },
     
     validate() {
