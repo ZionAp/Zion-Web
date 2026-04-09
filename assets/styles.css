@@ -432,17 +432,6 @@ body.dark-mode .theme-toggle {
   animation: orbFloat 12s ease-in-out infinite;
 }
 
-/* Hide mascot - added by modify_hero.py */
-.hero-bird .scene-mascot {
-  opacity: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-}
-
-.hero-bird .scene-sign {
-  z-index: 100;
-}
-
 .hero-bird {
   position: absolute;
   inset: 4% auto auto -2%;
@@ -1721,70 +1710,6 @@ body.dark-mode .footer {
 /* ===================================
    RESPONSIVE
    =================================== */
-
-
-/* Left-side appliances - mirrored from right side */
-.hero-piece-left-1 {
-  --drop-duration: 14s;
-  --drop-delay: -6s;
-  animation-name: applianceDropLeft1;
-}
-
-.hero-piece-left-2 {
-  --drop-duration: 12s;
-  --drop-delay: -11s;
-  animation-name: applianceDropLeft2;
-}
-
-.hero-stack-left-1 {
-  animation: applianceDropLeft3 13s linear infinite;
-  animation-delay: -3s;
-}
-
-.hero-stack-left-2 {
-  animation: applianceDropLeft4 15s linear infinite;
-  animation-delay: -8s;
-}
-
-@keyframes applianceDropLeft1 {
-  0% { transform: translate(-140px, -480px) rotate(8deg); opacity: 0; }
-  10% { transform: translate(-240px, -280px) rotate(6deg); opacity: 0.35; }
-  20% { transform: translate(-320px, -120px) rotate(4deg); opacity: 0.35; }
-  60% { transform: translate(-320px, 520px) rotate(-2deg); opacity: 0.35; }
-  65% { transform: translate(-320px, 546px) rotate(-2deg); opacity: 0.35; }
-  70% { transform: translate(-320px, 520px) rotate(-2deg); opacity: 0.35; }
-  85%, 100% { transform: translate(-320px, 520px) rotate(-2deg); opacity: 0; }
-}
-
-@keyframes applianceDropLeft2 {
-  0% { transform: translate(-200px, -420px) rotate(-6deg); opacity: 0; }
-  12% { transform: translate(-300px, -220px) rotate(-4deg); opacity: 0.32; }
-  22% { transform: translate(-380px, -80px) rotate(-2deg); opacity: 0.32; }
-  62% { transform: translate(-380px, 580px) rotate(2deg); opacity: 0.32; }
-  67% { transform: translate(-380px, 606px) rotate(2deg); opacity: 0.32; }
-  72% { transform: translate(-380px, 580px) rotate(2deg); opacity: 0.32; }
-  87%, 100% { transform: translate(-380px, 580px) rotate(2deg); opacity: 0; }
-}
-
-@keyframes applianceDropLeft3 {
-  0% { transform: translate(-360px, -580px) rotate(4deg); opacity: 0; }
-  8% { transform: translate(-460px, -380px) rotate(2deg); opacity: 0.28; }
-  18% { transform: translate(-540px, -220px) rotate(0deg); opacity: 0.28; }
-  58% { transform: translate(-540px, 450px) rotate(-3deg); opacity: 0.28; }
-  63% { transform: translate(-540px, 476px) rotate(-3deg); opacity: 0.28; }
-  68% { transform: translate(-540px, 450px) rotate(-3deg); opacity: 0.28; }
-  82%, 100% { transform: translate(-540px, 450px) rotate(-3deg); opacity: 0; }
-}
-
-@keyframes applianceDropLeft4 {
-  0% { transform: translate(-110px, -500px) rotate(-5deg); opacity: 0; }
-  10% { transform: translate(-210px, -300px) rotate(-3deg); opacity: 0.3; }
-  20% { transform: translate(-290px, -150px) rotate(-1deg); opacity: 0.3; }
-  60% { transform: translate(-290px, 520px) rotate(3deg); opacity: 0.3; }
-  65% { transform: translate(-290px, 546px) rotate(3deg); opacity: 0.3; }
-  70% { transform: translate(-290px, 520px) rotate(3deg); opacity: 0.3; }
-  85%, 100% { transform: translate(-290px, 520px) rotate(3deg); opacity: 0; }
-}
 
 @media (max-width: 1024px) {
   .nav-quick-actions {
