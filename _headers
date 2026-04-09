@@ -28,7 +28,7 @@
   Cache-Control: public, max-age=86400
 
 /sw.js
-  Cache-Control: no-cache
+  Cache-Control: no-cache, must-revalidate
 
 /404.html
   Cache-Control: public, max-age=86400
