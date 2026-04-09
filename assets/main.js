@@ -3,22 +3,6 @@
    Main JavaScript
    =================================== */
 
-function onTurnstileSuccess(token) {
-  var form = document.getElementById('booking-form');
-  if (form) {
-    var input = form.querySelector('[name="cf-turnstile-response"]');
-    if (input) input.value = token;
-  }
-}
-
-function onTurnstileError() {
-  var form = document.getElementById('booking-form');
-  if (form) {
-    var btn = form.querySelector('button[type="submit"]');
-    if (btn) btn.disabled = false;
-  }
-}
-
 (function() {
   'use strict';
 
@@ -165,12 +149,6 @@ function onTurnstileError() {
         
         const btn = this.form.querySelector('button[type="submit"]');
         if (btn.disabled) return;
-
-        const turnstileResponse = this.form.querySelector('[name="cf-turnstile-response"]');
-        if (turnstileResponse && !turnstileResponse.value) {
-          this.showToast('Please complete the verification check.', 'error');
-          return;
-        }
 
         if (!this.validate()) {
           this.showToast('Please fill out the required fields first.', 'error');
