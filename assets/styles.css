@@ -444,123 +444,116 @@ body.dark-mode .theme-toggle {
   mask-image: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.92) 58%, rgba(0, 0, 0, 0.22) 82%, transparent 100%);
 }
 
-.hero-bird .hero-mascot-aura {
-  opacity: 0.75;
+.hero-bird .hero-lobo-aura {
+  opacity: 0.82;
 }
 
-.hero-bird .hero-roadrunner {
-  transform-origin: 310px 490px;
-  animation: roadrunnerFloat 7s ease-in-out infinite;
+.hero-bird .hero-lobo-pack {
+  transform-origin: 360px 450px;
+  animation: loboPackFloat 6.5s ease-in-out infinite;
 }
 
-.hero-bird .rr-outline {
-  fill: url(#rrBody);
-  stroke: rgba(255, 255, 255, 0.24);
+.hero-bird .hero-sign-board {
+  fill: url(#loboSign);
+}
+
+.hero-bird .hero-sign-outline {
+  stroke: rgba(255, 255, 255, 0.16);
+  stroke-width: 4;
+}
+
+.hero-bird .hero-sign-text,
+.hero-bird .hero-sign-subtext {
+  fill: rgba(255, 255, 255, 0.94);
+  font-family: var(--font);
+  letter-spacing: 0.12em;
+}
+
+.hero-bird .hero-sign-text {
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.hero-bird .hero-sign-subtext {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.hero-bird .hero-sign-post {
+  stroke: rgba(255, 255, 255, 0.18);
   stroke-width: 5;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
-.hero-bird .rr-wing {
-  fill: url(#rrWing);
+.hero-bird .hero-sign {
+  transform-origin: 350px 334px;
+  animation: loboSignSwing 5.5s ease-in-out infinite;
 }
 
-.hero-bird .rr-neck,
-.hero-bird .rr-head {
-  fill: rgba(255, 255, 255, 0.10);
-}
-
-.hero-bird .rr-accent {
-  stroke: #67e8f9;
-  stroke-width: 6;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  animation: mascotStroke 8s linear infinite;
-}
-
-.hero-bird .rr-accent-soft {
-  stroke-width: 4.5;
-  opacity: 0.8;
-}
-
-.hero-bird .rr-beak {
-  fill: url(#rrBeak);
-  opacity: 0.96;
-}
-
-.hero-bird .rr-ground {
-  stroke: rgba(255, 255, 255, 0.14);
-  stroke-width: 4.5;
-  stroke-linecap: round;
-  fill: none;
-}
-
-.hero-bird .rr-shadow {
-  animation: mascotShadowShift 7s ease-in-out infinite;
-}
-
-.hero-bird .rr-tail {
-  transform-box: fill-box;
-  transform-origin: 92% 48%;
-  animation: roadrunnerTail 1.8s ease-in-out infinite;
-}
-
-.hero-bird .rr-crest {
-  transform-box: fill-box;
-  transform-origin: 50% 100%;
-  animation: roadrunnerCrest 1.2s ease-in-out infinite;
-}
-
-.hero-bird .rr-leg {
-  transform-box: fill-box;
-  transform-origin: 50% 0%;
-}
-
-.hero-bird .rr-leg-front {
-  animation: roadrunnerLegFront 0.92s ease-in-out infinite;
-}
-
-.hero-bird .rr-leg-back {
-  animation: roadrunnerLegBack 0.92s ease-in-out infinite;
-}
-
-.hero-bird .rr-body-group {
-  animation: roadrunnerBody 0.92s ease-in-out infinite;
-}
-
-.hero-bird .hero-lobo {
-  transform-origin: 434px 296px;
-  animation: loboFloat 5.4s ease-in-out infinite;
-}
-
-.hero-bird .lobo-ring {
-  fill: rgba(255, 255, 255, 0.03);
-  stroke: rgba(255, 255, 255, 0.16);
-  stroke-width: 4;
-}
-
+.hero-bird .lobo-body,
 .hero-bird .lobo-head,
 .hero-bird .lobo-ear-left,
-.hero-bird .lobo-ear-right {
-  fill: url(#loboFill);
+.hero-bird .lobo-ear-right,
+.hero-bird .lobo-bow {
+  fill: url(#loboCoat);
 }
 
+.hero-bird .lobo-chest,
 .hero-bird .lobo-face {
-  fill: rgba(255, 255, 255, 0.11);
+  fill: url(#loboFurLight);
 }
 
 .hero-bird .lobo-snout {
   fill: rgba(15, 23, 42, 0.88);
 }
 
-.hero-bird .lobo-eye-line {
-  stroke: rgba(255, 255, 255, 0.7);
+.hero-bird .lobo-eye-brow {
+  stroke: rgba(255, 255, 255, 0.72);
   stroke-width: 4;
   stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hero-bird .lobo-eye-soft {
+  opacity: 0.86;
+}
+
+.hero-bird .lobo-shadow {
+  animation: loboShadowPulse 6.5s ease-in-out infinite;
+}
+
+.hero-bird .lobo-mascot {
+  transform-box: fill-box;
+  transform-origin: 50% 58%;
+}
+
+.hero-bird .lobo-male {
+  animation: loboMaleBob 1.8s ease-in-out infinite;
+}
+
+.hero-bird .lobo-female {
+  animation: loboFemaleBob 1.9s ease-in-out infinite;
 }
 
 .hero-bird .lobo-glow {
-  animation: loboGlowPulse 4.8s ease-in-out infinite;
+  animation: loboGlowPulse 4.6s ease-in-out infinite;
+}
+
+.hero-bird .lobo-female .lobo-bow {
+  animation: loboBowBlink 2.6s ease-in-out infinite;
+}
+
+.hero-bird .lobo-male .lobo-head,
+.hero-bird .lobo-male .lobo-ear-left,
+.hero-bird .lobo-male .lobo-ear-right {
+  animation: loboMaleNod 1.8s ease-in-out infinite;
+}
+
+.hero-bird .lobo-female .lobo-head,
+.hero-bird .lobo-female .lobo-ear-left,
+.hero-bird .lobo-female .lobo-ear-right {
+  animation: loboFemaleNod 1.9s ease-in-out infinite;
 }
 
 .hero-pattern {
@@ -825,55 +818,49 @@ body.dark-mode .theme-toggle {
   z-index: -1;
 }
 
-@keyframes mascotStroke {
-  0%, 100% { stroke: #67e8f9; }
-  33% { stroke: #f43f5e; }
-  66% { stroke: #f59e0b; }
+@keyframes loboPackFloat {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(8px, -6px); }
 }
 
-@keyframes roadrunnerFloat {
-  0%, 100% { transform: translate(0, 0) rotate(-1.5deg); }
-  50% { transform: translate(12px, -8px) rotate(0.5deg); }
+@keyframes loboSignSwing {
+  0%, 100% { transform: rotate(-1.4deg); }
+  50% { transform: rotate(1.4deg); }
 }
 
-@keyframes roadrunnerTail {
-  0%, 100% { transform: rotate(-3deg) translateY(0); }
-  50% { transform: rotate(4deg) translateY(4px); }
-}
-
-@keyframes roadrunnerCrest {
-  0%, 100% { transform: rotate(-2deg); }
-  50% { transform: rotate(4deg) translateY(-3px); }
-}
-
-@keyframes roadrunnerBody {
+@keyframes loboMaleBob {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
 }
 
-@keyframes roadrunnerLegFront {
-  0%, 100% { transform: rotate(-5deg) translateY(0); }
-  50% { transform: rotate(16deg) translateY(7px); }
+@keyframes loboFemaleBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
 }
 
-@keyframes roadrunnerLegBack {
-  0%, 100% { transform: rotate(8deg) translateY(5px); }
-  50% { transform: rotate(-15deg) translateY(-5px); }
+@keyframes loboMaleNod {
+  0%, 100% { transform: rotate(-1deg); }
+  50% { transform: rotate(2deg) translateY(2px); }
 }
 
-@keyframes mascotShadowShift {
-  0%, 100% { transform: translateX(0) scaleX(1); opacity: 0.22; }
-  50% { transform: translateX(8px) scaleX(0.94); opacity: 0.15; }
+@keyframes loboFemaleNod {
+  0%, 100% { transform: rotate(1deg); }
+  50% { transform: rotate(-2deg) translateY(1px); }
 }
 
-@keyframes loboFloat {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-8px) scale(1.03); }
+@keyframes loboShadowPulse {
+  0%, 100% { opacity: 0.18; transform: scaleX(1); }
+  50% { opacity: 0.13; transform: scaleX(0.94); }
 }
 
 @keyframes loboGlowPulse {
-  0%, 100% { opacity: 0.18; transform: scale(1); }
-  50% { opacity: 0.28; transform: scale(1.08); }
+  0%, 100% { opacity: 0.16; transform: scale(1); }
+  50% { opacity: 0.24; transform: scale(1.06); }
+}
+
+@keyframes loboBowBlink {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.08); opacity: 0.86; }
 }
 
 .hero-badge {
@@ -1633,6 +1620,19 @@ body.dark-mode .booking {
   min-height: 65px;
 }
 
+.cf-turnstile iframe {
+  max-width: 100%;
+}
+
+.turnstile-fallback {
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(217, 74, 30, 0.24);
+  background: rgba(217, 74, 30, 0.08);
+  color: var(--text);
+  font-size: 0.9375rem;
+}
+
 /* ===================================
    CSS VARIABLES
    =================================== */
@@ -1984,6 +1984,14 @@ body.dark-mode .footer {
     width: 74%;
     height: 42%;
     opacity: 0.18;
+  }
+
+  .hero-bird .hero-sign-text {
+    font-size: 32px;
+  }
+
+  .hero-bird .hero-sign-subtext {
+    font-size: 14px;
   }
 
   .hero-badge,

@@ -21,9 +21,9 @@
     <link rel="dns-prefetch" href="https://challenges.cloudflare.com">
     <link rel="preconnect" href="https://api.web3forms.com">
     
-    <link rel="preload" as="style" href="/assets/styles.min.css?v=13">
-    <link rel="preload" as="script" href="/assets/main.min.js?v=6">
-    <link rel="stylesheet" href="/assets/styles.min.css?v=13" integrity="sha384-9ken0EvehC3fjHwSfc43+Exu9Stp+VijFxKKhLBVmZJvMyiXYu5E+Vgjyd1EXrah">
+    <link rel="preload" as="style" href="/assets/styles.min.css?v=14">
+    <link rel="preload" as="script" href="/assets/main.min.js?v=7">
+    <link rel="stylesheet" href="/assets/styles.min.css?v=14" integrity="sha384-HkpWmSjCpBrm5VOzccowyRAMw1mDT5bNQelKio/3eSN+yoz7fGQeK/PYje/iwvO+">
     
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://zionappliance.com/">
@@ -348,24 +348,20 @@
         <div class="hero-bg"></div>
         <svg class="hero-bird" viewBox="0 0 960 960" preserveAspectRatio="xMinYMid meet" aria-hidden="true">
           <defs>
-            <linearGradient id="rrBody" x1="14%" y1="22%" x2="86%" y2="88%">
-              <stop offset="0%" stop-color="#f8fafc" stop-opacity="0.18"/>
-              <stop offset="100%" stop-color="#64748b" stop-opacity="0.05"/>
+            <linearGradient id="loboCoat" x1="18%" y1="12%" x2="82%" y2="88%">
+              <stop offset="0%" stop-color="#ef4444" stop-opacity="0.96"/>
+              <stop offset="100%" stop-color="#7f1d1d" stop-opacity="0.94"/>
             </linearGradient>
-            <linearGradient id="rrWing" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#7dd3fc" stop-opacity="0.18"/>
-              <stop offset="100%" stop-color="#c084fc" stop-opacity="0.06"/>
+            <linearGradient id="loboFurLight" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#fca5a5" stop-opacity="0.85"/>
+              <stop offset="100%" stop-color="#fee2e2" stop-opacity="0.15"/>
             </linearGradient>
-            <linearGradient id="rrBeak" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#fb7185" stop-opacity="0.95"/>
-              <stop offset="100%" stop-color="#f97316" stop-opacity="0.95"/>
+            <linearGradient id="loboSign" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#1e3a5f" stop-opacity="0.94"/>
+              <stop offset="100%" stop-color="#0f172a" stop-opacity="0.96"/>
             </linearGradient>
-            <linearGradient id="loboFill" x1="14%" y1="10%" x2="86%" y2="90%">
-              <stop offset="0%" stop-color="#ef4444" stop-opacity="0.94"/>
-              <stop offset="100%" stop-color="#7f1d1d" stop-opacity="0.92"/>
-            </linearGradient>
-            <filter id="heroMascotGlow" x="-30%" y="-30%" width="160%" height="160%">
-              <feGaussianBlur stdDeviation="18" result="blur"/>
+            <filter id="heroLoboGlow" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="16" result="blur"/>
               <feMerge>
                 <feMergeNode in="blur"/>
                 <feMergeNode in="SourceGraphic"/>
@@ -373,58 +369,44 @@
             </filter>
           </defs>
 
-          <g class="hero-mascot-aura" filter="url(#heroMascotGlow)">
-            <ellipse cx="220" cy="522" rx="168" ry="126" fill="rgba(56,189,248,0.10)"/>
-            <ellipse cx="430" cy="342" rx="104" ry="84" fill="rgba(239,68,68,0.12)"/>
+          <g class="hero-lobo-aura" filter="url(#heroLoboGlow)">
+            <ellipse cx="232" cy="432" rx="132" ry="110" fill="rgba(239,68,68,0.10)"/>
+            <ellipse cx="392" cy="320" rx="124" ry="102" fill="rgba(96,165,250,0.08)"/>
           </g>
 
-          <g class="hero-roadrunner">
-            <ellipse class="rr-shadow" cx="278" cy="660" rx="126" ry="20" fill="rgba(15,23,42,0.20)"/>
-            <path class="rr-ground" d="M120 696c86-18 176-16 270 8" fill="none"/>
-
-            <g class="rr-tail">
-              <path class="rr-accent" d="M132 486c-62 4-100-1-130-18 42 30 82 50 126 62" fill="none"/>
-              <path class="rr-accent rr-accent-soft" d="M142 520c-58 28-90 53-104 90 40-24 77-40 118-48" fill="none"/>
+          <g class="hero-lobo-pack">
+            <g class="hero-sign">
+              <path class="hero-sign-board" d="M218 258h264c28 0 50 22 50 50v52c0 28-22 50-50 50H218c-28 0-50-22-50-50v-52c0-28 22-50 50-50z"/>
+              <path class="hero-sign-outline" d="M218 258h264c28 0 50 22 50 50v52c0 28-22 50-50 50H218c-28 0-50-22-50-50v-52c0-28 22-50 50-50z" fill="none"/>
+              <text x="350" y="332" text-anchor="middle" class="hero-sign-text">GO LOBOS</text>
+              <text x="350" y="368" text-anchor="middle" class="hero-sign-subtext">Burque Pride</text>
+              <path class="hero-sign-post" d="M274 410v104" fill="none"/>
+              <path class="hero-sign-post" d="M426 410v104" fill="none"/>
             </g>
 
-            <g class="rr-body-group">
-              <path class="rr-body rr-outline" d="M160 520c28-62 94-102 176-106 94-4 171 38 188 103 16 62-32 120-120 144-108 29-230-18-248-98-7-29-3-43 4-43z"/>
-              <path class="rr-wing rr-outline" d="M242 502c72-16 134 10 164 64 18 31 18 60 8 88-66 16-138-8-174-50-34-39-34-73 2-102z"/>
-              <path class="rr-neck rr-outline" d="M352 434c20-72 66-128 132-146 46-12 92 0 104 27 12 28-7 58-50 78-43 20-89 24-148 16"/>
-              <ellipse class="rr-head rr-outline" cx="558" cy="254" rx="46" ry="38"/>
-              <path class="rr-beak" d="M594 246c40-2 82 8 120 32-39 14-84 18-126 16z"/>
-              <circle cx="575" cy="248" r="5.5" fill="#f8fafc"/>
-              <circle cx="577" cy="248" r="2.5" fill="#020617"/>
-              <path class="rr-belly" d="M260 592c52 34 120 45 178 28 30-9 55-23 74-43-26 52-90 82-162 76-58-4-107-28-136-70 15-7 28-5 46 9z" fill="rgba(255,255,255,0.10)"/>
+            <g class="lobo-mascot lobo-male">
+              <ellipse class="lobo-shadow" cx="204" cy="654" rx="84" ry="16" fill="rgba(15,23,42,0.18)"/>
+              <path class="lobo-body" d="M120 640c6-86 52-156 126-174 54-14 119 0 152 38 22 24 34 58 26 92-92 48-212 63-304 44z"/>
+              <path class="lobo-chest" d="M162 624c34 20 92 22 136 6 32-12 55-31 76-56-12 58-66 102-136 108-44 4-84-12-114-46 10-7 20-10 38-12z"/>
+              <path class="lobo-head" d="M206 452l54 24 28 64-12 72-70 38-70-38-12-72 28-64z"/>
+              <path class="lobo-ear-left" d="M154 468l-26-62 58 30z"/>
+              <path class="lobo-ear-right" d="M258 468l26-62-58 30z"/>
+              <path class="lobo-face" d="M170 514l36-14 36 14-10 58-26 24-26-24z"/>
+              <path class="lobo-snout" d="M192 564l14-10 14 10-14 20z"/>
+              <path class="lobo-eye-brow" d="M176 532l18-12m24 12l18-12" fill="none"/>
             </g>
 
-            <g class="rr-crest">
-              <path class="rr-accent" d="M522 204c-14-34-18-60-14-86 18 27 30 54 40 82" fill="none"/>
-              <path class="rr-accent" d="M556 196c0-40 8-68 22-93 7 30 8 59 2 90" fill="none"/>
-              <path class="rr-accent" d="M586 204c14-34 30-58 54-76-8 30-22 56-42 82" fill="none"/>
-            </g>
-
-            <g class="rr-leg rr-leg-back">
-              <path class="rr-accent" d="M322 606c-18 46-22 86-10 124" fill="none"/>
-              <path class="rr-accent rr-accent-soft" d="M312 730c-22 10-39 22-54 40" fill="none"/>
-            </g>
-
-            <g class="rr-leg rr-leg-front">
-              <path class="rr-accent" d="M402 608c16 40 38 74 68 102" fill="none"/>
-              <path class="rr-accent rr-accent-soft" d="M470 710c23 8 41 19 60 36" fill="none"/>
-            </g>
-          </g>
-
-          <g class="hero-lobo">
-            <ellipse class="lobo-glow" cx="436" cy="296" rx="92" ry="76" fill="rgba(239,68,68,0.10)"/>
-            <path class="lobo-ring" d="M434 204c54 0 98 42 98 94 0 52-44 94-98 94s-98-42-98-94c0-52 44-94 98-94z"/>
-            <g class="lobo-mark">
-              <path class="lobo-head" d="M434 234l42 18 22 48-10 58-54 30-54-30-10-58 22-48z"/>
-              <path class="lobo-ear-left" d="M390 246l-18-44 42 22z"/>
-              <path class="lobo-ear-right" d="M478 246l18-44-42 22z"/>
-              <path class="lobo-face" d="M404 280l30-12 30 12-8 48-22 20-22-20z"/>
-              <path class="lobo-snout" d="M420 324l14-10 14 10-14 18z"/>
-              <path class="lobo-eye-line" d="M404 296l20-12m24 12l20-12" fill="none"/>
+            <g class="lobo-mascot lobo-female">
+              <ellipse class="lobo-shadow" cx="520" cy="646" rx="84" ry="16" fill="rgba(15,23,42,0.16)"/>
+              <path class="lobo-body" d="M438 632c12-82 58-144 126-160 52-12 112 4 144 38 22 24 34 56 28 88-90 46-208 58-298 34z"/>
+              <path class="lobo-chest" d="M474 612c36 18 92 18 136 0 30-12 52-29 72-54-10 56-62 98-128 104-42 4-84-10-116-42 8-4 20-6 36-8z"/>
+              <path class="lobo-head" d="M518 454l50 22 26 60-10 68-66 36-66-36-10-68 26-60z"/>
+              <path class="lobo-ear-left" d="M470 470l-24-58 54 28z"/>
+              <path class="lobo-ear-right" d="M566 470l24-58-54 28z"/>
+              <path class="lobo-face" d="M484 516l34-14 34 14-10 54-24 22-24-22z"/>
+              <path class="lobo-snout" d="M504 562l14-10 14 10-14 20z"/>
+              <path class="lobo-eye-brow lobo-eye-soft" d="M490 532l16-10m24 10l16-10" fill="none"/>
+              <path class="lobo-bow" d="M560 482c12-18 24-26 36-26-2 14-8 24-20 32 14 0 24 4 34 14-16 8-32 10-48 2-6-8-6-16-2-22z"/>
             </g>
           </g>
         </svg>
@@ -895,7 +877,7 @@
                 <label for="website-field">Website (leave empty)</label>
                 <input type="text" name="website" id="website-field" tabindex="-1" autocomplete="off">
               </div>
-              <div class="cf-turnstile" data-sitekey="0x4AAAAAAC2WzoI9fwmhe3xn" data-callback="onTurnstileSuccess" data-error="onTurnstileError"></div>
+              <div id="turnstile-widget" class="cf-turnstile" data-sitekey="0x4AAAAAAC2WzoI9fwmhe3xn"></div>
               <div class="form-group">
                 <label for="fullName">Full Name *</label>
                 <input type="text" id="fullName" name="name" required placeholder="John Smith" autocomplete="name">
@@ -1013,6 +995,6 @@
 
     <div id="toast" class="toast" role="alert" aria-live="polite"></div>
 
-    <script src="/assets/main.min.js?v=6" defer integrity="sha384-FIX/zKnju9t9XD6yymMJGUHaloxcWji6K5JUGre8wdP5Mi/HUqb8gkxjgaI9l6xG"></script>
+    <script src="/assets/main.min.js?v=7" defer integrity="sha384-1UfYUIj3g0heQubLwLe7Ws1Oy32Bpw+RnctpaJ2RO1K16sauQ0uXVYfxQv3f1XCH"></script>
   </body>
 </html>

@@ -8,18 +8,54 @@
 
   // Cloudflare Turnstile callbacks
   window.onTurnstileSuccess = function(token) {
-    document.getElementById('turnstile-response').value = token;
-    const btn = document.querySelector('button[type="submit"]');
-    if (btn && btn.innerHTML.includes('Verifying')) {
-      btn.innerHTML = 'Book Appointment';
+    const responseField = document.getElementById('turnstile-response');
+    const widget = document.getElementById('turnstile-widget');
+    const btn = document.querySelector('#booking-form button[type="submit"]');
+
+    if (responseField) {
+      responseField.value = token;
+    }
+
+    if (widget) {
+      widget.dataset.ready = 'true';
+    }
+
+    if (btn) {
+      btn.disabled = false;
+      btn.classList.remove('loading');
+      const btnText = btn.querySelector('.btn-text');
+      if (btnText) {
+        btnText.textContent = 'Book Appointment';
+      }
     }
   };
 
   window.onTurnstileError = function() {
-    const btn = document.querySelector('button[type="submit"]');
+    const responseField = document.getElementById('turnstile-response');
+    const widget = document.getElementById('turnstile-widget');
+    const btn = document.querySelector('#booking-form button[type="submit"]');
+
+    if (responseField) {
+      responseField.value = '';
+    }
+
+    if (widget) {
+      widget.dataset.ready = 'false';
+    }
+
     if (btn) {
-      btn.innerHTML = 'Book Appointment';
       btn.disabled = false;
+      btn.classList.remove('loading');
+      const btnText = btn.querySelector('.btn-text');
+      if (btnText) {
+        btnText.textContent = 'Book Appointment';
+      }
+    }
+  };
+
+  window.onTurnstileExpired = function() {
+    if (window.LazyTurnstile) {
+      window.LazyTurnstile.reset();
     }
   };
 
@@ -166,36 +202,64 @@
         
         const btn = this.form.querySelector('button[type="submit"]');
         if (btn.disabled) return;
+
+        if (!this.validate()) {
+          this.showToast('Please fill out the required fields first.', 'error');
+          return;
+        }
         
-        btn.disabled = true;
-        btn.innerHTML = 'Verifying...';
+        this.setButtonState('verifying');
         
         const turnstileResponse = document.getElementById('turnstile-response');
         const cfToken = turnstileResponse ? turnstileResponse.value : '';
         
         if (!cfToken) {
-          btn.innerHTML = 'Book Appointment';
-          btn.disabled = false;
-          this.showToast('Please wait for verification to complete.', 'error');
+          this.setButtonState('idle');
+          if (window.LazyTurnstile) {
+            window.LazyTurnstile.loadAndRender();
+          }
+          this.showToast('Complete the verification above, then try again.', 'error');
           return;
         }
         
-        btn.innerHTML = 'Sending...';
+        this.setButtonState('sending');
         
         const formData = new FormData(this.form);
-        
+
         fetch(this.form.action, {
           method: 'POST',
-          body: formData,
-          mode: 'no-cors'
-        }).catch(() => {});
-        
-        setTimeout(() => {
-          btn.innerHTML = 'Book Appointment';
-          btn.disabled = false;
-          this.showSuccess();
-          this.form.reset();
-        }, 1500);
+          headers: {
+            'Accept': 'application/json'
+          },
+          body: formData
+        })
+          .then(async (response) => {
+            const data = await response.json().catch(() => ({}));
+
+            if (!response.ok || data.success === false) {
+              throw new Error(data.message || 'We could not send your booking. Please try again.');
+            }
+
+            this.showSuccess();
+            this.form.reset();
+            if (window.LazyTurnstile) {
+              window.LazyTurnstile.reset();
+            }
+          })
+          .catch((error) => {
+            this.showToast(error.message || 'We could not send your booking. Please try again.', 'error');
+            if (window.LazyTurnstile) {
+              window.LazyTurnstile.reset();
+            }
+          })
+          .finally(() => {
+            this.setButtonState('idle');
+          });
+      });
+
+      this.form.querySelectorAll('input, select, textarea').forEach((field) => {
+        field.addEventListener('input', () => this.clearFieldError(field));
+        field.addEventListener('change', () => this.clearFieldError(field));
       });
     },
     
@@ -271,6 +335,19 @@
       field.classList.remove('error');
       field.removeAttribute('aria-invalid');
     },
+
+    setButtonState(state) {
+      const btn = this.form?.querySelector('button[type="submit"]');
+      if (!btn) return;
+
+      const btnText = btn.querySelector('.btn-text');
+      btn.classList.toggle('loading', state === 'sending');
+      btn.disabled = state !== 'idle';
+
+      if (btnText) {
+        btnText.textContent = state === 'verifying' ? 'Verifying...' : 'Book Appointment';
+      }
+    },
     
     showToast(message, type = 'success') {
       this.toast.textContent = message;
@@ -345,21 +422,97 @@
 
   // Lazy-load Turnstile when booking section is near viewport
   const LazyTurnstile = {
+    widgetId: null,
+    scriptPromise: null,
+
     init() {
       const form = document.getElementById('booking-form');
       if (!form) return;
+
       const observer = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting) {
           observer.disconnect();
-          const script = document.createElement('script');
-          script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
-          script.async = true;
-          document.head.appendChild(script);
+          this.loadAndRender();
         }
       }, { rootMargin: '200px' });
+
       observer.observe(form);
+    },
+
+    loadAndRender() {
+      const container = document.getElementById('turnstile-widget');
+      if (!container) return Promise.resolve();
+
+      if (window.turnstile) {
+        this.render();
+        return Promise.resolve();
+      }
+
+      if (this.scriptPromise) {
+        return this.scriptPromise;
+      }
+
+      this.scriptPromise = new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+        script.async = true;
+        script.defer = true;
+        script.dataset.turnstileScript = 'true';
+        script.onload = () => {
+          this.render();
+          resolve();
+        };
+        script.onerror = () => {
+          this.scriptPromise = null;
+          this.showUnavailable();
+          reject(new Error('Verification could not load.'));
+        };
+        document.head.appendChild(script);
+      });
+
+      return this.scriptPromise;
+    },
+
+    render() {
+      const container = document.getElementById('turnstile-widget');
+      if (!container || !window.turnstile || this.widgetId !== null) return;
+
+      container.dataset.ready = 'false';
+      this.widgetId = window.turnstile.render(container, {
+        sitekey: container.dataset.sitekey,
+        theme: 'auto',
+        callback: window.onTurnstileSuccess,
+        'error-callback': window.onTurnstileError,
+        'expired-callback': window.onTurnstileExpired
+      });
+    },
+
+    reset() {
+      const responseField = document.getElementById('turnstile-response');
+      const container = document.getElementById('turnstile-widget');
+
+      if (responseField) {
+        responseField.value = '';
+      }
+
+      if (container) {
+        container.dataset.ready = 'false';
+      }
+
+      if (window.turnstile && this.widgetId !== null) {
+        window.turnstile.reset(this.widgetId);
+      }
+    },
+
+    showUnavailable() {
+      const container = document.getElementById('turnstile-widget');
+      if (!container) return;
+
+      container.innerHTML = '<p class="turnstile-fallback">Verification could not load. Call or email us and we can still book you.</p>';
     }
   };
+
+  window.LazyTurnstile = LazyTurnstile;
 
   // Initialize everything
   document.addEventListener('DOMContentLoaded', () => {
