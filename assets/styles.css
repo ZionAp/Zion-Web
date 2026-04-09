@@ -464,13 +464,14 @@ body.dark-mode .theme-toggle {
 .hero-bird .hero-sign-text {
   fill: #ef4444;
   font-family: var(--font);
-  letter-spacing: 0.08em;
-  font-size: 40px;
+  letter-spacing: 0.04em;
+  font-size: 44px;
   font-weight: 800;
   stroke: rgba(255, 255, 255, 0.96);
-  stroke-width: 8;
+  stroke-width: 10;
   paint-order: stroke fill;
-  filter: drop-shadow(0 4px 0 rgba(15, 23, 42, 0.55));
+  font-style: italic;
+  filter: drop-shadow(0 5px 0 rgba(15, 23, 42, 0.6));
 }
 
 .hero-bird .hero-sign-post {
@@ -481,13 +482,26 @@ body.dark-mode .theme-toggle {
 }
 
 .hero-bird .hero-sign-stripe {
-  stroke: rgba(255, 255, 255, 0.14);
-  stroke-width: 10;
+  stroke: rgba(255, 255, 255, 0.18);
+  stroke-width: 12;
   stroke-linecap: round;
 }
 
 .hero-bird .hero-sign {
   transform-origin: 350px 334px;
+}
+
+.hero-bird .lobo-hat-brim,
+.hero-bird .lobo-hat-crown {
+  fill: rgba(109, 61, 28, 0.96);
+  stroke: rgba(255, 238, 204, 0.24);
+  stroke-width: 3;
+}
+
+.hero-bird .lobo-hat-band {
+  stroke: rgba(255, 221, 170, 0.65);
+  stroke-width: 4;
+  stroke-linecap: round;
 }
 
 .hero-bird .fridge-body {
@@ -516,6 +530,11 @@ body.dark-mode .theme-toggle {
   fill: rgba(255, 255, 255, 0.82);
 }
 
+.hero-bird .hero-tool-wrench,
+.hero-bird .lobo-tech-tool {
+  fill: rgba(232, 236, 241, 0.92);
+}
+
 .hero-bird .lobo-body,
 .hero-bird .lobo-head,
 .hero-bird .lobo-ear-left,
@@ -540,6 +559,13 @@ body.dark-mode .theme-toggle {
   stroke-width: 3;
 }
 
+.hero-bird .lobo-customer-arm,
+.hero-bird .lobo-tech-arm {
+  stroke: rgba(255, 255, 255, 0.38);
+  stroke-width: 8;
+  stroke-linecap: round;
+}
+
 .hero-bird .lobo-eye-brow {
   stroke: rgba(255, 255, 255, 0.72);
   stroke-width: 4;
@@ -557,13 +583,6 @@ body.dark-mode .theme-toggle {
 .hero-bird .lobo-mascot {
   transform-box: fill-box;
   transform-origin: 50% 58%;
-}
-
-.hero-bird .lobo-customer-arm,
-.hero-bird .lobo-tech-arm {
-  stroke: rgba(255, 255, 255, 0.38);
-  stroke-width: 8;
-  stroke-linecap: round;
 }
 
 .hero-pattern {
@@ -1585,16 +1604,6 @@ body.dark-mode .booking {
   pointer-events: none;
 }
 
-.form-security-note {
-  margin-bottom: 24px;
-  padding: 14px 16px;
-  border-radius: var(--radius-sm);
-  border: 1px solid rgba(30, 58, 95, 0.14);
-  background: rgba(30, 58, 95, 0.06);
-  color: var(--text-secondary);
-  font-size: 0.9375rem;
-}
-
 /* ===================================
    CSS VARIABLES
    =================================== */
@@ -1788,37 +1797,32 @@ body.dark-mode .footer {
   }
   
   .hero {
-    padding: 112px 0 72px;
+    padding: 104px 0 64px;
     min-height: auto;
+    text-align: center;
   }
 
   .hero-bird {
-    inset: 8% auto auto -10%;
-    width: 62%;
-    height: 64%;
-    opacity: 0.28;
-    -webkit-mask-image: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.8) 56%, rgba(0, 0, 0, 0.12) 84%, transparent 100%);
-    mask-image: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.8) 56%, rgba(0, 0, 0, 0.12) 84%, transparent 100%);
+    display: none;
   }
 
   .hero-pattern {
-    inset: -4% -18% auto 18%;
-    width: 114%;
-    height: 78%;
-    opacity: 0.38;
-    -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.2) 28%, #000 42%);
-    mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.2) 28%, #000 42%);
+    display: none;
   }
 
   .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     max-width: 100%;
   }
 
   .hero-content::before {
-    inset: -28px -18px -36px -18px;
+    inset: -24px -14px -28px -14px;
     background:
-      linear-gradient(180deg, rgba(10, 15, 26, 0.88) 0%, rgba(10, 15, 26, 0.74) 58%, rgba(10, 15, 26, 0.26) 100%),
-      radial-gradient(circle at 50% 22%, rgba(59, 130, 246, 0.14) 0%, transparent 48%);
+      linear-gradient(180deg, rgba(10, 15, 26, 0.94) 0%, rgba(10, 15, 26, 0.8) 58%, rgba(10, 15, 26, 0.34) 100%),
+      radial-gradient(circle at 50% 18%, rgba(59, 130, 246, 0.16) 0%, transparent 48%);
+    border-radius: 28px;
   }
 
   .hero-piece-extra {
@@ -1834,7 +1838,7 @@ body.dark-mode .footer {
     flex-direction: column;
     width: 100%;
     gap: 12px;
-    margin-bottom: 32px;
+    margin-bottom: 28px;
   }
   
   .hero-actions .btn {
@@ -1848,7 +1852,7 @@ body.dark-mode .footer {
   .hero-trust {
     flex-direction: column;
     width: 100%;
-    gap: 12px;
+    gap: 10px;
   }
 
   .trust-item {
@@ -1874,7 +1878,8 @@ body.dark-mode .footer {
   .service-card,
   .feature-card,
   .testimonial-card {
-    padding: 24px;
+    padding: 22px;
+    border-radius: 18px;
   }
   
   .areas-map iframe {
@@ -1923,7 +1928,8 @@ body.dark-mode .footer {
   
   .booking-info,
   .booking-form {
-    padding: 32px;
+    padding: 28px;
+    border-radius: 20px;
   }
 }
 
@@ -1932,28 +1938,16 @@ body.dark-mode .footer {
     padding: 0 16px;
   }
 
-  .hero-pattern {
-    inset: 8% -18% auto 12%;
-    width: 120%;
-    height: 62%;
-    opacity: 0.26;
-    -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, #000 16%, #000 74%, transparent 100%);
-    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, #000 16%, #000 74%, transparent 100%);
+  .hero {
+    padding: 96px 0 56px;
   }
 
   .hero-bird {
-    inset: 12% auto auto -18%;
-    width: 74%;
-    height: 42%;
-    opacity: 0.18;
+    display: none;
   }
 
   .hero-bird .hero-sign-text {
     font-size: 32px;
-  }
-
-  .hero-bird .hero-sign-subtext {
-    font-size: 14px;
   }
 
   .hero-badge,
@@ -1968,6 +1962,10 @@ body.dark-mode .footer {
   }
 
   .hero-subtitle {
+    font-size: 0.98rem;
+  }
+
+  .section-header p {
     font-size: 0.98rem;
   }
 
@@ -2010,7 +2008,7 @@ body.dark-mode .footer {
 
   .booking-info,
   .booking-form {
-    padding: 24px;
+    padding: 22px;
   }
 }
 
