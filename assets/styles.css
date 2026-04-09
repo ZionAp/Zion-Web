@@ -387,7 +387,31 @@ body.dark-mode .theme-toggle .sun-icon {
 }
 
 .hero-pattern g {
-  opacity: 0.12;
+  opacity: 0.15;
+}
+
+.color-shift-1 rect,
+.color-shift-1 circle,
+.color-shift-1 line,
+.color-shift-1 path {
+  stroke: #4ade80;
+  animation: colorShift1 12s ease-in-out infinite;
+}
+
+.color-shift-2 rect,
+.color-shift-2 circle,
+.color-shift-2 line,
+.color-shift-2 path {
+  stroke: #d94a1e;
+  animation: colorShift2 15s ease-in-out infinite;
+}
+
+.color-shift-3 rect,
+.color-shift-3 circle,
+.color-shift-3 line,
+.color-shift-3 path {
+  stroke: #3b82f6;
+  animation: colorShift3 18s ease-in-out infinite;
 }
 
 @keyframes colorShift1 {
