@@ -449,7 +449,7 @@ body.dark-mode .theme-toggle {
 }
 
 .hero-bird .scene-pack {
-  transform-origin: 360px 450px;
+  transform-origin: 200px 450px;
 }
 
 .hero-bird .scene-sign-board {
@@ -539,7 +539,7 @@ body.dark-mode .theme-toggle {
 }
 
 .hero-bird .scene-mascot {
-  transform-origin: 250px 590px;
+  transform-origin: 210px 460px;
 }
 
 .hero-bird .scene-mascot,
@@ -553,15 +553,12 @@ body.dark-mode .theme-toggle {
 .hero-bird .scene-sign-post,
 .hero-bird .scene-sign-text,
 .hero-bird .scene-body,
-.hero-bird .scene-head,
 .hero-bird .scene-ear-left,
 .hero-bird .scene-ear-right,
 .hero-bird .scene-tail,
 .hero-bird .scene-belly,
-.hero-bird .scene-muzzle,
 .hero-bird .scene-nose,
 .hero-bird .scene-glove,
-.hero-bird .scene-shoe,
 .hero-bird .scene-leg,
 .hero-bird .scene-arm,
 .hero-bird .scene-shadow {
