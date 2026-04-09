@@ -261,6 +261,16 @@ body.dark-mode .theme-toggle {
   transition: background var(--transition);
 }
 
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 80px;
+}
+
 .nav {
   display: flex;
   align-items: center;
@@ -1169,12 +1179,22 @@ body.dark-mode .services {
   padding: 32px;
   border: 1px solid var(--border);
   transition: all var(--transition);
+  overflow: hidden;
 }
 
 .service-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
   border-color: var(--primary);
+}
+
+.service-image {
+  width: calc(100% + 64px);
+  height: 160px;
+  object-fit: cover;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  margin: -32px -32px 16px -32px;
+  max-width: none;
 }
 
 .service-icon {
