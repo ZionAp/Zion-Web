@@ -1058,6 +1058,16 @@ body.dark-mode .theme-toggle {
   width: 100%;
 }
 
+.cf-turnstile {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.cf-turnstile:empty {
+  display: none;
+}
+
 .btn-loading {
   display: none;
 }
