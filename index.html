@@ -23,10 +23,10 @@
     <link rel="preconnect" href="https://challenges.cloudflare.com">
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     
-    <link rel="preload" as="style" href="/assets/styles.min.css?v=32" fetchpriority="high">
-    <link rel="preload" as="script" href="/assets/main.min.js?v=12">
-    <link rel="stylesheet" href="/assets/styles.min.css?v=32" integrity="sha384-xnH1Tn1IXmB3/Sj61HjexP44+fPVioYeXSWFakJtdv7zk9S8LlsfqI3c8FDQmr7Y">
-    <noscript><link rel="stylesheet" href="/assets/styles.min.css?v=32" integrity="sha384-xnH1Tn1IXmB3/Sj61HjexP44+fPVioYeXSWFakJtdv7zk9S8LlsfqI3c8FDQmr7Y"></noscript>
+    <link rel="preload" as="style" href="/assets/styles.min.css?v=33" fetchpriority="high">
+    <link rel="preload" as="script" href="/assets/main.min.js?v=13">
+    <link rel="stylesheet" href="/assets/styles.min.css?v=33" integrity="sha384-MskEXCVBddjZNZGn4s8zMu+EdkDD+gJ9K5cbmYuN5cAWku+3kMb6XqIqq8asYfHo">
+    <noscript><link rel="stylesheet" href="/assets/styles.min.css?v=33" integrity="sha384-MskEXCVBddjZNZGn4s8zMu+EdkDD+gJ9K5cbmYuN5cAWku+3kMb6XqIqq8asYfHo"></noscript>
     
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://zionappliance.com/">
@@ -308,6 +308,12 @@
               <path class="scene-sign-board" d="M60 180h320c32 0 58 20 64 48l8 52c4 24-12 46-36 52l-280 48c-28 4-54-14-60-40l-10-60c-6-32 20-60 52-60z"/>
               <path class="scene-sign-outline" d="M60 180h320c32 0 58 20 64 48l8 52c4 24-12 46-36 52l-280 48c-28 4-54-14-60-40l-10-60c-6-32 20-60 52-60z" fill="none"/>
               <path class="scene-sign-stripe" d="M44 244l348-50" fill="none"/>
+              <g class="scene-zia">
+                <rect x="198" y="300" width="44" height="4" fill="#ef4444"/>
+                <rect x="200" y="306" width="40" height="3" fill="#fbbf24"/>
+                <rect x="202" y="311" width="36" height="3" fill="#ef4444"/>
+                <rect x="204" y="316" width="32" height="3" fill="#fbbf24"/>
+              </g>
               <text x="220" y="286" text-anchor="middle" class="scene-sign-text">GO LOBOS</text>
               <path class="scene-sign-post" d="M140 332v82" fill="none"/>
               <path class="scene-sign-post" d="M310 316v98" fill="none"/>
@@ -317,6 +323,8 @@
               <ellipse class="scene-head" cx="210" cy="420" rx="56" ry="62"/>
               <path class="scene-ear-left" d="M166 380l-22-56 50 24z"/>
               <path class="scene-ear-right" d="M254 380l22-56-50 24z"/>
+              <path class="scene-ear-inner-left" d="M162 392l-10-24 22 10z"/>
+              <path class="scene-ear-inner-right" d="M258 392l10-24-22 10z"/>
               <circle cx="188" cy="408" r="13" fill="#fff7ed"/>
               <circle cx="230" cy="406" r="13" fill="#fff7ed"/>
               <circle cx="190" cy="408" r="5.5" fill="#1e293b"/>
@@ -822,6 +830,7 @@
             <form id="booking-form" class="booking-form" action="https://api.web3forms.com/submit" method="POST">
               <input type="hidden" name="access_key" value="1ae2e518-8851-4bee-8134-cff953eb7c0f">
               <input type="hidden" name="subject" value="New Booking - Zion Appliance Solutions">
+              <input type="hidden" name="from_site" value="zion">
               <input type="hidden" name="botcheck" class="botcheck">
               <div class="cf-turnstile" data-sitekey="0x4AAAAAAC2WzoI9fwmhe3xn" data-theme="light"></div>
               <div class="form-group bot-field" style="position:absolute;left:-9999px;top:-9999px;">
@@ -936,6 +945,9 @@
              <p>Mon-Sat: 8 AM - 6 PM</p>
              <p>Sunday: By appointment</p>
           </div>
+        <div class="footer-promotion">
+            <p>Like this website? I'd love to build one for you too. <a href="mailto:zionappliance@gmail.com?subject=Website Inquiry">Contact me</a> to get started.</p>
+          </div>
         </div>
         <div class="footer-bottom">
           <p>&copy; 2025 Zion Appliance Solutions. All rights reserved.</p>
@@ -945,6 +957,6 @@
 
     <div id="toast" class="toast" role="alert" aria-live="polite"></div>
 
-    <script src="/assets/main.min.js?v=12" defer integrity="sha384-dkKn9v9wmSOxuYPwE5bb+YB/HNUxrILecc8SdJxGyfsQ5iWfjsDfHB2U6a13o/Vq"></script>
+    <script src="/assets/main.min.js?v=13" defer integrity="sha384-dkKn9v9wmSOxuYPwE5bb+YB/HNUxrILecc8SdJxGyfsQ5iWfjsDfHB2U6a13o/Vq"></script>
   </body>
 </html>
