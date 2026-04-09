@@ -510,6 +510,14 @@ body.dark-mode .theme-toggle {
   fill: rgba(15, 23, 42, 0.9);
 }
 
+.hero-bird .scene-brow,
+.hero-bird .scene-mouth {
+  stroke: rgba(255, 255, 255, 0.72);
+  stroke-width: 4;
+  stroke-linecap: round;
+  fill: none;
+}
+
 .hero-bird .scene-shadow {
   fill: rgba(15, 23, 42, 0.18);
 }
@@ -560,6 +568,8 @@ body.dark-mode .theme-toggle {
 .hero-bird .scene-belly,
 .hero-bird .scene-muzzle,
 .hero-bird .scene-nose,
+.hero-bird .scene-brow,
+.hero-bird .scene-mouth,
 .hero-bird .scene-glove,
 .hero-bird .scene-shoe,
 .hero-bird .scene-leg,
