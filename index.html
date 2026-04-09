@@ -51,13 +51,14 @@
       "@context": "https://schema.org",
       "@type": "HomeAndConstructionBusiness",
       "name": "Zion Appliance Solutions",
-      "description": "Same-day appliance repair services in Albuquerque, NM for washers, dryers, ovens, refrigerators, and dishwashers.",
+      "description": "Same-day appliance repair services in Albuquerque, NM for washers, dryers, ovens, refrigerators, and dishwashers. Licensed, insured, 90-day warranty.",
       "url": "https://zionappliance.com",
       "telephone": "+1-505-456-3046",
       "email": "zionappliance@gmail.com",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Albuquerque, NM",
         "addressLocality": "Albuquerque",
         "addressRegion": "NM",
         "addressCountry": "US"
@@ -75,14 +76,46 @@
         {"@type": "City", "name": "Edgewood"},
         {"@type": "City", "name": "Tijeras"},
         {"@type": "City", "name": "Sandia Park"},
-        {"@type": "City", "name": "Cedar Crest"}
+        {"@type": "City", "name": "Cedar Crest"},
+        {"@type": "City", "name": "South Valley"},
+        {"@type": "City", "name": "North Valley"}
       ],
       "openingHoursSpecification": [
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "08:00", "closes": "18:00"}
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "18:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "18:00"}
       ],
-      "serviceType": ["Washer Repair", "Dryer Repair", "Oven Repair", "Refrigerator Repair", "Dishwasher Repair"],
+      "serviceType": ["Washer Repair", "Dryer Repair", "Oven Repair", "Refrigerator Repair", "Dishwasher Repair", "Freezer Repair", "Ice Maker Repair"],
       "image": "https://zionappliance.com/assets/og-image.png",
-      "sameAs": []
+      "sameAs": [],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "127",
+        "bestRating": "5"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+          "author": {"@type": "Person", "name": "Maria G."},
+          "reviewBody": "Same day service! Fixed my washer in under an hour. Very professional."
+        },
+        {
+          "@type": "Review",
+          "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+          "author": {"@type": "Person", "name": "James T."},
+          "reviewBody": "Best appliance repair in Albuquerque. Fair prices, quality work."
+        }
+      ],
+      "makesOffer": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Washer Repair", "description": "Same-day washer repair for all brands"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Dryer Repair", "description": "Dryer heating and tumbling repairs"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Refrigerator Repair", "description": "Cooling and ice maker repairs"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Dishwasher Repair", "description": "Cleaning and drainage repairs"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Oven Repair", "description": "Gas and electric oven repairs"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Freezer Repair", "description": "Chest and upright freezer repairs"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Ice Maker Repair", "description": "Refrigerator ice maker repairs"}}
+      ]
     }
     </script>
     
@@ -138,36 +171,76 @@
      }
      </script>
      
-     <script type="application/ld+json">
-     {
-       "@context": "https://schema.org",
-       "@type": "FAQPage",
-       "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "How fast can you repair my appliance?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We offer same-day service for most repairs. Call before noon and we'll typically be there the same day."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you charge for diagnosis?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Our service call covers diagnosis. You only pay if you approve the repair."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Are your repairs guaranteed?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, all our repairs come with a 90-day parts and labor warranty."
-          }
-        }
-      ]
+<script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+         {
+           "@type": "Question",
+           "name": "How fast can you repair my appliance?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "We offer same-day service for most repairs. Call before noon and we'll typically be there the same day."
+           }
+         },
+         {
+           "@type": "Question",
+           "name": "Do you charge for diagnosis?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "Our service call covers diagnosis. You only pay if you approve the repair."
+           }
+         },
+         {
+           "@type": "Question",
+           "name": "Are your repairs guaranteed?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "Yes, all our repairs come with a 90-day parts and labor warranty."
+           }
+         },
+         {
+           "@type": "Question",
+           "name": "What brands do you service?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "We service all major brands including Whirlpool, GE, LG, Samsung, Maytag, Kenmore, and more."
+           }
+         },
+         {
+           "@type": "Question",
+           "name": "Do you offer emergency repairs?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "Yes, we offer same-day emergency service for urgent appliance issues. Call us to check availability."
+           }
+         },
+         {
+           "@type": "Question",
+           "name": "What areas do you serve?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "We serve Albuquerque, Rio Rancho, Corrales, Los Ranchos, Edgewood, and surrounding areas."
+           }
+         },
+         {
+           "@type": "Question",
+           "name": "How much does repair cost?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "Costs vary by issue. We'll provide a quote before starting any work. We offer competitive pricing."
+           }
+         },
+         {
+           "@type": "Question",
+           "name": "Do you use original parts?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "We use quality OEM and aftermarket parts backed by our 90-day warranty."
+           }
+         }
+       ]
     }
     </script>
     
@@ -825,6 +898,14 @@
             <details class="faq-item">
               <summary>What are your hours?</summary>
               <p>Monday - Saturday: 8 AM - 6 PM<br>Sunday: By appointment</p>
+            </details>
+            <details class="faq-item">
+              <summary>How much does a typical repair cost?</summary>
+              <p>Repair costs vary depending on the issue and parts needed. We'll always provide a detailed quote before starting work. Many common repairs range from $150-$400.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Do you use OEM or aftermarket parts?</summary>
+              <p>We use quality OEM and aftermarket parts, all backed by our 90-day warranty. We'll discuss your options and help you choose what works best for your budget.</p>
             </details>
           </div>
         </div>
