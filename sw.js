@@ -1,10 +1,9 @@
-const CACHE_NAME = 'zion-appliance-v2';
+const CACHE_NAME = 'zion-appliance-v3';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
   '/assets/styles.min.css',
   '/assets/main.min.js',
-  '/assets/particles.js',
   '/favicon.svg',
   '/manifest.json',
   '/robots.txt',
@@ -36,25 +35,22 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
-  
+  const url = new URL(event.request.url);
+  if (url.origin !== self.location.origin) return;
+
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse) {
-        return cachedResponse;
-      }
-      
-      return fetch(event.request).then((response) => {
-        if (!response || response.status !== 200 || response.type !== 'basic') {
-          return response;
+      const fetchPromise = fetch(event.request).then((response) => {
+        if (response && response.status === 200) {
+          const responseToCache = response.clone();
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, responseToCache);
+          });
         }
-        
-        const responseToCache = response.clone();
-        caches.open(CACHE_NAME).then((cache) => {
-          cache.put(event.request, responseToCache);
-        });
-        
         return response;
-      });
+      }).catch(() => cachedResponse);
+
+      return cachedResponse || fetchPromise;
     }).catch(() => {
       if (event.request.destination === 'document') {
         return caches.match('/index.html');

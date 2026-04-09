@@ -3,8 +3,8 @@ const fs = require('fs');
 const path = require('path');
 
 async function generateQRCodes() {
-  const phoneNumber = 'tel:+15055088203';
-  const whatsappNumber = 'https://wa.me/15055088203';
+  const phoneNumber = 'tel:+15054563046';
+  const whatsappNumber = 'https://wa.me/15054563046';
   
   // Generate phone QR code
   await QRCode.toFile(path.join(__dirname, 'assets', 'phone-qr.png'), phoneNumber, {
@@ -32,7 +32,7 @@ async function generateQRCodes() {
   const vCard = `BEGIN:VCARD
 VERSION:3.0
 FN:Zion Appliance Solutions
-TEL:+15055088203
+TEL:+15054563046
 EMAIL:zionappliance@gmail.com
 URL:https://zionappliance.com
 ORG:Zion Appliance Solutions

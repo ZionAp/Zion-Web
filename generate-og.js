@@ -39,7 +39,7 @@ const ogImage = `<?xml version="1.0" encoding="UTF-8"?>
   
   <!-- Contact Info Box -->
   <rect x="750" y="420" width="370" height="140" rx="12" fill="rgba(255,255,255,0.1)"/>
-  <text x="780" y="465" font-family="Arial, sans-serif" font-size="22" fill="white">📞 (505) 508-8203</text>
+  <text x="780" y="465" font-family="Arial, sans-serif" font-size="22" fill="white">📞 (505) 456-3046</text>
   <text x="780" y="500" font-family="Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.8)">zionappliance@gmail.com</text>
   <text x="780" y="535" font-family="Arial, sans-serif" font-size="16" fill="#4ade80">zionappliance.com</text>
   

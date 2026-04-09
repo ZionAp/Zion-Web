@@ -8,3 +8,9 @@ npm-debug.log*
 dist/
 build/
 .cache/
+*.map
+generate-*.js
+generate-*.py
+test-form.js
+lighthouse-report.*
+seoreport.md

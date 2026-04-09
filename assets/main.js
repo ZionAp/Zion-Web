@@ -207,7 +207,7 @@
           <div class="success-icon">✓</div>
           <h3>Booking Submitted!</h3>
           <p>We'll contact you within 30 minutes during business hours.</p>
-          <a href="tel:5055088203" class="success-call">Call us now: (505) 508-8203</a>
+          <a href="tel:5054563046" class="success-call">Call us now: (505) 456-3046</a>
           <button onclick="this.closest('.success-overlay').remove()">Close</button>
         </div>
       `;
@@ -336,60 +336,8 @@
     }
   };
 
-  // Add CSS for form validation and animations
-  const injectStyles = () => {
-    const styles = `
-      .form-group input.error,
-      .form-group select.error,
-      .form-group textarea.error {
-        border-color: #ef4444;
-      }
-      
-      @keyframes slideDown {
-        from {
-          opacity: 0;
-          transform: translateY(-10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      
-      .animate-ready {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease, transform 0.6s ease;
-      }
-      
-      .animate-in {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    `;
-    
-    const styleEl = document.createElement('style');
-    styleEl.textContent = styles;
-    document.head.appendChild(styleEl);
-  };
-
-  // Lazy load hCaptcha when form is focused
-  const loadHCaptcha = () => {
-    if (document.querySelector('script[src*="hcaptcha"]')) return;
-    const script = document.createElement('script');
-    script.src = 'https://js.hcaptcha.com/1/api.js?render=explicit';
-    script.async = true;
-    script.defer = true;
-    document.head.appendChild(script);
-    document.removeEventListener('focus', loadHCaptcha);
-    document.removeEventListener('click', loadHCaptcha);
-  };
-  document.addEventListener('focus', loadHCaptcha, { once: true });
-  document.addEventListener('click', loadHCaptcha, { once: true });
-
   // Initialize everything
   document.addEventListener('DOMContentLoaded', () => {
-    injectStyles();
     ThemeManager.init();
     MobileMenu.init();
     SmoothScroll.init();
@@ -398,7 +346,6 @@
     FAQAccordion.init();
     ScrollAnimations.init();
     
-    // Register Service Worker for PWA/Offline
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/sw.js').catch(() => {});
     }
