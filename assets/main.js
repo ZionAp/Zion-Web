@@ -340,6 +340,24 @@
     }
   };
 
+  // Lazy-load Turnstile when booking section is near viewport
+  const LazyTurnstile = {
+    init() {
+      const form = document.getElementById('booking-form');
+      if (!form) return;
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          observer.disconnect();
+          const script = document.createElement('script');
+          script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+          script.async = true;
+          document.head.appendChild(script);
+        }
+      }, { rootMargin: '200px' });
+      observer.observe(form);
+    }
+  };
+
   // Initialize everything
   document.addEventListener('DOMContentLoaded', () => {
     ThemeManager.init();
@@ -349,6 +367,7 @@
     HeaderScroll.init();
     FAQAccordion.init();
     ScrollAnimations.init();
+    LazyTurnstile.init();
     
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/sw.js').catch(() => {});
