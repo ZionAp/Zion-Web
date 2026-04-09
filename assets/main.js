@@ -54,8 +54,8 @@
   };
 
   window.onTurnstileExpired = function() {
-    if (window.LazyTurnstile) {
-      window.LazyTurnstile.reset();
+    if (window.TurnstileWidget) {
+      window.TurnstileWidget.reset();
     }
   };
 
@@ -215,9 +215,6 @@
         
         if (!cfToken) {
           this.setButtonState('idle');
-          if (window.LazyTurnstile) {
-            window.LazyTurnstile.loadAndRender();
-          }
           this.showToast('Complete the verification above, then try again.', 'error');
           return;
         }
@@ -242,14 +239,14 @@
 
             this.showSuccess();
             this.form.reset();
-            if (window.LazyTurnstile) {
-              window.LazyTurnstile.reset();
+            if (window.TurnstileWidget) {
+              window.TurnstileWidget.reset();
             }
           })
           .catch((error) => {
             this.showToast(error.message || 'We could not send your booking. Please try again.', 'error');
-            if (window.LazyTurnstile) {
-              window.LazyTurnstile.reset();
+            if (window.TurnstileWidget) {
+              window.TurnstileWidget.reset();
             }
           })
           .finally(() => {
@@ -420,66 +417,38 @@
     }
   };
 
-  // Lazy-load Turnstile when booking section is near viewport
-  const LazyTurnstile = {
+  // Render Turnstile directly so the widget is visible immediately
+  const TurnstileWidget = {
     widgetId: null,
-    scriptPromise: null,
+    container: null,
 
     init() {
-      const form = document.getElementById('booking-form');
-      if (!form) return;
+      this.container = document.getElementById('turnstile-widget');
+      if (!this.container) return;
 
-      const observer = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-          observer.disconnect();
-          this.loadAndRender();
-        }
-      }, { rootMargin: '200px' });
-
-      observer.observe(form);
+      this.waitForApi();
     },
 
-    loadAndRender() {
-      const container = document.getElementById('turnstile-widget');
-      if (!container) return Promise.resolve();
-
+    waitForApi(attempt = 0) {
       if (window.turnstile) {
         this.render();
-        return Promise.resolve();
+        return;
       }
 
-      if (this.scriptPromise) {
-        return this.scriptPromise;
+      if (attempt >= 40) {
+        this.showUnavailable();
+        return;
       }
 
-      this.scriptPromise = new Promise((resolve, reject) => {
-        const script = document.createElement('script');
-        script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
-        script.async = true;
-        script.defer = true;
-        script.dataset.turnstileScript = 'true';
-        script.onload = () => {
-          this.render();
-          resolve();
-        };
-        script.onerror = () => {
-          this.scriptPromise = null;
-          this.showUnavailable();
-          reject(new Error('Verification could not load.'));
-        };
-        document.head.appendChild(script);
-      });
-
-      return this.scriptPromise;
+      window.setTimeout(() => this.waitForApi(attempt + 1), 250);
     },
 
     render() {
-      const container = document.getElementById('turnstile-widget');
-      if (!container || !window.turnstile || this.widgetId !== null) return;
+      if (!this.container || !window.turnstile || this.widgetId !== null) return;
 
-      container.dataset.ready = 'false';
-      this.widgetId = window.turnstile.render(container, {
-        sitekey: container.dataset.sitekey,
+      this.container.dataset.ready = 'false';
+      this.widgetId = window.turnstile.render(this.container, {
+        sitekey: this.container.dataset.sitekey,
         theme: 'auto',
         callback: window.onTurnstileSuccess,
         'error-callback': window.onTurnstileError,
@@ -489,14 +458,13 @@
 
     reset() {
       const responseField = document.getElementById('turnstile-response');
-      const container = document.getElementById('turnstile-widget');
 
       if (responseField) {
         responseField.value = '';
       }
 
-      if (container) {
-        container.dataset.ready = 'false';
+      if (this.container) {
+        this.container.dataset.ready = 'false';
       }
 
       if (window.turnstile && this.widgetId !== null) {
@@ -505,14 +473,13 @@
     },
 
     showUnavailable() {
-      const container = document.getElementById('turnstile-widget');
-      if (!container) return;
+      if (!this.container) return;
 
-      container.innerHTML = '<p class="turnstile-fallback">Verification could not load. Call or email us and we can still book you.</p>';
+      this.container.innerHTML = '<p class="turnstile-fallback">Verification could not load. Call or email us and we can still book you.</p>';
     }
   };
 
-  window.LazyTurnstile = LazyTurnstile;
+  window.TurnstileWidget = TurnstileWidget;
 
   // Initialize everything
   document.addEventListener('DOMContentLoaded', () => {
@@ -523,7 +490,7 @@
     HeaderScroll.init();
     FAQAccordion.init();
     ScrollAnimations.init();
-    LazyTurnstile.init();
+    TurnstileWidget.init();
     
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/sw.js').catch(() => {});

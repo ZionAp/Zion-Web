@@ -463,20 +463,12 @@ body.dark-mode .theme-toggle {
 }
 
 .hero-bird .hero-sign-text,
-.hero-bird .hero-sign-subtext {
+{
   fill: rgba(255, 255, 255, 0.94);
   font-family: var(--font);
   letter-spacing: 0.12em;
-}
-
-.hero-bird .hero-sign-text {
   font-size: 40px;
   font-weight: 800;
-}
-
-.hero-bird .hero-sign-subtext {
-  font-size: 17px;
-  font-weight: 700;
 }
 
 .hero-bird .hero-sign-post {
@@ -489,6 +481,36 @@ body.dark-mode .theme-toggle {
 .hero-bird .hero-sign {
   transform-origin: 350px 334px;
   animation: loboSignSwing 5.5s ease-in-out infinite;
+}
+
+.hero-bird .fridge-body {
+  fill: rgba(255, 255, 255, 0.1);
+  stroke: rgba(255, 255, 255, 0.22);
+  stroke-width: 4;
+}
+
+.hero-bird .fridge-divider,
+.hero-bird .fridge-handle {
+  stroke: rgba(255, 255, 255, 0.28);
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.hero-bird .fridge-badge {
+  fill: rgba(96, 165, 250, 0.7);
+}
+
+.hero-bird .hero-fridge {
+  animation: fridgeGlow 4.6s ease-in-out infinite;
+}
+
+.hero-bird .hero-tool,
+.hero-bird .lobo-tech-tool {
+  fill: rgba(255, 255, 255, 0.82);
+}
+
+.hero-bird .hero-tool-wrench {
+  animation: toolPulse 3.4s ease-in-out infinite;
 }
 
 .hero-bird .lobo-body,
@@ -506,6 +528,13 @@ body.dark-mode .theme-toggle {
 
 .hero-bird .lobo-snout {
   fill: rgba(15, 23, 42, 0.88);
+}
+
+.hero-bird .lobo-customer-phone,
+.hero-bird .lobo-tech-badge {
+  fill: rgba(255, 255, 255, 0.16);
+  stroke: rgba(255, 255, 255, 0.26);
+  stroke-width: 3;
 }
 
 .hero-bird .lobo-eye-brow {
@@ -542,6 +571,10 @@ body.dark-mode .theme-toggle {
 
 .hero-bird .lobo-female .lobo-bow {
   animation: loboBowBlink 2.6s ease-in-out infinite;
+}
+
+.hero-bird .lobo-tech-tool {
+  animation: toolPulse 2.8s ease-in-out infinite;
 }
 
 .hero-bird .lobo-male .lobo-head,
@@ -826,6 +859,16 @@ body.dark-mode .theme-toggle {
 @keyframes loboSignSwing {
   0%, 100% { transform: rotate(-1.4deg); }
   50% { transform: rotate(1.4deg); }
+}
+
+@keyframes fridgeGlow {
+  0%, 100% { opacity: 0.9; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-3px); }
+}
+
+@keyframes toolPulse {
+  0%, 100% { transform: scale(1) rotate(-4deg); opacity: 0.86; }
+  50% { transform: scale(1.06) rotate(4deg); opacity: 1; }
 }
 
 @keyframes loboMaleBob {

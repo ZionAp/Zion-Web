@@ -20,10 +20,11 @@
     <link rel="dns-prefetch" href="https://api.web3forms.com">
     <link rel="dns-prefetch" href="https://challenges.cloudflare.com">
     <link rel="preconnect" href="https://api.web3forms.com">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
     
-    <link rel="preload" as="style" href="/assets/styles.min.css?v=14">
-    <link rel="preload" as="script" href="/assets/main.min.js?v=7">
-    <link rel="stylesheet" href="/assets/styles.min.css?v=14" integrity="sha384-HkpWmSjCpBrm5VOzccowyRAMw1mDT5bNQelKio/3eSN+yoz7fGQeK/PYje/iwvO+">
+    <link rel="preload" as="style" href="/assets/styles.min.css?v=15">
+    <link rel="preload" as="script" href="/assets/main.min.js?v=8">
+    <link rel="stylesheet" href="/assets/styles.min.css?v=15" integrity="sha384-vPXapYY8vrE6Ca12el6w9qExAE/hnTHeZXJ1hF9xakddEOW1yQJAqiT+Gc3ggBda">
     
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://zionappliance.com/">
@@ -378,10 +379,22 @@
             <g class="hero-sign">
               <path class="hero-sign-board" d="M218 258h264c28 0 50 22 50 50v52c0 28-22 50-50 50H218c-28 0-50-22-50-50v-52c0-28 22-50 50-50z"/>
               <path class="hero-sign-outline" d="M218 258h264c28 0 50 22 50 50v52c0 28-22 50-50 50H218c-28 0-50-22-50-50v-52c0-28 22-50 50-50z" fill="none"/>
-              <text x="350" y="332" text-anchor="middle" class="hero-sign-text">GO LOBOS</text>
-              <text x="350" y="368" text-anchor="middle" class="hero-sign-subtext">Burque Pride</text>
+              <text x="350" y="346" text-anchor="middle" class="hero-sign-text">GO LOBOS</text>
               <path class="hero-sign-post" d="M274 410v104" fill="none"/>
               <path class="hero-sign-post" d="M426 410v104" fill="none"/>
+            </g>
+
+            <g class="hero-fridge-scene">
+              <g class="hero-fridge">
+                <rect x="324" y="496" width="130" height="184" rx="24" class="fridge-body"/>
+                <line x1="324" y1="584" x2="454" y2="584" class="fridge-divider"/>
+                <rect x="422" y="536" width="10" height="34" rx="5" class="fridge-handle"/>
+                <rect x="422" y="618" width="10" height="38" rx="5" class="fridge-handle"/>
+                <circle cx="360" cy="542" r="10" class="fridge-badge"/>
+              </g>
+              <g class="hero-tool hero-tool-wrench">
+                <path d="M468 552c16-14 34-20 52-18-8 16-20 28-36 38l18 20c6 8 6 18 0 24-8 8-20 8-28 0l-18-20c-10 16-22 28-38 36-2-18 4-36 18-52z"/>
+              </g>
             </g>
 
             <g class="lobo-mascot lobo-male">
@@ -394,6 +407,7 @@
               <path class="lobo-face" d="M170 514l36-14 36 14-10 58-26 24-26-24z"/>
               <path class="lobo-snout" d="M192 564l14-10 14 10-14 20z"/>
               <path class="lobo-eye-brow" d="M176 532l18-12m24 12l18-12" fill="none"/>
+              <path class="lobo-customer-phone" d="M282 560c14-8 30-8 42 0-8 12-20 24-38 32-8-10-8-20-4-32z"/>
             </g>
 
             <g class="lobo-mascot lobo-female">
@@ -407,6 +421,8 @@
               <path class="lobo-snout" d="M504 562l14-10 14 10-14 20z"/>
               <path class="lobo-eye-brow lobo-eye-soft" d="M490 532l16-10m24 10l16-10" fill="none"/>
               <path class="lobo-bow" d="M560 482c12-18 24-26 36-26-2 14-8 24-20 32 14 0 24 4 34 14-16 8-32 10-48 2-6-8-6-16-2-22z"/>
+              <rect x="468" y="602" width="42" height="50" rx="14" class="lobo-tech-badge"/>
+              <path class="lobo-tech-tool" d="M452 596c20-18 42-26 66-24-10 18-24 34-46 46l20 22c8 8 8 18 0 26-8 8-20 8-28 0l-20-22c-12 18-28 32-46 40-2-24 6-46 24-66z"/>
             </g>
           </g>
         </svg>
@@ -995,6 +1011,6 @@
 
     <div id="toast" class="toast" role="alert" aria-live="polite"></div>
 
-    <script src="/assets/main.min.js?v=7" defer integrity="sha384-1UfYUIj3g0heQubLwLe7Ws1Oy32Bpw+RnctpaJ2RO1K16sauQ0uXVYfxQv3f1XCH"></script>
+    <script src="/assets/main.min.js?v=8" defer integrity="sha384-6stFFDPo8H57LY92uQjJrZyhs0ePEHhhiu3miRynXX50a/Qe601JZScT4VMl7Y6e"></script>
   </body>
 </html>
