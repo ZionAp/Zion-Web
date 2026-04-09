@@ -510,14 +510,6 @@ body.dark-mode .theme-toggle {
   fill: rgba(15, 23, 42, 0.9);
 }
 
-.hero-bird .scene-brow,
-.hero-bird .scene-mouth {
-  stroke: rgba(255, 255, 255, 0.72);
-  stroke-width: 4;
-  stroke-linecap: round;
-  fill: none;
-}
-
 .hero-bird .scene-shadow {
   fill: rgba(15, 23, 42, 0.18);
 }
