@@ -20,9 +20,9 @@
     <link rel="dns-prefetch" href="https://api.web3forms.com">
     <link rel="preconnect" href="https://api.web3forms.com">
     
-    <link rel="preload" as="style" href="/assets/styles.min.css?v=24">
+    <link rel="preload" as="style" href="/assets/styles.min.css?v=19">
     <link rel="preload" as="script" href="/assets/main.min.js?v=9">
-    <link rel="stylesheet" href="/assets/styles.min.css?v=24" integrity="sha384-4c67f014c85639a1cbcec9a05c3f5d2d1b59b3cdcd35da1b10f7e0d2e76b5a46c44a841bae2977e2fab05bf24a341fa5">
+    <link rel="stylesheet" href="/assets/styles.min.css?v=19" integrity="sha384-w08kInlZRoW65frj9kHJuOtcDw6TnuzfKBiVZv2efPblJ5wGrE0llgMz19+i9ZWr">
     
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://zionappliance.com/">
@@ -301,12 +301,12 @@
 
           <g class="scene-pack">
             <g class="scene-sign">
-              <path class="scene-sign-board" d="M280 214h250c34 0 62 24 68 56l12 60c5 28-14 54-42 60l-264 52c-36 7-70-16-76-52l-12-68c-7-38 22-72 64-72z"/>
-              <path class="scene-sign-outline" d="M280 214h250c34 0 62 24 68 56l12 60c5 28-14 54-42 60l-264 52c-36 7-70-16-76-52l-12-68c-7-38 22-72 64-72z" fill="none"/>
-              <path class="scene-sign-stripe" d="M264 276l324-42" fill="none"/>
-              <text x="380" y="320" text-anchor="middle" class="scene-sign-text">GO LOBOS</text>
-              <path class="scene-sign-post" d="M340 438v100" fill="none"/>
-              <path class="scene-sign-post" d="M488 410v130" fill="none"/>
+              <path class="scene-sign-board" d="M440 214h250c34 0 62 24 68 56l12 60c5 28-14 54-42 60l-264 52c-36 7-70-16-76-52l-12-68c-7-38 22-72 64-72z"/>
+              <path class="scene-sign-outline" d="M440 214h250c34 0 62 24 68 56l12 60c5 28-14 54-42 60l-264 52c-36 7-70-16-76-52l-12-68c-7-38 22-72 64-72z" fill="none"/>
+              <path class="scene-sign-stripe" d="M424 276l324-42" fill="none"/>
+              <text x="568" y="320" text-anchor="middle" class="scene-sign-text">GO LOBOS</text>
+              <path class="scene-sign-post" d="M500 438v100" fill="none"/>
+              <path class="scene-sign-post" d="M648 410v130" fill="none"/>
             </g>
 
             <g class="scene-mascot">
