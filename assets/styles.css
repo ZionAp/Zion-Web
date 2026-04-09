@@ -550,13 +550,9 @@ body.dark-mode .theme-toggle {
   transform-origin: 250px 590px;
 }
 
-.hero-bird .scene-mascot {
-  display: none;
-}
-
+.hero-bird .scene-mascot,
 .hero-bird .scene-sign {
   animation: none;
-  transform: translateX(-180px);
 }
 
 .hero-bird .scene-sign-board,
