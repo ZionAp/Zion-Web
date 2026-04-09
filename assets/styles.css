@@ -450,7 +450,6 @@ body.dark-mode .theme-toggle {
 
 .hero-bird .hero-lobo-pack {
   transform-origin: 360px 450px;
-  animation: loboPackFloat 6.5s ease-in-out infinite;
 }
 
 .hero-bird .hero-sign-board {
@@ -462,13 +461,16 @@ body.dark-mode .theme-toggle {
   stroke-width: 4;
 }
 
-.hero-bird .hero-sign-text,
-{
-  fill: rgba(255, 255, 255, 0.94);
+.hero-bird .hero-sign-text {
+  fill: #ef4444;
   font-family: var(--font);
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   font-size: 40px;
   font-weight: 800;
+  stroke: rgba(255, 255, 255, 0.96);
+  stroke-width: 8;
+  paint-order: stroke fill;
+  filter: drop-shadow(0 4px 0 rgba(15, 23, 42, 0.55));
 }
 
 .hero-bird .hero-sign-post {
@@ -478,9 +480,14 @@ body.dark-mode .theme-toggle {
   stroke-linejoin: round;
 }
 
+.hero-bird .hero-sign-stripe {
+  stroke: rgba(255, 255, 255, 0.14);
+  stroke-width: 10;
+  stroke-linecap: round;
+}
+
 .hero-bird .hero-sign {
   transform-origin: 350px 334px;
-  animation: loboSignSwing 5.5s ease-in-out infinite;
 }
 
 .hero-bird .fridge-body {
@@ -507,10 +514,6 @@ body.dark-mode .theme-toggle {
 .hero-bird .hero-tool,
 .hero-bird .lobo-tech-tool {
   fill: rgba(255, 255, 255, 0.82);
-}
-
-.hero-bird .hero-tool-wrench {
-  animation: toolPulse 3.4s ease-in-out infinite;
 }
 
 .hero-bird .lobo-body,
@@ -549,7 +552,6 @@ body.dark-mode .theme-toggle {
 }
 
 .hero-bird .lobo-shadow {
-  animation: loboShadowPulse 6.5s ease-in-out infinite;
 }
 
 .hero-bird .lobo-mascot {
@@ -557,36 +559,11 @@ body.dark-mode .theme-toggle {
   transform-origin: 50% 58%;
 }
 
-.hero-bird .lobo-male {
-  animation: loboMaleBob 1.8s ease-in-out infinite;
-}
-
-.hero-bird .lobo-female {
-  animation: loboFemaleBob 1.9s ease-in-out infinite;
-}
-
-.hero-bird .lobo-glow {
-  animation: loboGlowPulse 4.6s ease-in-out infinite;
-}
-
-.hero-bird .lobo-female .lobo-bow {
-  animation: loboBowBlink 2.6s ease-in-out infinite;
-}
-
-.hero-bird .lobo-tech-tool {
-  animation: toolPulse 2.8s ease-in-out infinite;
-}
-
-.hero-bird .lobo-male .lobo-head,
-.hero-bird .lobo-male .lobo-ear-left,
-.hero-bird .lobo-male .lobo-ear-right {
-  animation: loboMaleNod 1.8s ease-in-out infinite;
-}
-
-.hero-bird .lobo-female .lobo-head,
-.hero-bird .lobo-female .lobo-ear-left,
-.hero-bird .lobo-female .lobo-ear-right {
-  animation: loboFemaleNod 1.9s ease-in-out infinite;
+.hero-bird .lobo-customer-arm,
+.hero-bird .lobo-tech-arm {
+  stroke: rgba(255, 255, 255, 0.38);
+  stroke-width: 8;
+  stroke-linecap: round;
 }
 
 .hero-pattern {
@@ -851,59 +828,9 @@ body.dark-mode .theme-toggle {
   z-index: -1;
 }
 
-@keyframes loboPackFloat {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(8px, -6px); }
-}
-
-@keyframes loboSignSwing {
-  0%, 100% { transform: rotate(-1.4deg); }
-  50% { transform: rotate(1.4deg); }
-}
-
 @keyframes fridgeGlow {
   0%, 100% { opacity: 0.9; transform: translateY(0); }
   50% { opacity: 1; transform: translateY(-3px); }
-}
-
-@keyframes toolPulse {
-  0%, 100% { transform: scale(1) rotate(-4deg); opacity: 0.86; }
-  50% { transform: scale(1.06) rotate(4deg); opacity: 1; }
-}
-
-@keyframes loboMaleBob {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
-@keyframes loboFemaleBob {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-7px); }
-}
-
-@keyframes loboMaleNod {
-  0%, 100% { transform: rotate(-1deg); }
-  50% { transform: rotate(2deg) translateY(2px); }
-}
-
-@keyframes loboFemaleNod {
-  0%, 100% { transform: rotate(1deg); }
-  50% { transform: rotate(-2deg) translateY(1px); }
-}
-
-@keyframes loboShadowPulse {
-  0%, 100% { opacity: 0.18; transform: scaleX(1); }
-  50% { opacity: 0.13; transform: scaleX(0.94); }
-}
-
-@keyframes loboGlowPulse {
-  0%, 100% { opacity: 0.16; transform: scale(1); }
-  50% { opacity: 0.24; transform: scale(1.06); }
-}
-
-@keyframes loboBowBlink {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.08); opacity: 0.86; }
 }
 
 .hero-badge {
@@ -1658,21 +1585,13 @@ body.dark-mode .booking {
   pointer-events: none;
 }
 
-.cf-turnstile {
+.form-security-note {
   margin-bottom: 24px;
-  min-height: 65px;
-}
-
-.cf-turnstile iframe {
-  max-width: 100%;
-}
-
-.turnstile-fallback {
   padding: 14px 16px;
   border-radius: var(--radius-sm);
-  border: 1px solid rgba(217, 74, 30, 0.24);
-  background: rgba(217, 74, 30, 0.08);
-  color: var(--text);
+  border: 1px solid rgba(30, 58, 95, 0.14);
+  background: rgba(30, 58, 95, 0.06);
+  color: var(--text-secondary);
   font-size: 0.9375rem;
 }
 

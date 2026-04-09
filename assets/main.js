@@ -6,59 +6,6 @@
 (function() {
   'use strict';
 
-  // Cloudflare Turnstile callbacks
-  window.onTurnstileSuccess = function(token) {
-    const responseField = document.getElementById('turnstile-response');
-    const widget = document.getElementById('turnstile-widget');
-    const btn = document.querySelector('#booking-form button[type="submit"]');
-
-    if (responseField) {
-      responseField.value = token;
-    }
-
-    if (widget) {
-      widget.dataset.ready = 'true';
-    }
-
-    if (btn) {
-      btn.disabled = false;
-      btn.classList.remove('loading');
-      const btnText = btn.querySelector('.btn-text');
-      if (btnText) {
-        btnText.textContent = 'Book Appointment';
-      }
-    }
-  };
-
-  window.onTurnstileError = function() {
-    const responseField = document.getElementById('turnstile-response');
-    const widget = document.getElementById('turnstile-widget');
-    const btn = document.querySelector('#booking-form button[type="submit"]');
-
-    if (responseField) {
-      responseField.value = '';
-    }
-
-    if (widget) {
-      widget.dataset.ready = 'false';
-    }
-
-    if (btn) {
-      btn.disabled = false;
-      btn.classList.remove('loading');
-      const btnText = btn.querySelector('.btn-text');
-      if (btnText) {
-        btnText.textContent = 'Book Appointment';
-      }
-    }
-  };
-
-  window.onTurnstileExpired = function() {
-    if (window.TurnstileWidget) {
-      window.TurnstileWidget.reset();
-    }
-  };
-
   // Theme Management
   const ThemeManager = {
     STORAGE_KEY: 'zion-theme-preference',
@@ -208,17 +155,6 @@
           return;
         }
         
-        this.setButtonState('verifying');
-        
-        const turnstileResponse = document.getElementById('turnstile-response');
-        const cfToken = turnstileResponse ? turnstileResponse.value : '';
-        
-        if (!cfToken) {
-          this.setButtonState('idle');
-          this.showToast('Complete the verification above, then try again.', 'error');
-          return;
-        }
-        
         this.setButtonState('sending');
         
         const formData = new FormData(this.form);
@@ -239,15 +175,9 @@
 
             this.showSuccess();
             this.form.reset();
-            if (window.TurnstileWidget) {
-              window.TurnstileWidget.reset();
-            }
           })
           .catch((error) => {
             this.showToast(error.message || 'We could not send your booking. Please try again.', 'error');
-            if (window.TurnstileWidget) {
-              window.TurnstileWidget.reset();
-            }
           })
           .finally(() => {
             this.setButtonState('idle');
@@ -342,7 +272,7 @@
       btn.disabled = state !== 'idle';
 
       if (btnText) {
-        btnText.textContent = state === 'verifying' ? 'Verifying...' : 'Book Appointment';
+        btnText.textContent = state === 'sending' ? 'Sending...' : 'Book Appointment';
       }
     },
     
@@ -417,70 +347,6 @@
     }
   };
 
-  // Render Turnstile directly so the widget is visible immediately
-  const TurnstileWidget = {
-    widgetId: null,
-    container: null,
-
-    init() {
-      this.container = document.getElementById('turnstile-widget');
-      if (!this.container) return;
-
-      this.waitForApi();
-    },
-
-    waitForApi(attempt = 0) {
-      if (window.turnstile) {
-        this.render();
-        return;
-      }
-
-      if (attempt >= 40) {
-        this.showUnavailable();
-        return;
-      }
-
-      window.setTimeout(() => this.waitForApi(attempt + 1), 250);
-    },
-
-    render() {
-      if (!this.container || !window.turnstile || this.widgetId !== null) return;
-
-      this.container.dataset.ready = 'false';
-      this.widgetId = window.turnstile.render(this.container, {
-        sitekey: this.container.dataset.sitekey,
-        theme: 'auto',
-        callback: window.onTurnstileSuccess,
-        'error-callback': window.onTurnstileError,
-        'expired-callback': window.onTurnstileExpired
-      });
-    },
-
-    reset() {
-      const responseField = document.getElementById('turnstile-response');
-
-      if (responseField) {
-        responseField.value = '';
-      }
-
-      if (this.container) {
-        this.container.dataset.ready = 'false';
-      }
-
-      if (window.turnstile && this.widgetId !== null) {
-        window.turnstile.reset(this.widgetId);
-      }
-    },
-
-    showUnavailable() {
-      if (!this.container) return;
-
-      this.container.innerHTML = '<p class="turnstile-fallback">Verification could not load. Call or email us and we can still book you.</p>';
-    }
-  };
-
-  window.TurnstileWidget = TurnstileWidget;
-
   // Initialize everything
   document.addEventListener('DOMContentLoaded', () => {
     ThemeManager.init();
@@ -490,7 +356,6 @@
     HeaderScroll.init();
     FAQAccordion.init();
     ScrollAnimations.init();
-    TurnstileWidget.init();
     
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/sw.js').catch(() => {});

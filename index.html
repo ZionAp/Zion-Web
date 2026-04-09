@@ -18,13 +18,11 @@
     <link rel="manifest" href="/manifest.json">
     
     <link rel="dns-prefetch" href="https://api.web3forms.com">
-    <link rel="dns-prefetch" href="https://challenges.cloudflare.com">
     <link rel="preconnect" href="https://api.web3forms.com">
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
     
-    <link rel="preload" as="style" href="/assets/styles.min.css?v=15">
-    <link rel="preload" as="script" href="/assets/main.min.js?v=8">
-    <link rel="stylesheet" href="/assets/styles.min.css?v=15" integrity="sha384-vPXapYY8vrE6Ca12el6w9qExAE/hnTHeZXJ1hF9xakddEOW1yQJAqiT+Gc3ggBda">
+    <link rel="preload" as="style" href="/assets/styles.min.css?v=16">
+    <link rel="preload" as="script" href="/assets/main.min.js?v=9">
+    <link rel="stylesheet" href="/assets/styles.min.css?v=16" integrity="sha384-6pRCTsJpfJxq07CIlh138AJNw9Yv6/S+3i+IACCGaeIWYKCZvxokAS0FVaRYDV9E">
     
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://zionappliance.com/">
@@ -377,11 +375,12 @@
 
           <g class="hero-lobo-pack">
             <g class="hero-sign">
-              <path class="hero-sign-board" d="M218 258h264c28 0 50 22 50 50v52c0 28-22 50-50 50H218c-28 0-50-22-50-50v-52c0-28 22-50 50-50z"/>
-              <path class="hero-sign-outline" d="M218 258h264c28 0 50 22 50 50v52c0 28-22 50-50 50H218c-28 0-50-22-50-50v-52c0-28 22-50 50-50z" fill="none"/>
-              <text x="350" y="346" text-anchor="middle" class="hero-sign-text">GO LOBOS</text>
-              <path class="hero-sign-post" d="M274 410v104" fill="none"/>
-              <path class="hero-sign-post" d="M426 410v104" fill="none"/>
+              <path class="hero-sign-board" d="M214 258h272c30 0 56 23 60 52l10 70c3 23-14 44-38 48l-286 38c-28 4-54-15-58-43l-12-74c-5-33 20-63 52-63z"/>
+              <path class="hero-sign-outline" d="M214 258h272c30 0 56 23 60 52l10 70c3 23-14 44-38 48l-286 38c-28 4-54-15-58-43l-12-74c-5-33 20-63 52-63z" fill="none"/>
+              <path class="hero-sign-stripe" d="M208 316l330-44" fill="none"/>
+              <text x="352" y="346" text-anchor="middle" class="hero-sign-text">GO LOBOS</text>
+              <path class="hero-sign-post" d="M286 430v86" fill="none"/>
+              <path class="hero-sign-post" d="M430 412v102" fill="none"/>
             </g>
 
             <g class="hero-fridge-scene">
@@ -408,6 +407,7 @@
               <path class="lobo-snout" d="M192 564l14-10 14 10-14 20z"/>
               <path class="lobo-eye-brow" d="M176 532l18-12m24 12l18-12" fill="none"/>
               <path class="lobo-customer-phone" d="M282 560c14-8 30-8 42 0-8 12-20 24-38 32-8-10-8-20-4-32z"/>
+              <path class="lobo-customer-arm" d="M264 572c28 8 48 18 64 32" fill="none"/>
             </g>
 
             <g class="lobo-mascot lobo-female">
@@ -423,6 +423,7 @@
               <path class="lobo-bow" d="M560 482c12-18 24-26 36-26-2 14-8 24-20 32 14 0 24 4 34 14-16 8-32 10-48 2-6-8-6-16-2-22z"/>
               <rect x="468" y="602" width="42" height="50" rx="14" class="lobo-tech-badge"/>
               <path class="lobo-tech-tool" d="M452 596c20-18 42-26 66-24-10 18-24 34-46 46l20 22c8 8 8 18 0 26-8 8-20 8-28 0l-20-22c-12 18-28 32-46 40-2-24 6-46 24-66z"/>
+              <path class="lobo-tech-arm" d="M488 586c-20 10-36 26-48 48" fill="none"/>
             </g>
           </g>
         </svg>
@@ -888,12 +889,11 @@
               <input type="hidden" name="access_key" value="1ae2e518-8851-4bee-8134-cff953eb7c0f">
               <input type="hidden" name="subject" value="New Booking - Zion Appliance Solutions">
               <input type="hidden" name="botcheck" class="botcheck">
-              <input type="hidden" name="cf-turnstile-response" id="turnstile-response">
               <div class="form-group bot-field" style="position:absolute;left:-9999px;top:-9999px;">
                 <label for="website-field">Website (leave empty)</label>
                 <input type="text" name="website" id="website-field" tabindex="-1" autocomplete="off">
               </div>
-              <div id="turnstile-widget" class="cf-turnstile" data-sitekey="0x4AAAAAAC2WzoI9fwmhe3xn"></div>
+              <p class="form-security-note">Spam protected with hidden bot filtering. If you prefer, call or email us directly.</p>
               <div class="form-group">
                 <label for="fullName">Full Name *</label>
                 <input type="text" id="fullName" name="name" required placeholder="John Smith" autocomplete="name">
@@ -1011,6 +1011,6 @@
 
     <div id="toast" class="toast" role="alert" aria-live="polite"></div>
 
-    <script src="/assets/main.min.js?v=8" defer integrity="sha384-6stFFDPo8H57LY92uQjJrZyhs0ePEHhhiu3miRynXX50a/Qe601JZScT4VMl7Y6e"></script>
+    <script src="/assets/main.min.js?v=9" defer integrity="sha384-dkKn9v9wmSOxuYPwE5bb+YB/HNUxrILecc8SdJxGyfsQ5iWfjsDfHB2U6a13o/Vq"></script>
   </body>
 </html>
