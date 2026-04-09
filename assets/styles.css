@@ -342,9 +342,9 @@ body.dark-mode .theme-toggle .sun-icon {
   position: absolute;
   inset: 0;
   background: 
-    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(74, 222, 128, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse 60% 40% at 80% 60%, rgba(217, 74, 30, 0.12) 0%, transparent 50%),
-    radial-gradient(ellipse 50% 50% at 50% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(59, 130, 246, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 60%, rgba(217, 74, 30, 0.10) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 50% at 50% 80%, rgba(74, 222, 128, 0.06) 0%, transparent 50%);
   animation: meshPulse 8s ease-in-out infinite;
 }
 
@@ -353,14 +353,14 @@ body.dark-mode .theme-toggle .sun-icon {
   position: absolute;
   inset: 0;
   background-image: 
-    radial-gradient(circle at 20% 30%, rgba(74, 222, 128, 0.08) 0%, transparent 25%),
+    radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.08) 0%, transparent 25%),
     radial-gradient(circle at 70% 70%, rgba(217, 74, 30, 0.06) 0%, transparent 20%),
-    radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 30%);
+    radial-gradient(circle at 50% 50%, rgba(74, 222, 128, 0.04) 0%, transparent 30%);
   animation: orbFloat 12s ease-in-out infinite;
 }
 
 .color-shift-1 {
-  stroke: #4ade80;
+  stroke: #60a5fa;
   animation: colorShift1 12s ease-in-out infinite;
 }
 
@@ -370,26 +370,26 @@ body.dark-mode .theme-toggle .sun-icon {
 }
 
 .color-shift-3 {
-  stroke: #3b82f6;
+  stroke: #a78bfa;
   animation: colorShift3 18s ease-in-out infinite;
 }
 
 @keyframes colorShift1 {
-  0%, 100% { stroke: #4ade80; }
-  33% { stroke: #3b82f6; }
-  66% { stroke: #d94a1e; }
+  0%, 100% { stroke: #60a5fa; }
+  33% { stroke: #d94a1e; }
+  66% { stroke: #a78bfa; }
 }
 
 @keyframes colorShift2 {
-  0%, 100% { stroke: #3b82f6; }
-  33% { stroke: #d94a1e; }
-  66% { stroke: #4ade80; }
+  0%, 100% { stroke: #d94a1e; }
+  33% { stroke: #a78bfa; }
+  66% { stroke: #60a5fa; }
 }
 
 @keyframes colorShift3 {
-  0%, 100% { stroke: #d94a1e; }
-  33% { stroke: #4ade80; }
-  66% { stroke: #3b82f6; }
+  0%, 100% { stroke: #a78bfa; }
+  33% { stroke: #60a5fa; }
+  66% { stroke: #d94a1e; }
 }
 
 @keyframes meshPulse {
@@ -410,7 +410,7 @@ body.dark-mode .theme-toggle .sun-icon {
   left: 10%;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(74, 222, 128, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
   border-radius: 50%;
   filter: blur(60px);
   animation: glowPulse 6s ease-in-out infinite;
@@ -424,7 +424,7 @@ body.dark-mode .theme-toggle .sun-icon {
   right: 10%;
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, rgba(217, 74, 30, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(217, 74, 30, 0.06) 0%, transparent 70%);
   border-radius: 50%;
   filter: blur(50px);
   animation: glowPulse 8s ease-in-out infinite reverse;

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'zion-appliance-v4';
+const CACHE_NAME = 'zion-appliance-v5';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
