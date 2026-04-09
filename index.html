@@ -21,9 +21,9 @@
     <link rel="dns-prefetch" href="https://challenges.cloudflare.com">
     <link rel="preconnect" href="https://api.web3forms.com">
     
-    <link rel="preload" as="style" href="/assets/styles.min.css?v=12">
+    <link rel="preload" as="style" href="/assets/styles.min.css?v=13">
     <link rel="preload" as="script" href="/assets/main.min.js?v=6">
-    <link rel="stylesheet" href="/assets/styles.min.css?v=12" integrity="sha384-8nGyoE+BZGi0eJyTnZYpMtlP+lNUP05y9i/dFoh/Q+fLnGjfLtXkSo6JCvKo99a7">
+    <link rel="stylesheet" href="/assets/styles.min.css?v=13" integrity="sha384-9ken0EvehC3fjHwSfc43+Exu9Stp+VijFxKKhLBVmZJvMyiXYu5E+Vgjyd1EXrah">
     
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://zionappliance.com/">
@@ -348,16 +348,24 @@
         <div class="hero-bg"></div>
         <svg class="hero-bird" viewBox="0 0 960 960" preserveAspectRatio="xMinYMid meet" aria-hidden="true">
           <defs>
-            <linearGradient id="birdShell" x1="20%" y1="10%" x2="80%" y2="90%">
-              <stop offset="0%" stop-color="#cbd5e1" stop-opacity="0.18"/>
-              <stop offset="100%" stop-color="#475569" stop-opacity="0.05"/>
+            <linearGradient id="rrBody" x1="14%" y1="22%" x2="86%" y2="88%">
+              <stop offset="0%" stop-color="#f8fafc" stop-opacity="0.18"/>
+              <stop offset="100%" stop-color="#64748b" stop-opacity="0.05"/>
             </linearGradient>
-            <linearGradient id="birdWing" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.16"/>
-              <stop offset="100%" stop-color="#a78bfa" stop-opacity="0.04"/>
+            <linearGradient id="rrWing" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#7dd3fc" stop-opacity="0.18"/>
+              <stop offset="100%" stop-color="#c084fc" stop-opacity="0.06"/>
             </linearGradient>
-            <filter id="birdGlow" x="-30%" y="-30%" width="160%" height="160%">
-              <feGaussianBlur stdDeviation="22" result="blur"/>
+            <linearGradient id="rrBeak" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#fb7185" stop-opacity="0.95"/>
+              <stop offset="100%" stop-color="#f97316" stop-opacity="0.95"/>
+            </linearGradient>
+            <linearGradient id="loboFill" x1="14%" y1="10%" x2="86%" y2="90%">
+              <stop offset="0%" stop-color="#ef4444" stop-opacity="0.94"/>
+              <stop offset="100%" stop-color="#7f1d1d" stop-opacity="0.92"/>
+            </linearGradient>
+            <filter id="heroMascotGlow" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="18" result="blur"/>
               <feMerge>
                 <feMergeNode in="blur"/>
                 <feMergeNode in="SourceGraphic"/>
@@ -365,55 +373,58 @@
             </filter>
           </defs>
 
-          <g class="bird-aura" filter="url(#birdGlow)">
-            <ellipse cx="250" cy="400" rx="220" ry="170" fill="rgba(59,130,246,0.12)"/>
-            <ellipse cx="370" cy="510" rx="240" ry="190" fill="rgba(217,74,30,0.08)"/>
-            <ellipse cx="170" cy="620" rx="180" ry="130" fill="rgba(34,197,94,0.08)"/>
+          <g class="hero-mascot-aura" filter="url(#heroMascotGlow)">
+            <ellipse cx="220" cy="522" rx="168" ry="126" fill="rgba(56,189,248,0.10)"/>
+            <ellipse cx="430" cy="342" rx="104" ry="84" fill="rgba(239,68,68,0.12)"/>
           </g>
 
-          <g class="bird-runner">
-            <ellipse class="bird-shadow" cx="328" cy="700" rx="210" ry="38" fill="rgba(15,23,42,0.28)"/>
-            <path class="bird-ground bird-rgb-stroke" d="M110 744c82-22 176-29 278-24 66 3 136 15 205 37" fill="none"/>
-            <path class="bird-ground bird-ground-soft" d="M144 782c103-22 222-20 347 6" fill="none"/>
+          <g class="hero-roadrunner">
+            <ellipse class="rr-shadow" cx="278" cy="660" rx="126" ry="20" fill="rgba(15,23,42,0.20)"/>
+            <path class="rr-ground" d="M120 696c86-18 176-16 270 8" fill="none"/>
 
-            <g class="bird-tail">
-              <path class="bird-rgb-stroke bird-tail-feather" d="M202 516c-84 10-133 8-178-10 56 36 109 58 172 72" fill="none"/>
-              <path class="bird-rgb-stroke bird-tail-feather bird-tail-feather-mid" d="M210 546c-80 28-125 49-152 82 64-24 118-38 168-44" fill="none"/>
-              <path class="bird-rgb-stroke bird-tail-feather bird-tail-feather-low" d="M226 578c-72 47-106 80-121 122 49-31 93-50 142-62" fill="none"/>
+            <g class="rr-tail">
+              <path class="rr-accent" d="M132 486c-62 4-100-1-130-18 42 30 82 50 126 62" fill="none"/>
+              <path class="rr-accent rr-accent-soft" d="M142 520c-58 28-90 53-104 90 40-24 77-40 118-48" fill="none"/>
             </g>
 
-            <g class="bird-body-group">
-              <path class="bird-shell bird-outline" d="M214 548c26-78 104-129 210-134 126-7 231 50 253 138 20 81-42 157-157 189-143 40-311-21-336-129-9-39-4-62 30-64z"/>
-              <path class="bird-wing bird-outline" d="M314 520c84-24 164 1 212 64 36 47 45 95 28 137-78 24-181 4-236-53-46-48-54-104-4-148z"/>
-              <path class="bird-neck bird-outline" d="M428 420c20-92 78-168 167-198 58-20 122-6 141 31 18 37-9 82-69 111-53 25-112 28-181 12"/>
-              <ellipse class="bird-head bird-outline" cx="700" cy="236" rx="68" ry="56"/>
-              <path class="bird-beak bird-rgb-fill" d="M755 226c64-8 127 2 175 28-55 24-118 35-182 32z"/>
-              <circle class="bird-eye" cx="724" cy="228" r="7" fill="#f8fafc"/>
-              <circle class="bird-eye-pupil" cx="727" cy="228" r="3.2" fill="#020617"/>
-              <path class="bird-belly" d="M344 632c62 54 150 75 230 57 49-11 90-35 120-66-39 69-127 111-223 105-79-5-147-38-185-96 18-12 35-12 58 0z" fill="rgba(255,255,255,0.08)"/>
+            <g class="rr-body-group">
+              <path class="rr-body rr-outline" d="M160 520c28-62 94-102 176-106 94-4 171 38 188 103 16 62-32 120-120 144-108 29-230-18-248-98-7-29-3-43 4-43z"/>
+              <path class="rr-wing rr-outline" d="M242 502c72-16 134 10 164 64 18 31 18 60 8 88-66 16-138-8-174-50-34-39-34-73 2-102z"/>
+              <path class="rr-neck rr-outline" d="M352 434c20-72 66-128 132-146 46-12 92 0 104 27 12 28-7 58-50 78-43 20-89 24-148 16"/>
+              <ellipse class="rr-head rr-outline" cx="558" cy="254" rx="46" ry="38"/>
+              <path class="rr-beak" d="M594 246c40-2 82 8 120 32-39 14-84 18-126 16z"/>
+              <circle cx="575" cy="248" r="5.5" fill="#f8fafc"/>
+              <circle cx="577" cy="248" r="2.5" fill="#020617"/>
+              <path class="rr-belly" d="M260 592c52 34 120 45 178 28 30-9 55-23 74-43-26 52-90 82-162 76-58-4-107-28-136-70 15-7 28-5 46 9z" fill="rgba(255,255,255,0.10)"/>
             </g>
 
-            <g class="bird-crest">
-              <path class="bird-rgb-stroke" d="M648 166c-22-48-31-86-29-120 26 38 44 76 58 116" fill="none"/>
-              <path class="bird-rgb-stroke" d="M686 158c-6-56 0-98 16-130 10 42 14 84 12 126" fill="none"/>
-              <path class="bird-rgb-stroke" d="M724 166c10-53 28-90 54-117-6 44-21 84-42 122" fill="none"/>
+            <g class="rr-crest">
+              <path class="rr-accent" d="M522 204c-14-34-18-60-14-86 18 27 30 54 40 82" fill="none"/>
+              <path class="rr-accent" d="M556 196c0-40 8-68 22-93 7 30 8 59 2 90" fill="none"/>
+              <path class="rr-accent" d="M586 204c14-34 30-58 54-76-8 30-22 56-42 82" fill="none"/>
             </g>
 
-            <g class="bird-leg bird-leg-back">
-              <path class="bird-rgb-stroke" d="M446 650c-26 56-38 108-31 159" fill="none"/>
-              <path class="bird-rgb-stroke" d="M415 809c-32 12-57 26-76 48" fill="none"/>
-              <path class="bird-rgb-stroke" d="M415 809c-4 20-3 39 2 59" fill="none"/>
+            <g class="rr-leg rr-leg-back">
+              <path class="rr-accent" d="M322 606c-18 46-22 86-10 124" fill="none"/>
+              <path class="rr-accent rr-accent-soft" d="M312 730c-22 10-39 22-54 40" fill="none"/>
             </g>
 
-            <g class="bird-leg bird-leg-front">
-              <path class="bird-rgb-stroke" d="M542 654c18 51 44 97 80 136" fill="none"/>
-              <path class="bird-rgb-stroke" d="M622 790c25 9 48 24 69 44" fill="none"/>
-              <path class="bird-rgb-stroke" d="M622 790c7 19 14 36 25 52" fill="none"/>
+            <g class="rr-leg rr-leg-front">
+              <path class="rr-accent" d="M402 608c16 40 38 74 68 102" fill="none"/>
+              <path class="rr-accent rr-accent-soft" d="M470 710c23 8 41 19 60 36" fill="none"/>
             </g>
+          </g>
 
-            <g class="bird-trails">
-              <path class="bird-ground-soft" d="M138 628c40-18 88-24 142-20" fill="none"/>
-              <path class="bird-ground-soft" d="M120 674c54-14 115-14 171 1" fill="none"/>
+          <g class="hero-lobo">
+            <ellipse class="lobo-glow" cx="436" cy="296" rx="92" ry="76" fill="rgba(239,68,68,0.10)"/>
+            <path class="lobo-ring" d="M434 204c54 0 98 42 98 94 0 52-44 94-98 94s-98-42-98-94c0-52 44-94 98-94z"/>
+            <g class="lobo-mark">
+              <path class="lobo-head" d="M434 234l42 18 22 48-10 58-54 30-54-30-10-58 22-48z"/>
+              <path class="lobo-ear-left" d="M390 246l-18-44 42 22z"/>
+              <path class="lobo-ear-right" d="M478 246l18-44-42 22z"/>
+              <path class="lobo-face" d="M404 280l30-12 30 12-8 48-22 20-22-20z"/>
+              <path class="lobo-snout" d="M420 324l14-10 14 10-14 18z"/>
+              <path class="lobo-eye-line" d="M404 296l20-12m24 12l20-12" fill="none"/>
             </g>
           </g>
         </svg>

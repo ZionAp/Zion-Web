@@ -434,97 +434,133 @@ body.dark-mode .theme-toggle {
 
 .hero-bird {
   position: absolute;
-  inset: -6% auto auto -8%;
-  width: 60%;
-  height: 112%;
+  inset: 4% auto auto -2%;
+  width: 48%;
+  height: 86%;
   z-index: -2;
   pointer-events: none;
-  opacity: 0.56;
-  -webkit-mask-image: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.94) 42%, rgba(0, 0, 0, 0.36) 76%, transparent 100%);
-  mask-image: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.94) 42%, rgba(0, 0, 0, 0.36) 76%, transparent 100%);
+  opacity: 0.52;
+  -webkit-mask-image: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.92) 58%, rgba(0, 0, 0, 0.22) 82%, transparent 100%);
+  mask-image: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.92) 58%, rgba(0, 0, 0, 0.22) 82%, transparent 100%);
 }
 
-.hero-bird .bird-aura {
-  opacity: 0.7;
+.hero-bird .hero-mascot-aura {
+  opacity: 0.75;
 }
 
-.hero-bird .bird-runner {
-  transform-origin: 360px 540px;
-  animation: birdRunnerFloat 8s ease-in-out infinite, birdSpectrum 11s linear infinite;
+.hero-bird .hero-roadrunner {
+  transform-origin: 310px 490px;
+  animation: roadrunnerFloat 7s ease-in-out infinite;
 }
 
-.hero-bird .bird-outline {
-  fill: url(#birdShell);
+.hero-bird .rr-outline {
+  fill: url(#rrBody);
   stroke: rgba(255, 255, 255, 0.24);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hero-bird .rr-wing {
+  fill: url(#rrWing);
+}
+
+.hero-bird .rr-neck,
+.hero-bird .rr-head {
+  fill: rgba(255, 255, 255, 0.10);
+}
+
+.hero-bird .rr-accent {
+  stroke: #67e8f9;
   stroke-width: 6;
   stroke-linecap: round;
   stroke-linejoin: round;
+  animation: mascotStroke 8s linear infinite;
 }
 
-.hero-bird .bird-wing {
-  fill: url(#birdWing);
+.hero-bird .rr-accent-soft {
+  stroke-width: 4.5;
+  opacity: 0.8;
 }
 
-.hero-bird .bird-neck,
-.hero-bird .bird-head {
-  fill: rgba(255, 255, 255, 0.08);
+.hero-bird .rr-beak {
+  fill: url(#rrBeak);
+  opacity: 0.96;
 }
 
-.hero-bird .bird-rgb-stroke {
-  stroke: #60a5fa;
-  stroke-width: 8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  animation: birdRgbStroke 7s linear infinite;
-}
-
-.hero-bird .bird-rgb-fill {
-  fill: #60a5fa;
-  animation: birdRgbFill 7s linear infinite;
-}
-
-.hero-bird .bird-ground {
-  opacity: 0.4;
-}
-
-.hero-bird .bird-ground-soft {
+.hero-bird .rr-ground {
   stroke: rgba(255, 255, 255, 0.14);
-  stroke-width: 5;
+  stroke-width: 4.5;
   stroke-linecap: round;
   fill: none;
 }
 
-.hero-bird .bird-shadow {
-  animation: birdShadowShift 8s ease-in-out infinite;
+.hero-bird .rr-shadow {
+  animation: mascotShadowShift 7s ease-in-out infinite;
 }
 
-.hero-bird .bird-tail {
+.hero-bird .rr-tail {
   transform-box: fill-box;
-  transform-origin: 88% 46%;
-  animation: birdTailWave 1.6s ease-in-out infinite;
+  transform-origin: 92% 48%;
+  animation: roadrunnerTail 1.8s ease-in-out infinite;
 }
 
-.hero-bird .bird-crest {
+.hero-bird .rr-crest {
   transform-box: fill-box;
   transform-origin: 50% 100%;
-  animation: birdCrestFlutter 1.3s ease-in-out infinite;
+  animation: roadrunnerCrest 1.2s ease-in-out infinite;
 }
 
-.hero-bird .bird-leg {
+.hero-bird .rr-leg {
   transform-box: fill-box;
   transform-origin: 50% 0%;
 }
 
-.hero-bird .bird-leg-front {
-  animation: birdLegFront 0.82s ease-in-out infinite;
+.hero-bird .rr-leg-front {
+  animation: roadrunnerLegFront 0.92s ease-in-out infinite;
 }
 
-.hero-bird .bird-leg-back {
-  animation: birdLegBack 0.82s ease-in-out infinite;
+.hero-bird .rr-leg-back {
+  animation: roadrunnerLegBack 0.92s ease-in-out infinite;
 }
 
-.hero-bird .bird-body-group {
-  animation: birdBodyBob 0.82s ease-in-out infinite;
+.hero-bird .rr-body-group {
+  animation: roadrunnerBody 0.92s ease-in-out infinite;
+}
+
+.hero-bird .hero-lobo {
+  transform-origin: 434px 296px;
+  animation: loboFloat 5.4s ease-in-out infinite;
+}
+
+.hero-bird .lobo-ring {
+  fill: rgba(255, 255, 255, 0.03);
+  stroke: rgba(255, 255, 255, 0.16);
+  stroke-width: 4;
+}
+
+.hero-bird .lobo-head,
+.hero-bird .lobo-ear-left,
+.hero-bird .lobo-ear-right {
+  fill: url(#loboFill);
+}
+
+.hero-bird .lobo-face {
+  fill: rgba(255, 255, 255, 0.11);
+}
+
+.hero-bird .lobo-snout {
+  fill: rgba(15, 23, 42, 0.88);
+}
+
+.hero-bird .lobo-eye-line {
+  stroke: rgba(255, 255, 255, 0.7);
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.hero-bird .lobo-glow {
+  animation: loboGlowPulse 4.8s ease-in-out infinite;
 }
 
 .hero-pattern {
@@ -789,58 +825,55 @@ body.dark-mode .theme-toggle {
   z-index: -1;
 }
 
-@keyframes birdSpectrum {
-  0% { filter: hue-rotate(0deg) saturate(1.15); }
-  33% { filter: hue-rotate(110deg) saturate(1.28); }
-  66% { filter: hue-rotate(220deg) saturate(1.22); }
-  100% { filter: hue-rotate(360deg) saturate(1.15); }
+@keyframes mascotStroke {
+  0%, 100% { stroke: #67e8f9; }
+  33% { stroke: #f43f5e; }
+  66% { stroke: #f59e0b; }
 }
 
-@keyframes birdRgbStroke {
-  0%, 100% { stroke: #60a5fa; }
-  33% { stroke: #ef4444; }
-  66% { stroke: #22c55e; }
+@keyframes roadrunnerFloat {
+  0%, 100% { transform: translate(0, 0) rotate(-1.5deg); }
+  50% { transform: translate(12px, -8px) rotate(0.5deg); }
 }
 
-@keyframes birdRgbFill {
-  0%, 100% { fill: #60a5fa; }
-  33% { fill: #ef4444; }
-  66% { fill: #22c55e; }
-}
-
-@keyframes birdRunnerFloat {
-  0%, 100% { transform: translate(0, 0) rotate(-2deg); }
-  50% { transform: translate(18px, -14px) rotate(1deg); }
-}
-
-@keyframes birdTailWave {
-  0%, 100% { transform: rotate(-4deg) translateY(0); }
-  50% { transform: rotate(5deg) translateY(6px); }
-}
-
-@keyframes birdCrestFlutter {
+@keyframes roadrunnerTail {
   0%, 100% { transform: rotate(-3deg) translateY(0); }
-  50% { transform: rotate(5deg) translateY(-5px); }
+  50% { transform: rotate(4deg) translateY(4px); }
 }
 
-@keyframes birdBodyBob {
+@keyframes roadrunnerCrest {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(4deg) translateY(-3px); }
+}
+
+@keyframes roadrunnerBody {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-6px); }
 }
 
-@keyframes birdLegFront {
-  0%, 100% { transform: rotate(-6deg) translateY(0); }
-  50% { transform: rotate(18deg) translateY(10px); }
+@keyframes roadrunnerLegFront {
+  0%, 100% { transform: rotate(-5deg) translateY(0); }
+  50% { transform: rotate(16deg) translateY(7px); }
 }
 
-@keyframes birdLegBack {
-  0%, 100% { transform: rotate(10deg) translateY(8px); }
-  50% { transform: rotate(-18deg) translateY(-8px); }
+@keyframes roadrunnerLegBack {
+  0%, 100% { transform: rotate(8deg) translateY(5px); }
+  50% { transform: rotate(-15deg) translateY(-5px); }
 }
 
-@keyframes birdShadowShift {
-  0%, 100% { transform: translateX(0) scaleX(1); opacity: 0.26; }
-  50% { transform: translateX(12px) scaleX(0.92); opacity: 0.18; }
+@keyframes mascotShadowShift {
+  0%, 100% { transform: translateX(0) scaleX(1); opacity: 0.22; }
+  50% { transform: translateX(8px) scaleX(0.94); opacity: 0.15; }
+}
+
+@keyframes loboFloat {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-8px) scale(1.03); }
+}
+
+@keyframes loboGlowPulse {
+  0%, 100% { opacity: 0.18; transform: scale(1); }
+  50% { opacity: 0.28; transform: scale(1.08); }
 }
 
 .hero-badge {
@@ -1798,12 +1831,12 @@ body.dark-mode .footer {
   }
 
   .hero-bird {
-    inset: 0 auto auto -22%;
-    width: 84%;
-    height: 82%;
-    opacity: 0.34;
-    -webkit-mask-image: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.82) 44%, rgba(0, 0, 0, 0.18) 74%, transparent 100%);
-    mask-image: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.82) 44%, rgba(0, 0, 0, 0.18) 74%, transparent 100%);
+    inset: 8% auto auto -10%;
+    width: 62%;
+    height: 64%;
+    opacity: 0.28;
+    -webkit-mask-image: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.8) 56%, rgba(0, 0, 0, 0.12) 84%, transparent 100%);
+    mask-image: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.8) 56%, rgba(0, 0, 0, 0.12) 84%, transparent 100%);
   }
 
   .hero-pattern {
@@ -1947,10 +1980,10 @@ body.dark-mode .footer {
   }
 
   .hero-bird {
-    inset: 10% auto auto -34%;
-    width: 108%;
-    height: 56%;
-    opacity: 0.2;
+    inset: 12% auto auto -18%;
+    width: 74%;
+    height: 42%;
+    opacity: 0.18;
   }
 
   .hero-badge,
