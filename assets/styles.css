@@ -501,9 +501,18 @@ body.dark-mode .theme-toggle {
   fill: none;
 }
 
-.hero-bird .scene-belly,
-.hero-bird .scene-muzzle {
+.hero-bird .scene-belly {
   fill: url(#sceneFur);
+}
+
+.hero-bird .scene-shadow {
+  fill: rgba(15, 23, 42, 0.18);
+}
+
+.hero-bird .scene-leg {
+  stroke: rgba(255, 255, 255, 0.42);
+  stroke-linecap: round;
+  fill: none;
 }
 
 .hero-bird .scene-nose {
@@ -528,26 +537,8 @@ body.dark-mode .theme-toggle {
   stroke-width: 3;
 }
 
-.hero-bird .scene-shoe {
-  fill: rgba(255, 255, 255, 0.18);
-  stroke: rgba(255, 255, 255, 0.28);
-  stroke-width: 3;
-}
-
-.hero-bird .scene-leg,
-.hero-bird .scene-arm {
-  stroke: rgba(255, 255, 255, 0.42);
-  stroke-width: 10;
-  stroke-linecap: round;
-  fill: none;
-}
-
-.hero-bird .scene-arm {
-  stroke-width: 12;
-}
-
 .hero-bird .scene-mascot {
-  transform-origin: 250px 590px;
+  transform-origin: 460px 470px;
 }
 
 .hero-bird .scene-mascot,
@@ -566,14 +557,7 @@ body.dark-mode .theme-toggle {
 .hero-bird .scene-ear-right,
 .hero-bird .scene-tail,
 .hero-bird .scene-belly,
-.hero-bird .scene-muzzle,
-.hero-bird .scene-nose,
-.hero-bird .scene-brow,
-.hero-bird .scene-mouth,
-.hero-bird .scene-glove,
-.hero-bird .scene-shoe,
 .hero-bird .scene-leg,
-.hero-bird .scene-arm,
 .hero-bird .scene-shadow {
   vector-effect: non-scaling-stroke;
 }
