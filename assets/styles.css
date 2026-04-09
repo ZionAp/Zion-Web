@@ -444,145 +444,137 @@ body.dark-mode .theme-toggle {
   mask-image: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.92) 58%, rgba(0, 0, 0, 0.22) 82%, transparent 100%);
 }
 
-.hero-bird .hero-lobo-aura {
+.hero-bird .scene-glow {
   opacity: 0.82;
 }
 
-.hero-bird .hero-lobo-pack {
+.hero-bird .scene-pack {
   transform-origin: 360px 450px;
 }
 
-.hero-bird .hero-sign-board {
-  fill: url(#loboSign);
+.hero-bird .scene-sign-board {
+  fill: url(#sceneSign);
 }
 
-.hero-bird .hero-sign-outline {
-  stroke: rgba(255, 255, 255, 0.16);
+.hero-bird .scene-sign-outline {
+  stroke: rgba(255, 255, 255, 0.18);
   stroke-width: 4;
 }
 
-.hero-bird .hero-sign-text {
-  fill: #ef4444;
-  font-family: var(--font);
-  letter-spacing: 0.04em;
-  font-size: 44px;
-  font-weight: 800;
-  stroke: rgba(255, 255, 255, 0.96);
-  stroke-width: 10;
-  paint-order: stroke fill;
-  font-style: italic;
-  filter: drop-shadow(0 5px 0 rgba(15, 23, 42, 0.6));
-}
-
-.hero-bird .hero-sign-post {
-  stroke: rgba(255, 255, 255, 0.18);
-  stroke-width: 5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.hero-bird .hero-sign-stripe {
-  stroke: rgba(255, 255, 255, 0.18);
+.hero-bird .scene-sign-stripe {
+  stroke: rgba(255, 255, 255, 0.14);
   stroke-width: 12;
   stroke-linecap: round;
 }
 
-.hero-bird .hero-sign {
-  transform-origin: 350px 334px;
-}
-
-.hero-bird .lobo-hat-brim,
-.hero-bird .lobo-hat-crown {
-  fill: rgba(109, 61, 28, 0.96);
-  stroke: rgba(255, 238, 204, 0.24);
-  stroke-width: 3;
-}
-
-.hero-bird .lobo-hat-band {
-  stroke: rgba(255, 221, 170, 0.65);
-  stroke-width: 4;
+.hero-bird .scene-sign-post {
+  stroke: rgba(255, 255, 255, 0.22);
+  stroke-width: 6;
   stroke-linecap: round;
 }
 
-.hero-bird .fridge-body {
-  fill: rgba(255, 255, 255, 0.1);
-  stroke: rgba(255, 255, 255, 0.22);
-  stroke-width: 4;
+.hero-bird .scene-sign-text {
+  fill: #fff7ed;
+  font-family: var(--font);
+  font-size: 54px;
+  font-style: italic;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  stroke: #7f1d1d;
+  stroke-width: 10;
+  paint-order: stroke fill;
+  filter: drop-shadow(0 6px 0 rgba(15, 23, 42, 0.55));
 }
 
-.hero-bird .fridge-divider,
-.hero-bird .fridge-handle {
+.hero-bird .scene-fridge-shell {
+  fill: url(#sceneFridge);
   stroke: rgba(255, 255, 255, 0.28);
   stroke-width: 4;
+}
+
+.hero-bird .scene-fridge-panel {
+  fill: rgba(255, 255, 255, 0.08);
+  stroke: rgba(255, 255, 255, 0.16);
+  stroke-width: 2.5;
+}
+
+.hero-bird .scene-fridge-divider,
+.hero-bird .scene-fridge-handle,
+.hero-bird .scene-fridge-vent {
+  stroke: rgba(255, 255, 255, 0.3);
+  stroke-width: 4;
   stroke-linecap: round;
+  fill: none;
 }
 
-.hero-bird .fridge-badge {
-  fill: rgba(96, 165, 250, 0.7);
+.hero-bird .scene-fridge-light {
+  fill: rgba(234, 179, 8, 0.9);
 }
 
-.hero-bird .hero-fridge {
-  animation: fridgeGlow 4.6s ease-in-out infinite;
+.hero-bird .scene-fridge-wrap {
+  animation: fridgeGlow 4.8s ease-in-out infinite;
 }
 
-.hero-bird .hero-tool,
-.hero-bird .lobo-tech-tool {
-  fill: rgba(255, 255, 255, 0.82);
+.hero-bird .scene-lobo-body,
+.hero-bird .scene-lobo-head,
+.hero-bird .scene-lobo-ear-left,
+.hero-bird .scene-lobo-ear-right {
+  fill: url(#sceneRed);
 }
 
-.hero-bird .hero-tool-wrench,
-.hero-bird .lobo-tech-tool {
-  fill: rgba(232, 236, 241, 0.92);
+.hero-bird .scene-lobo-chest,
+.hero-bird .scene-lobo-face {
+  fill: url(#sceneFur);
 }
 
-.hero-bird .lobo-body,
-.hero-bird .lobo-head,
-.hero-bird .lobo-ear-left,
-.hero-bird .lobo-ear-right,
-.hero-bird .lobo-bow {
-  fill: url(#loboCoat);
+.hero-bird .scene-lobo-snout {
+  fill: rgba(15, 23, 42, 0.9);
 }
 
-.hero-bird .lobo-chest,
-.hero-bird .lobo-face {
-  fill: url(#loboFurLight);
-}
-
-.hero-bird .lobo-snout {
-  fill: rgba(15, 23, 42, 0.88);
-}
-
-.hero-bird .lobo-customer-phone,
-.hero-bird .lobo-tech-badge {
-  fill: rgba(255, 255, 255, 0.16);
-  stroke: rgba(255, 255, 255, 0.26);
-  stroke-width: 3;
-}
-
-.hero-bird .lobo-customer-arm,
-.hero-bird .lobo-tech-arm {
-  stroke: rgba(255, 255, 255, 0.38);
-  stroke-width: 8;
-  stroke-linecap: round;
-}
-
-.hero-bird .lobo-eye-brow {
+.hero-bird .scene-lobo-brow {
   stroke: rgba(255, 255, 255, 0.72);
   stroke-width: 4;
   stroke-linecap: round;
-  stroke-linejoin: round;
 }
 
-.hero-bird .lobo-eye-soft {
-  opacity: 0.86;
+.hero-bird .scene-lobo-shadow {
+  fill: rgba(15, 23, 42, 0.18);
 }
 
-.hero-bird .lobo-shadow {
+.hero-bird .scene-lobo-hat-brim,
+.hero-bird .scene-lobo-hat-crown,
+.hero-bird .scene-lobo-hat-brim-right,
+.hero-bird .scene-lobo-hat-crown-right {
+  fill: url(#sceneHat);
+  stroke: rgba(255, 241, 219, 0.22);
+  stroke-width: 3;
 }
 
-.hero-bird .lobo-mascot {
-  transform-box: fill-box;
-  transform-origin: 50% 58%;
+.hero-bird .scene-lobo-hat-band,
+.hero-bird .scene-lobo-hat-band-right {
+  stroke: rgba(250, 204, 151, 0.72);
+  stroke-width: 4;
+  stroke-linecap: round;
+  fill: none;
+}
+
+.hero-bird .scene-lobo-phone,
+.hero-bird .scene-lobo-badge {
+  fill: rgba(255, 255, 255, 0.15);
+  stroke: rgba(255, 255, 255, 0.24);
+  stroke-width: 3;
+}
+
+.hero-bird .scene-lobo-arm {
+  stroke: rgba(255, 255, 255, 0.38);
+  stroke-width: 8;
+  stroke-linecap: round;
+  fill: none;
+}
+
+.hero-bird .scene-lobo-tool,
+.hero-bird .hero-tool-wrench {
+  fill: rgba(232, 236, 241, 0.92);
 }
 
 .hero-pattern {
@@ -1946,7 +1938,7 @@ body.dark-mode .footer {
     display: none;
   }
 
-  .hero-bird .hero-sign-text {
+  .hero-bird .scene-sign-text {
     font-size: 32px;
   }
 
