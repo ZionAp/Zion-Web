@@ -369,9 +369,57 @@ body.dark-mode .theme-toggle .sun-icon {
   width: 100%;
   height: 100%;
   z-index: -2;
-  opacity: 0.5;
+  opacity: 0.6;
   pointer-events: none;
   color: #4ade80;
+}
+
+.hero-matrix {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-matrix svg {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-matrix .appliance {
+  opacity: 0.15;
+  transition: opacity 0.5s ease;
+}
+
+@keyframes colorShift1 {
+  0%, 100% { stroke: #4ade80; }
+  33% { stroke: #3b82f6; }
+  66% { stroke: #d94a1e; }
+}
+
+@keyframes colorShift2 {
+  0%, 100% { stroke: #3b82f6; }
+  33% { stroke: #d94a1e; }
+  66% { stroke: #4ade80; }
+}
+
+@keyframes colorShift3 {
+  0%, 100% { stroke: #d94a1e; }
+  33% { stroke: #4ade80; }
+  66% { stroke: #3b82f6; }
+}
+
+.color-shift-1 {
+  animation: colorShift1 12s ease-in-out infinite;
+}
+
+.color-shift-2 {
+  animation: colorShift2 15s ease-in-out infinite;
+}
+
+.color-shift-3 {
+  animation: colorShift3 18s ease-in-out infinite;
 }
 
 #particles-canvas {
