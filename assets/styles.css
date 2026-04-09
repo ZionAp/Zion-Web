@@ -502,7 +502,7 @@ body.dark-mode .theme-toggle {
 }
 
 .hero-bird .scene-belly,
-.hero-bird .scene-muzzle {
+.hero-bird .scene-face {
   fill: url(#sceneFur);
 }
 
@@ -534,16 +534,11 @@ body.dark-mode .theme-toggle {
   stroke-width: 3;
 }
 
-.hero-bird .scene-leg,
-.hero-bird .scene-arm {
+.hero-bird .scene-leg {
   stroke: rgba(255, 255, 255, 0.42);
   stroke-width: 10;
   stroke-linecap: round;
   fill: none;
-}
-
-.hero-bird .scene-arm {
-  stroke-width: 12;
 }
 
 .hero-bird .scene-mascot {
@@ -566,14 +561,9 @@ body.dark-mode .theme-toggle {
 .hero-bird .scene-ear-right,
 .hero-bird .scene-tail,
 .hero-bird .scene-belly,
-.hero-bird .scene-muzzle,
+.hero-bird .scene-face,
 .hero-bird .scene-nose,
-.hero-bird .scene-brow,
-.hero-bird .scene-mouth,
-.hero-bird .scene-glove,
-.hero-bird .scene-shoe,
 .hero-bird .scene-leg,
-.hero-bird .scene-arm,
 .hero-bird .scene-shadow {
   vector-effect: non-scaling-stroke;
 }
