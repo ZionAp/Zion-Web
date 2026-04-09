@@ -4,7 +4,7 @@
   "description": "Zion Appliance Solutions website",
   "private": true,
   "scripts": {
-    "build:css": "cssnano assets/styles.css assets/styles.min.css",
+    "build:css": "cleancss -o assets/styles.min.css assets/styles.css",
     "build:js": "terser assets/main.js -o assets/main.min.js -c -m",
     "build": "npm run build:css && npm run build:js",
     "audit": "lighthouse https://zionappliance.com --output=html --output-path=./lighthouse-report.html",
