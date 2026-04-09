@@ -6,6 +6,7 @@
   "scripts": {
     "build:css": "cleancss -o assets/styles.min.css assets/styles.css",
     "build:js": "terser assets/main.js -o assets/main.min.js -c -m",
+    "build:html": "html-minifier-terser --collapse-whitespace --remove-comments --minify-css --minify-js --input-dir . --output-dir . --exclude 'node_modules' '!*.min.css' '!*.min.js' '!sw.js' '!manifest.json' '!favicon.svg' '!og-image.svg' '!browserconfig.xml' '!generate-*.js' '!lighthouse-report*'",
     "build": "npm run build:css && npm run build:js",
     "audit": "lighthouse https://zionappliance.com --output=html --output-path=./lighthouse-report.html",
     "audit:json": "lighthouse https://zionappliance.com --output=json --output-path=./lighthouse-report.json",
@@ -17,6 +18,7 @@
     "html-minifier-terser": "^7.2.0",
     "lighthouse": "^12.8.2",
     "playwright": "^1.59.1",
+    "sharp": "^0.34.5",
     "terser": "^5.46.1",
     "wrangler": "^4.81.0"
   }
