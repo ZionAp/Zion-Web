@@ -163,7 +163,7 @@ body.dark-mode .booking-info {
   bottom: 20px;
   z-index: 1000;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   gap: 10px;
 }
 
@@ -176,6 +176,8 @@ body.dark-mode .booking-info {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
+  flex-shrink: 0;
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition), background var(--transition);
   box-shadow: 0 14px 35px rgba(15, 23, 42, 0.2);
   backdrop-filter: blur(14px);
@@ -194,8 +196,17 @@ body.dark-mode .booking-info {
 }
 
 .floating-action-call {
+  width: auto;
+  padding: 0 18px;
   background: linear-gradient(135deg, #8b1a0a, #d94a1e);
   color: white;
+}
+
+.floating-action-label {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .floating-action-email {
@@ -398,16 +409,20 @@ body.dark-mode .theme-toggle {
   height: 112%;
   z-index: -2;
   pointer-events: none;
-  opacity: 0.9;
+  opacity: 0.74;
 }
 
 .hero-pattern .appliance-glow {
-  opacity: 0.8;
+  opacity: 0.62;
 }
 
 .hero-pattern .appliance-line {
   stroke: rgba(255, 255, 255, 0.24);
   stroke-width: 2.5;
+}
+
+.hero-pattern .appliance-line-soft {
+  stroke: rgba(255, 255, 255, 0.14);
 }
 
 .color-shift-1 {
@@ -493,6 +508,18 @@ body.dark-mode .theme-toggle {
   max-width: 700px;
   opacity: 1;
   visibility: visible;
+}
+
+.hero-content::before {
+  content: '';
+  position: absolute;
+  inset: -48px -64px -56px -32px;
+  background:
+    linear-gradient(90deg, rgba(10, 15, 26, 0.82) 0%, rgba(10, 15, 26, 0.7) 48%, rgba(10, 15, 26, 0.14) 100%),
+    radial-gradient(circle at 20% 35%, rgba(59, 130, 246, 0.16) 0%, transparent 52%);
+  border-radius: 36px;
+  filter: blur(1px);
+  z-index: -1;
 }
 
 .hero-badge {
@@ -1415,14 +1442,21 @@ body.dark-mode .footer {
   }
 
   .hero-pattern {
-    inset: -4% -24% auto -24%;
+    inset: -4% -18% auto -18%;
     width: 148%;
     height: 78%;
-    opacity: 0.62;
+    opacity: 0.48;
   }
 
   .hero-content {
     max-width: 100%;
+  }
+
+  .hero-content::before {
+    inset: -28px -18px -36px -18px;
+    background:
+      linear-gradient(180deg, rgba(10, 15, 26, 0.82) 0%, rgba(10, 15, 26, 0.7) 58%, rgba(10, 15, 26, 0.24) 100%),
+      radial-gradient(circle at 50% 22%, rgba(59, 130, 246, 0.14) 0%, transparent 48%);
   }
 
   .hero-subtitle {
@@ -1529,10 +1563,10 @@ body.dark-mode .footer {
   }
 
   .hero-pattern {
-    inset: 2% -34% auto -34%;
+    inset: 3% -24% auto -24%;
     width: 168%;
     height: 62%;
-    opacity: 0.48;
+    opacity: 0.34;
   }
 
   .hero-badge,
@@ -1574,6 +1608,14 @@ body.dark-mode .footer {
     width: 48px;
     height: 48px;
     border-radius: 16px;
+  }
+
+  .floating-action-call {
+    padding: 0 14px;
+  }
+
+  .floating-action-label {
+    display: none;
   }
 
   .booking-info,
