@@ -207,7 +207,10 @@
           <div class="success-icon">✓</div>
           <h3>Booking Submitted!</h3>
           <p>We'll contact you within 30 minutes during business hours.</p>
-          <a href="tel:5054563046" class="success-call">Call us now: (505) 456-3046</a>
+          <div class="success-actions">
+            <a href="tel:5054563046" class="success-call">Call us now: (505) 456-3046</a>
+            <a href="mailto:zionappliance@gmail.com" class="success-email">Email us</a>
+          </div>
           <button class="close-btn">Close</button>
         </div>
       `;

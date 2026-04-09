@@ -42,6 +42,13 @@
         margin-top: 30px;
         font-size: 1.25rem;
       }
+      .phone-actions {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 12px;
+        flex-wrap: wrap;
+      }
       .phone a { color: #4ade80; text-decoration: none; }
     </style>
   </head>
@@ -52,7 +59,11 @@
       <p>The page you're looking for doesn't exist or has been moved.</p>
       <a href="/" class="btn">Go to Homepage</a>
       <div class="phone">
-        Or call us directly: <a href="tel:5054563046">(505) 456-3046</a>
+        Or contact us directly:
+        <div class="phone-actions">
+          <a href="tel:5054563046">(505) 456-3046</a>
+          <a href="mailto:zionappliance@gmail.com">zionappliance@gmail.com</a>
+        </div>
       </div>
     </div>
   </body>
