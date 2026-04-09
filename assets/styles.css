@@ -436,118 +436,135 @@ body.dark-mode .theme-toggle {
   transform-origin: center;
   animation: applianceDrop var(--drop-duration) linear infinite;
   animation-delay: var(--drop-delay);
+  will-change: transform, opacity;
 }
 
 .hero-piece-1 {
-  --drop-duration: 19s;
-  --drop-delay: -12s;
+  --drop-duration: 13s;
+  --drop-delay: -9s;
   animation-name: applianceDrop1;
 }
 
 .hero-piece-2 {
-  --drop-duration: 22s;
-  --drop-delay: -5s;
+  --drop-duration: 15s;
+  --drop-delay: -4s;
   animation-name: applianceDrop2;
 }
 
 .hero-piece-3 {
-  --drop-duration: 16s;
+  --drop-duration: 11s;
   --drop-delay: -2s;
   animation-name: applianceDrop3;
 }
 
 .hero-piece-4 {
-  --drop-duration: 14s;
+  --drop-duration: 10s;
   --drop-delay: -8s;
   animation-name: applianceDrop4;
 }
 
 .hero-piece-5 {
-  --drop-duration: 18s;
-  --drop-delay: -15s;
+  --drop-duration: 12s;
+  --drop-delay: -10s;
   animation-name: applianceDrop5;
 }
 
 .hero-piece-6 {
-  --drop-duration: 13s;
+  --drop-duration: 9s;
   --drop-delay: -3s;
   animation-name: applianceDrop6;
 }
 
 .hero-piece-7 {
-  --drop-duration: 20s;
-  --drop-delay: -9s;
+  --drop-duration: 14s;
+  --drop-delay: -7s;
   animation-name: applianceDrop7;
 }
 
 .hero-piece-8 {
-  --drop-duration: 24s;
-  --drop-delay: -18s;
+  --drop-duration: 16s;
+  --drop-delay: -12s;
   animation-name: applianceDrop8;
 }
 
 @keyframes applianceDrop1 {
-  0% { transform: translate(980px, -520px) rotate(-6deg); opacity: 0; }
-  8% { opacity: 0.44; }
-  62% { transform: translate(980px, 470px) rotate(2deg); opacity: 0.44; }
-  68% { transform: translate(980px, 492px) rotate(2deg); opacity: 0.44; }
-  74%, 100% { transform: translate(980px, 470px) rotate(2deg); opacity: 0; }
+  0% { transform: translate(920px, -520px) rotate(-8deg); opacity: 0; }
+  8% { transform: translate(1020px, -320px) rotate(-6deg); opacity: 0.42; }
+  18% { transform: translate(1100px, -180px) rotate(-4deg); opacity: 0.42; }
+  56% { transform: translate(1100px, 470px) rotate(2deg); opacity: 0.42; }
+  61% { transform: translate(1100px, 496px) rotate(2deg); opacity: 0.42; }
+  66% { transform: translate(1100px, 470px) rotate(2deg); opacity: 0.42; }
+  78%, 100% { transform: translate(1100px, 470px) rotate(2deg); opacity: 0; }
 }
 
 @keyframes applianceDrop2 {
-  0% { transform: translate(1210px, -620px) rotate(4deg); opacity: 0; }
-  10% { opacity: 0.38; }
-  66% { transform: translate(1210px, 260px) rotate(-3deg); opacity: 0.38; }
-  72% { transform: translate(1210px, 282px) rotate(-3deg); opacity: 0.38; }
-  78%, 100% { transform: translate(1210px, 260px) rotate(-3deg); opacity: 0; }
+  0% { transform: translate(1290px, -620px) rotate(6deg); opacity: 0; }
+  10% { transform: translate(1210px, -420px) rotate(4deg); opacity: 0.36; }
+  24% { transform: translate(1130px, -240px) rotate(2deg); opacity: 0.36; }
+  60% { transform: translate(1130px, 260px) rotate(-3deg); opacity: 0.36; }
+  66% { transform: translate(1130px, 286px) rotate(-3deg); opacity: 0.36; }
+  72% { transform: translate(1130px, 260px) rotate(-3deg); opacity: 0.36; }
+  84%, 100% { transform: translate(1130px, 260px) rotate(-3deg); opacity: 0; }
 }
 
 @keyframes applianceDrop3 {
-  0% { transform: translate(1495px, -380px) rotate(-5deg); opacity: 0; }
-  8% { opacity: 0.42; }
-  60% { transform: translate(1495px, 530px) rotate(4deg); opacity: 0.42; }
-  67% { transform: translate(1495px, 548px) rotate(4deg); opacity: 0.42; }
-  74%, 100% { transform: translate(1495px, 530px) rotate(4deg); opacity: 0; }
+  0% { transform: translate(1590px, -380px) rotate(-7deg); opacity: 0; }
+  12% { transform: translate(1510px, -190px) rotate(-5deg); opacity: 0.4; }
+  22% { transform: translate(1430px, -60px) rotate(-3deg); opacity: 0.4; }
+  58% { transform: translate(1430px, 530px) rotate(4deg); opacity: 0.4; }
+  64% { transform: translate(1430px, 552px) rotate(4deg); opacity: 0.4; }
+  70% { transform: translate(1430px, 530px) rotate(4deg); opacity: 0.4; }
+  82%, 100% { transform: translate(1430px, 530px) rotate(4deg); opacity: 0; }
 }
 
 @keyframes applianceDrop4 {
-  0% { transform: translate(1655px, -300px) rotate(6deg); opacity: 0; }
-  9% { opacity: 0.3; }
-  58% { transform: translate(1655px, 700px) rotate(-4deg); opacity: 0.3; }
-  64% { transform: translate(1655px, 716px) rotate(-4deg); opacity: 0.3; }
-  71%, 100% { transform: translate(1655px, 700px) rotate(-4deg); opacity: 0; }
+  0% { transform: translate(1730px, -300px) rotate(8deg); opacity: 0; }
+  14% { transform: translate(1655px, -120px) rotate(5deg); opacity: 0.28; }
+  26% { transform: translate(1575px, 12px) rotate(3deg); opacity: 0.28; }
+  56% { transform: translate(1575px, 700px) rotate(-4deg); opacity: 0.28; }
+  62% { transform: translate(1575px, 718px) rotate(-4deg); opacity: 0.28; }
+  68% { transform: translate(1575px, 700px) rotate(-4deg); opacity: 0.28; }
+  80%, 100% { transform: translate(1575px, 700px) rotate(-4deg); opacity: 0; }
 }
 
 @keyframes applianceDrop5 {
-  0% { transform: translate(1080px, -360px) rotate(-3deg); opacity: 0; }
-  10% { opacity: 0.36; }
-  65% { transform: translate(1080px, 620px) rotate(5deg); opacity: 0.36; }
-  72% { transform: translate(1080px, 640px) rotate(5deg); opacity: 0.36; }
-  80%, 100% { transform: translate(1080px, 620px) rotate(5deg); opacity: 0; }
+  0% { transform: translate(980px, -360px) rotate(-5deg); opacity: 0; }
+  10% { transform: translate(1080px, -210px) rotate(-3deg); opacity: 0.34; }
+  22% { transform: translate(1160px, -70px) rotate(-1deg); opacity: 0.34; }
+  60% { transform: translate(1160px, 620px) rotate(5deg); opacity: 0.34; }
+  66% { transform: translate(1160px, 642px) rotate(5deg); opacity: 0.34; }
+  72% { transform: translate(1160px, 620px) rotate(5deg); opacity: 0.34; }
+  84%, 100% { transform: translate(1160px, 620px) rotate(5deg); opacity: 0; }
 }
 
 @keyframes applianceDrop6 {
-  0% { transform: translate(1395px, -220px) rotate(7deg); opacity: 0; }
-  12% { opacity: 0.28; }
-  56% { transform: translate(1395px, 740px) rotate(-7deg); opacity: 0.28; }
-  63% { transform: translate(1395px, 754px) rotate(-7deg); opacity: 0.28; }
-  70%, 100% { transform: translate(1395px, 740px) rotate(-7deg); opacity: 0; }
+  0% { transform: translate(1320px, -220px) rotate(9deg); opacity: 0; }
+  14% { transform: translate(1400px, -70px) rotate(7deg); opacity: 0.26; }
+  24% { transform: translate(1480px, 22px) rotate(5deg); opacity: 0.26; }
+  54% { transform: translate(1480px, 740px) rotate(-7deg); opacity: 0.26; }
+  60% { transform: translate(1480px, 756px) rotate(-7deg); opacity: 0.26; }
+  66% { transform: translate(1480px, 740px) rotate(-7deg); opacity: 0.26; }
+  78%, 100% { transform: translate(1480px, 740px) rotate(-7deg); opacity: 0; }
 }
 
 @keyframes applianceDrop7 {
-  0% { transform: translate(1525px, -420px) rotate(-8deg); opacity: 0; }
-  11% { opacity: 0.32; }
-  60% { transform: translate(1525px, 330px) rotate(3deg); opacity: 0.32; }
-  66% { transform: translate(1525px, 350px) rotate(3deg); opacity: 0.32; }
-  74%, 100% { transform: translate(1525px, 330px) rotate(3deg); opacity: 0; }
+  0% { transform: translate(1620px, -420px) rotate(-10deg); opacity: 0; }
+  10% { transform: translate(1540px, -250px) rotate(-7deg); opacity: 0.3; }
+  24% { transform: translate(1460px, -80px) rotate(-5deg); opacity: 0.3; }
+  58% { transform: translate(1460px, 330px) rotate(3deg); opacity: 0.3; }
+  64% { transform: translate(1460px, 352px) rotate(3deg); opacity: 0.3; }
+  70% { transform: translate(1460px, 330px) rotate(3deg); opacity: 0.3; }
+  82%, 100% { transform: translate(1460px, 330px) rotate(3deg); opacity: 0; }
 }
 
 @keyframes applianceDrop8 {
-  0% { transform: translate(1295px, -520px) rotate(5deg); opacity: 0; }
-  10% { opacity: 0.26; }
-  68% { transform: translate(1295px, 110px) rotate(-2deg); opacity: 0.26; }
-  76% { transform: translate(1295px, 126px) rotate(-2deg); opacity: 0.26; }
-  84%, 100% { transform: translate(1295px, 110px) rotate(-2deg); opacity: 0; }
+  0% { transform: translate(1180px, -520px) rotate(7deg); opacity: 0; }
+  12% { transform: translate(1260px, -340px) rotate(5deg); opacity: 0.24; }
+  26% { transform: translate(1340px, -170px) rotate(2deg); opacity: 0.24; }
+  62% { transform: translate(1340px, 110px) rotate(-2deg); opacity: 0.24; }
+  69% { transform: translate(1340px, 128px) rotate(-2deg); opacity: 0.24; }
+  76% { transform: translate(1340px, 110px) rotate(-2deg); opacity: 0.24; }
+  88%, 100% { transform: translate(1340px, 110px) rotate(-2deg); opacity: 0; }
 }
 
 .color-shift-1 {
