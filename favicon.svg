@@ -1,65 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
   <defs>
-    <linearGradient id="bgGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="bgGrad7" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#1e3a5f"/>
-      <stop offset="50%" style="stop-color:#2d5a87"/>
-      <stop offset="100%" style="stop-color:#1e3a5f"/>
+      <stop offset="100%" style="stop-color:#2d5a87"/>
     </linearGradient>
-    <linearGradient id="screenGrad5" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#0a1628"/>
-      <stop offset="100%" style="stop-color:#1e3a5f"/>
-    </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="0.5" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
   
-  <!-- Background -->
-  <rect width="64" height="64" rx="10" fill="url(#bgGrad5)"/>
+  <!-- Simple Background -->
+  <rect width="64" height="64" rx="12" fill="url(#bgGrad7)"/>
   
-  <!-- Zia Sun Symbol - New Mexico -->
-  <g stroke="#d94a1e" stroke-width="2.5" stroke-linecap="round">
-    <!-- Cardinal directions -->
-    <line x1="32" y1="4" x2="32" y2="14"/>
-    <line x1="32" y1="18" x2="32" y2="26"/>
-    <line x1="32" y1="38" x2="32" y2="46"/>
-    <line x1="32" y1="50" x2="32" y2="60"/>
-    <line x1="4" y1="32" x2="14" y2="32"/>
-    <line x1="18" y1="32" x2="26" y2="32"/>
-    <line x1="38" y1="32" x2="46" y2="32"/>
-    <line x1="50" y1="32" x2="60" y2="32"/>
-    <!-- Intercardinal directions -->
-    <line x1="14" y1="14" x2="19" y2="19"/>
-    <line x1="45" y1="45" x2="50" y2="50"/>
-    <line x1="50" y1="14" x2="45" y2="19"/>
-    <line x1="19" y1="45" x2="14" y2="50"/>
-  </g>
+  <!-- Professional Text Logo -->
+  <text x="32" y="38" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="28" font-weight="900" fill="#4ade80" letter-spacing="-1">Z</text>
   
-  <!-- Center Circle - Multimeter -->
-  <circle cx="32" cy="32" r="11" fill="#ffffff" stroke="#d94a1e" stroke-width="2"/>
+  <!-- Multimeter Bar Underneath -->
+  <rect x="18" y="44" width="28" height="10" rx="2" fill="#ffffff"/>
+  <rect x="20" y="46" width="24" height="6" rx="1" fill="#0a1628"/>
+  <text x="22" y="50.5" font-family="monospace" font-size="4" fill="#4ade80" font-weight="bold">120V</text>
   
-  <!-- Multimeter Display Screen -->
-  <rect x="24" y="25" width="16" height="8" rx="1" fill="url(#screenGrad5)" stroke="#1e3a5f" stroke-width="0.5"/>
-  
-  <!-- Digital Reading -->
-  <g filter="url(#glow)">
-    <text x="25" y="29" font-family="'Courier New', monospace" font-size="5" font-weight="bold" fill="#4ade80">120V</text>
-  </g>
-  
-  <!-- Multimeter Buttons -->
-  <circle cx="25" cy="37" r="2.2" fill="#dc2626"/>
-  <circle cx="32" cy="37" r="2.2" fill="#22c55e"/>
-  <circle cx="39" cy="37" r="2.2" fill="#16a34a"/>
-  
-  <!-- Rotary Dial -->
-  <circle cx="37" cy="28" r="3.5" fill="#475569" stroke="#64748b" stroke-width="0.5"/>
-  <line x1="36" y1="25.5" x2="36" y2="27" stroke="#ffffff" stroke-width="0.8"/>
-  
-  <!-- Small branding text -->
-  <text x="32" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="1.5" fill="#94a3b8">AC</text>
+  <!-- NM Accent -->
+  <rect x="18" y="56" width="28" height="2" rx="1" fill="#d94a1e"/>
 </svg>

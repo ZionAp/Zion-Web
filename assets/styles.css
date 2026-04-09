@@ -368,28 +368,17 @@ body.dark-mode .theme-toggle .sun-icon {
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: -2;
-  opacity: 0.6;
-  pointer-events: none;
-  color: #4ade80;
-}
-
-.hero-matrix {
-  position: absolute;
-  inset: 0;
   z-index: -1;
   pointer-events: none;
-  overflow: hidden;
 }
 
-.hero-matrix svg {
+.hero-pattern svg {
   width: 100%;
   height: 100%;
 }
 
-.hero-matrix .appliance {
-  opacity: 0.15;
-  transition: opacity 0.5s ease;
+.hero-pattern g {
+  opacity: 0.12;
 }
 
 @keyframes colorShift1 {
@@ -478,7 +467,7 @@ body.dark-mode .theme-toggle .sun-icon {
 .hero-content {
   position: relative;
   max-width: 700px;
-  z-index: 1;
+  z-index: 10;
 }
 
 .hero-badge {
