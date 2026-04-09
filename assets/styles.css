@@ -502,8 +502,8 @@ body.dark-mode .theme-toggle {
 }
 
 .hero-bird .scene-belly,
-.hero-bird .scene-face-blank {
-  fill: #8b1a0a;
+.hero-bird .scene-muzzle {
+  fill: url(#sceneFur);
 }
 
 .hero-bird .scene-nose {
@@ -532,12 +532,6 @@ body.dark-mode .theme-toggle {
   fill: rgba(255, 255, 255, 0.18);
   stroke: rgba(255, 255, 255, 0.28);
   stroke-width: 3;
-}
-
-.hero-bird .scene-paw {
-  fill: #8b1a0a;
-  stroke: rgba(255, 255, 255, 0.2);
-  stroke-width: 2;
 }
 
 .hero-bird .scene-leg,
@@ -580,9 +574,7 @@ body.dark-mode .theme-toggle {
 .hero-bird .scene-shoe,
 .hero-bird .scene-leg,
 .hero-bird .scene-arm,
-.hero-bird .scene-shadow,
-.hero-bird .scene-paw,
-.hero-bird .scene-face-blank {
+.hero-bird .scene-shadow {
   vector-effect: non-scaling-stroke;
 }
 
