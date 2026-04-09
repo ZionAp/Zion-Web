@@ -539,7 +539,7 @@ body.dark-mode .theme-toggle {
 }
 
 .hero-bird .scene-mascot {
-  transform-origin: 210px 460px;
+  transform-origin: 210px 420px;
 }
 
 .hero-bird .scene-mascot,
@@ -547,21 +547,101 @@ body.dark-mode .theme-toggle {
   animation: none;
 }
 
+.hero-bird .scene-drops {
+  opacity: 0.38;
+}
+
+.hero-bird .scene-drop {
+  transform-box: view-box;
+  transform-origin: center;
+}
+
+.hero-bird .scene-drop-1 {
+  animation: sceneDrop1 13s linear infinite;
+  animation-delay: -2s;
+}
+
+.hero-bird .scene-drop-2 {
+  animation: sceneDrop2 10s linear infinite;
+  animation-delay: -5s;
+}
+
+.hero-bird .scene-drop-3 {
+  animation: sceneDrop3 12s linear infinite;
+  animation-delay: -8s;
+}
+
+.hero-bird .scene-drop-4 {
+  animation: sceneDrop4 9s linear infinite;
+  animation-delay: -1s;
+}
+
+.hero-bird .scene-drop-5 {
+  animation: sceneDrop5 11s linear infinite;
+  animation-delay: -4s;
+}
+
+.hero-bird .scene-drop-6 {
+  animation: sceneDrop6 14s linear infinite;
+  animation-delay: -7s;
+}
+
+@keyframes sceneDrop1 {
+  0% { transform: translateY(-30px); opacity: 0; }
+  8% { transform: translateY(-8px); opacity: 0.38; }
+  75% { transform: translateY(40px); opacity: 0.38; }
+  90% { transform: translateY(55px); opacity: 0; }
+  100% { transform: translateY(55px); opacity: 0; }
+}
+
+@keyframes sceneDrop2 {
+  0% { transform: translateY(-25px); opacity: 0; }
+  10% { transform: translateY(-5px); opacity: 0.38; }
+  72% { transform: translateY(35px); opacity: 0.38; }
+  88% { transform: translateY(50px); opacity: 0; }
+  100% { transform: translateY(50px); opacity: 0; }
+}
+
+@keyframes sceneDrop3 {
+  0% { transform: translateY(-35px); opacity: 0; }
+  9% { transform: translateY(-10px); opacity: 0.38; }
+  78% { transform: translateY(42px); opacity: 0.38; }
+  92% { transform: translateY(58px); opacity: 0; }
+  100% { transform: translateY(58px); opacity: 0; }
+}
+
+@keyframes sceneDrop4 {
+  0% { transform: translateY(-22px); opacity: 0; }
+  11% { transform: translateY(-4px); opacity: 0.38; }
+  70% { transform: translateY(32px); opacity: 0.38; }
+  86% { transform: translateY(48px); opacity: 0; }
+  100% { transform: translateY(48px); opacity: 0; }
+}
+
+@keyframes sceneDrop5 {
+  0% { transform: translateY(-28px); opacity: 0; }
+  7% { transform: translateY(-6px); opacity: 0.38; }
+  74% { transform: translateY(38px); opacity: 0.38; }
+  89% { transform: translateY(52px); opacity: 0; }
+  100% { transform: translateY(52px); opacity: 0; }
+}
+
+@keyframes sceneDrop6 {
+  0% { transform: translateY(-32px); opacity: 0; }
+  10% { transform: translateY(-8px); opacity: 0.38; }
+  76% { transform: translateY(44px); opacity: 0.38; }
+  91% { transform: translateY(60px); opacity: 0; }
+  100% { transform: translateY(60px); opacity: 0; }
+}
+
 .hero-bird .scene-sign-board,
 .hero-bird .scene-sign-outline,
 .hero-bird .scene-sign-stripe,
 .hero-bird .scene-sign-post,
 .hero-bird .scene-sign-text,
-.hero-bird .scene-body,
 .hero-bird .scene-ear-left,
 .hero-bird .scene-ear-right,
-.hero-bird .scene-tail,
-.hero-bird .scene-belly,
-.hero-bird .scene-nose,
-.hero-bird .scene-glove,
-.hero-bird .scene-leg,
-.hero-bird .scene-arm,
-.hero-bird .scene-shadow {
+.hero-bird .scene-nose {
   vector-effect: non-scaling-stroke;
 }
 
