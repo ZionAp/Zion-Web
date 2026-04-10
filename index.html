@@ -855,15 +855,10 @@
               </div>
             </div>
             <div class="areas-map">
-              <iframe 
-                title="Albuquerque service area"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=-106.8,34.9,-106.4,35.2&layer=mapnik&marker=35.0844,-106.6504"
-                width="100%" 
-                height="350"
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy">
-              </iframe>
+              <div class="map-facade" onclick="this.innerHTML='<iframe title=&quot;Albuquerque service area&quot; src=&quot;https://www.openstreetmap.org/export/embed.html?bbox=-106.8,34.9,-106.4,35.2&amp;layer=mapnik&amp;marker=35.0844,-106.6504&quot; width=&quot;100%&quot; height=&quot;350&quot; style=&quot;border:0;&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot;></iframe>'">
+                <img src="https://tile.openstreetmap.org/10/168/283.png" alt="Albuquerque service area map" width="100%" height="350" style="border:0;object-fit:cover">
+                <button type="button" class="map-load-btn">Load Map</button>
+              </div>
             </div>
           </div>
         </div>
