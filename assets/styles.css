@@ -422,6 +422,34 @@ body.dark-mode .theme-toggle {
   transition: all var(--transition);
 }
 
+.header-phone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: white;
+  padding: 10px 20px;
+  border-radius: var(--radius);
+  background: var(--accent);
+  transition: all var(--transition);
+  box-shadow: 0 2px 8px rgba(255, 108, 53, 0.3);
+}
+
+.header-phone:hover {
+  background: var(--accent-light);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(163, 42, 10, 0.4);
+}
+
+.header-phone-label {
+  display: none;
+}
+
+.header-phone-number {
+  font-size: 0.875rem;
+}
+
 /* ===================================
    HERO SECTION
    =================================== */
@@ -2137,14 +2165,6 @@ body.dark-mode .footer {
 
   .nav-links {
     top: 64px;
-  }
-
-  .nav-phone {
-    display: none;
-  }
-
-  .header-cta {
-    display: none;
   }
 }
 
