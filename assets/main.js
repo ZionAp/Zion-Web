@@ -6,15 +6,6 @@
 (function() {
   'use strict';
 
-  // Cloudflare Turnstile callbacks
-  window.onTurnstileSuccess = function(token) {
-    document.getElementById('cf-turnstile-response').value = token;
-  };
-  
-  window.onTurnstileError = function() {
-    console.error('Turnstile error - form may not submit');
-  };
-
   // Theme Management
   const ThemeManager = {
     STORAGE_KEY: 'zion-theme-preference',
@@ -161,6 +152,11 @@
 
         if (!this.validate()) {
           this.showToast('Please fill out the required fields first.', 'error');
+          return;
+        }
+        
+        const honeypot = this.form.querySelector('input[name="website"]');
+        if (honeypot && honeypot.value) {
           return;
         }
         

@@ -18,10 +18,7 @@
     <link rel="manifest" href="/manifest.json">
     
     <link rel="dns-prefetch" href="https://api.web3forms.com">
-    <link rel="dns-prefetch" href="https://challenges.cloudflare.com">
     <link rel="preconnect" href="https://api.web3forms.com">
-    <link rel="preconnect" href="https://challenges.cloudflare.com">
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     
     <link rel="preload" as="style" href="/assets/styles.min.css?v=42">
     <link rel="stylesheet" href="/assets/styles.min.css?v=42">
@@ -966,8 +963,10 @@
                 <label for="serviceDetails">Describe the Problem</label>
                 <textarea id="serviceDetails" name="message" rows="4" placeholder="Tell us what's happening with your appliance..."></textarea>
               </div>
-              <div class="cf-turnstile" data-sitekey="0x4AAAAAAC2WzoI9fwmhe3xn" data-callback="onTurnstileSuccess" data-error-callback="onTurnstileError"></div>
-              <input type="hidden" name="cf-turnstile-response" id="cf-turnstile-response">
+              <div class="honeypot-field" style="position:absolute;left:-9999px">
+                <label for="website">Leave this empty</label>
+                <input type="text" name="website" id="website" tabindex="-1" autocomplete="off">
+              </div>
               <button type="submit" class="btn btn-primary btn-full">
                 <span class="btn-text">Book Appointment</span>
                 <span class="btn-loading">
