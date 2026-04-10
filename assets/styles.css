@@ -1363,6 +1363,62 @@ body.dark-mode .service-price {
   gap: 24px;
 }
 
+.maintenance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.maintenance-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  transition: all var(--transition);
+}
+
+.maintenance-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
+}
+
+.maintenance-icon {
+  width: 48px;
+  height: 48px;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.maintenance-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.maintenance-card h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.maintenance-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.maintenance-card li {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.maintenance-card li:last-child {
+  border-bottom: none;
+}
+
 .testimonial-card {
   background: var(--bg);
   border: 1px solid var(--border);
