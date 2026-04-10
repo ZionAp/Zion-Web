@@ -155,11 +155,6 @@
           return;
         }
         
-        const honeypot = this.form.querySelector('input[name="website"]');
-        if (honeypot && honeypot.value) {
-          return;
-        }
-        
         this.setButtonState('sending');
         
         const formData = new FormData(this.form);
