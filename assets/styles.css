@@ -324,7 +324,7 @@ body.dark-mode .theme-toggle {
 
 .nav-links {
   display: flex;
-  gap: 32px;
+  gap: 48px;
 }
 
 .nav-link {
@@ -1930,46 +1930,15 @@ body.dark-mode .footer {
     display: none;
   }
 
+  .nav,
   .nav-links {
-    position: fixed;
-    top: 64px;
-    left: 0;
-    right: 0;
-    background: var(--bg);
-    border-bottom: 1px solid var(--border);
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    transform: translateY(-100%);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 99;
+    display: none;
   }
-  
-  .nav-links.active {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
-  }
-  
-  .nav-links a {
-    padding: 12px 0;
-    font-size: 1.125rem;
-    font-weight: 500;
-    color: var(--text);
-    border-bottom: 1px solid var(--border);
-  }
-  
-  .nav-links a:last-child {
-    border-bottom: none;
-  }
-  
+
   .mobile-menu-btn {
     display: flex;
   }
-  
+
   .mobile-menu-btn.active span:nth-child(1) {
     transform: rotate(45deg) translate(6px, 6px);
   }
