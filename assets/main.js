@@ -40,16 +40,34 @@
     bindToggle() {
       const toggle = document.querySelector('.theme-toggle');
       if (toggle) {
-        toggle.addEventListener('click', () => this.toggle());
+        toggle.addEventListener('click', (e) => {
+          e.preventDefault();
+          this.toggle();
+        });
+
+        toggle.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            this.toggle();
+          }
+        });
       }
     },
     
     watchSystemPreference() {
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      const handler = (e) => {
         if (!localStorage.getItem(this.STORAGE_KEY)) {
-          this.applyTheme(e.matches ? 'dark' : 'light');
+          const matches = typeof e.matches === 'boolean' ? e.matches : mediaQuery.matches;
+          this.applyTheme(matches ? 'dark' : 'light');
         }
-      });
+      };
+
+      if (mediaQuery.addEventListener) {
+        mediaQuery.addEventListener('change', handler);
+      } else if (mediaQuery.addListener) {
+        mediaQuery.addListener(handler);
+      }
     }
   };
 
