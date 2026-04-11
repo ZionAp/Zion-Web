@@ -71,6 +71,8 @@
     }
   };
 
+  window.ThemeManager = ThemeManager;
+
   // Mobile Menu
   const MobileMenu = {
     isOpen: false,
