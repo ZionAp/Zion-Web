@@ -130,7 +130,15 @@
 
   // Smooth Scroll
   const SmoothScroll = {
+    headerHeight: 0,
+    
     init() {
+      // Cache header height once to avoid forced reflows
+      const header = document.querySelector('.header');
+      if (header) {
+        this.headerHeight = header.offsetHeight;
+      }
+      
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', (e) => {
           const href = anchor.getAttribute('href');
@@ -139,8 +147,7 @@
           const target = document.querySelector(href);
           if (target) {
             e.preventDefault();
-            const headerHeight = document.querySelector('.header')?.offsetHeight || 80;
-            const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+            const targetPosition = target.getBoundingClientRect().top + window.scrollY - this.headerHeight;
             
             window.scrollTo({
               top: targetPosition,
@@ -310,22 +317,27 @@
       });
       
       setTimeout(() => {
-        this.toast.classList.remove('show');
-      }, 5000);
-    }
-  };
-
-  // Header Scroll Effect
-  const HeaderScroll = {
+    ticking: false,
+    currentScroll: 0,
+    
     init() {
       const header = document.querySelector('.header');
       if (!header) return;
       
-      let lastScroll = 0;
-      
       window.addEventListener('scroll', () => {
-        const currentScroll = window.scrollY;
+        this.currentScroll = window.scrollY;
         
+        if (!this.ticking) {
+          requestAnimationFrame(() => {
+            if (this.currentScroll > 100) {
+              header.classList.add('scrolled');
+            } else {
+              header.classList.remove('scrolled');
+            }
+            this.ticking = false;
+          });
+          this.ticking = true;
+        }
         if (currentScroll > 100) {
           header.classList.add('scrolled');
         } else {
@@ -337,9 +349,8 @@
     }
   };
 
-  // FAQ Accordion Animation
-  const FAQAccordion = {
-    init() {
+  // FAQ A// Just toggle class; animation is handled by CSS
+          item.classList.toggle('open', item.open);{
       document.querySelectorAll('.faq-item').forEach(item => {
         item.addEventListener('toggle', () => {
           if (item.open) {
