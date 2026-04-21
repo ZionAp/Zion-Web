@@ -1,0 +1,8 @@
+# Redirect all HTTP traffic to HTTPS
+http://* https://:splat 301
+
+# Redirect non-www to www
+https://zionappliance.com/* https://www.zionappliance.com/:splat 301
+
+# Catch any remaining non-www variants
+https://zionappliance.com https://www.zionappliance.com/ 301
