@@ -880,35 +880,14 @@ body.dark-mode .theme-toggle {
 
 .color-shift-1 {
   stroke: #60a5fa;
-  animation: colorShift1 12s ease-in-out infinite;
 }
 
 .color-shift-2 {
   stroke: #d94a1e;
-  animation: colorShift2 15s ease-in-out infinite;
 }
 
 .color-shift-3 {
   stroke: #a78bfa;
-  animation: colorShift3 18s ease-in-out infinite;
-}
-
-@keyframes colorShift1 {
-  0%, 100% { stroke: #60a5fa; }
-  33% { stroke: #d94a1e; }
-  66% { stroke: #a78bfa; }
-}
-
-@keyframes colorShift2 {
-  0%, 100% { stroke: #d94a1e; }
-  33% { stroke: #a78bfa; }
-  66% { stroke: #60a5fa; }
-}
-
-@keyframes colorShift3 {
-  0%, 100% { stroke: #a78bfa; }
-  33% { stroke: #60a5fa; }
-  66% { stroke: #d94a1e; }
 }
 
 @keyframes meshPulse {

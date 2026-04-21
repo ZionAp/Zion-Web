@@ -133,11 +133,7 @@
     headerHeight: 0,
     
     init() {
-      // Cache header height once to avoid forced reflows
       const header = document.querySelector('.header');
-      if (header) {
-        this.headerHeight = header.offsetHeight;
-      }
       
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', (e) => {
@@ -147,7 +143,8 @@
           const target = document.querySelector(href);
           if (target) {
             e.preventDefault();
-            const targetPosition = target.getBoundingClientRect().top + window.scrollY - this.headerHeight;
+            const h = header ? header.offsetHeight : 0;
+            const targetPosition = target.getBoundingClientRect().top + window.scrollY - h;
             
             window.scrollTo({
               top: targetPosition,
