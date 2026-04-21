@@ -372,29 +372,6 @@
     }
   };
 
-  // Deferred Map Loading
-  const DeferredMap = {
-    init() {
-      const mapIframe = document.querySelector('.areas-map iframe');
-      if (!mapIframe || !mapIframe.dataset.src) return;
-
-      // Create observer to load map when it comes into view
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting && !mapIframe.src) {
-            // Load the map when visible
-            mapIframe.src = mapIframe.dataset.src;
-            observer.unobserve(mapIframe);
-          }
-        });
-      }, {
-        rootMargin: '300px' // Start loading 300px before visible
-      });
-
-      observer.observe(mapIframe);
-    }
-  };
-
   // Initialize everything
   document.addEventListener('DOMContentLoaded', () => {
     ThemeManager.init();
@@ -404,7 +381,6 @@
     HeaderScroll.init();
     FAQAccordion.init();
     ScrollAnimations.init();
-    DeferredMap.init();
     
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/sw.js').catch(() => {});
