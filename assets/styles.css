@@ -239,6 +239,13 @@ body.dark-mode .booking-info {
   white-space: nowrap;
 }
 
+.floating-action-hint {
+  display: block;
+  font-size: 0.6875rem;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
 .floating-action-email {
   background: linear-gradient(135deg, #1e3a5f, #2d5a87);
   color: white;
@@ -366,6 +373,13 @@ body.dark-mode .theme-toggle {
   background: var(--accent);
   transition: all var(--transition);
   box-shadow: 0 2px 8px rgba(255, 108, 53, 0.3);
+}
+
+.nav-phone-hint {
+  font-size: 0.6875rem;
+  font-weight: 400;
+  opacity: 0.85;
+  letter-spacing: 0.02em;
 }
 
 .nav-quick-actions {
@@ -1802,6 +1816,13 @@ body.dark-mode .booking {
   font-size: 1.125rem;
 }
 
+.contact-item small {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
 .contact-item svg {
   width: 24px;
   height: 24px;
@@ -1885,6 +1906,14 @@ body.dark-mode .footer {
 
 .footer-contact a:hover {
   color: white;
+}
+
+.footer-text-hint {
+  display: block;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: -4px;
+  margin-bottom: 4px;
 }
 
 .footer-promotion {

@@ -1,9 +1,9 @@
-const CACHE_NAME = 'zion-appliance-v14';
+const CACHE_NAME = 'zion-appliance-v15';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
-  '/assets/styles.min.css?v=49',
-  '/assets/main.min.js?v=24',
+  '/assets/styles.min.css?v=50',
+  '/assets/main.min.js?v=25',
   '/favicon.svg',
   '/manifest.json',
   '/robots.txt',
