@@ -522,7 +522,7 @@ body.dark-mode .theme-toggle {
   height: 86%;
   z-index: -2;
   pointer-events: none;
-  opacity: 0.52;
+  opacity: 0.68;
   -webkit-mask-image: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.92) 58%, rgba(0, 0, 0, 0.22) 82%, transparent 100%);
   mask-image: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.92) 58%, rgba(0, 0, 0, 0.22) 82%, transparent 100%);
 }
@@ -735,7 +735,7 @@ body.dark-mode .theme-toggle {
   height: 112%;
   z-index: -2;
   pointer-events: none;
-  opacity: 0.66;
+  opacity: 0.72;
   -webkit-mask-image: linear-gradient(90deg, transparent 0%, transparent 28%, rgba(0, 0, 0, 0.18) 42%, #000 54%);
   mask-image: linear-gradient(90deg, transparent 0%, transparent 28%, rgba(0, 0, 0, 0.18) 42%, #000 54%);
 }
