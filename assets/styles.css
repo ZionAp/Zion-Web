@@ -471,6 +471,7 @@ body.dark-mode .theme-toggle {
 
 .hero {
   position: relative;
+  isolation: isolate;
   min-height: 100vh;
   display: flex;
   align-items: center;
