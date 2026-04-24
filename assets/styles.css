@@ -332,6 +332,7 @@ body.dark-mode .theme-toggle {
   color: var(--text-secondary);
   transition: color var(--transition);
   position: relative;
+  padding: 8px 4px;
 }
 
 .nav-link::after {
@@ -1702,7 +1703,7 @@ body.dark-mode .success-modal button {
 }
 
 .faq-item summary {
-  padding: 20px 24px;
+  padding: 16px 24px;
   font-weight: 600;
   cursor: pointer;
   list-style: none;
@@ -1710,6 +1711,7 @@ body.dark-mode .success-modal button {
   justify-content: space-between;
   align-items: center;
   transition: background var(--transition);
+  min-height: 48px;
 }
 
 .faq-item summary::-webkit-details-marker {
@@ -1865,7 +1867,7 @@ body.dark-mode .footer {
 .footer-links a {
   display: block;
   color: rgba(255, 255, 255, 0.7);
-  padding: 6px 0;
+  padding: 8px 0;
   transition: color var(--transition);
 }
 
