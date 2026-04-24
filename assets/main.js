@@ -6,6 +6,26 @@
 (function() {
   'use strict';
 
+  // Error Logging Utility
+  const Logger = {
+    log(message, data = null) {
+      const timestamp = new Date().toISOString();
+      console.log(`[${timestamp}] ${message}`, data || '');
+    },
+    
+    error(message, error = null) {
+      const timestamp = new Date().toISOString();
+      console.error(`[${timestamp}] ERROR: ${message}`, error || '');
+    },
+    
+    warn(message, data = null) {
+      const timestamp = new Date().toISOString();
+      console.warn(`[${timestamp}] WARNING: ${message}`, data || '');
+    }
+  };
+
+  window.Logger = Logger;
+
   // Theme Management
   const ThemeManager = {
     STORAGE_KEY: 'zion-theme-preference',
@@ -206,6 +226,7 @@
             this.form.reset();
           })
           .catch((error) => {
+            Logger.error('Form submission failed', error);
             this.showToast(error.message || 'We could not send your booking. Please try again.', 'error');
           })
           .finally(() => {
@@ -425,7 +446,13 @@
     HeroAnimationController.init();
     
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js').catch(() => {});
+      navigator.serviceWorker.register('/sw.js')
+        .then((registration) => {
+          Logger.log('Service Worker registered successfully', { scope: registration.scope });
+        })
+        .catch((error) => {
+          Logger.warn('Service Worker registration failed', error);
+        });
     }
   });
 

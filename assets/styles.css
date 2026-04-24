@@ -3,20 +3,20 @@
    Main Stylesheet
    =================================== */
 
-* {
+/* Prevent text selection on non-interactive elements for cleaner UI */
+body, h1, h2, h3, h4, h5, h6, p, span, div, section, article {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
 
+/* Allow selection on decorative pseudo-elements */
 *::before, *::after {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  pointer-events: none;
 }
 
+/* Prevent image dragging */
 img {
   -webkit-user-drag: none;
   -khtml-user-drag: none;
@@ -26,7 +26,8 @@ img {
   pointer-events: none;
 }
 
-a, button, input, textarea, select {
+/* Restore text selection on interactive elements for accessibility */
+a, button, input, textarea, select, label {
   -webkit-user-select: auto;
   -moz-user-select: auto;
   -ms-user-select: auto;
@@ -2199,6 +2200,41 @@ body.dark-mode .footer {
   .floating-actions {
     right: 16px;
     bottom: 14px;
+  }
+}
+
+/* ===================================
+   PERFORMANCE OPTIMIZATIONS
+   =================================== */
+
+/* Reduce motion for low-end devices */
+@media (max-width: 768px) and (prefers-reduced-motion: no-preference) {
+  .hero-piece {
+    will-change: transform, opacity;
+  }
+  
+  .scene-drop-1,
+  .scene-drop-2,
+  .scene-drop-3,
+  .scene-drop-4,
+  .scene-drop-5,
+  .scene-drop-6 {
+    will-change: transform, opacity;
+  }
+}
+
+/* Disable background animations on very small screens to improve performance */
+@media (max-width: 480px) and (prefers-reduced-motion: no-preference) {
+  .hero-pattern {
+    opacity: 0.5;
+  }
+  
+  .hero-piece-1,
+  .hero-piece-3,
+  .hero-piece-4,
+  .hero-piece-6,
+  .hero-piece-8 {
+    animation-duration: 20s !important;
   }
 }
 

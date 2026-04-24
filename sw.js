@@ -1,4 +1,5 @@
 const CACHE_NAME = 'zion-appliance-v17';
+const OFFLINE_PAGE = '/index.html';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
@@ -17,7 +18,10 @@ const STATIC_ASSETS = [
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(STATIC_ASSETS);
+      return cache.addAll(STATIC_ASSETS).catch((error) => {
+        console.error('[Service Worker] Install error:', error);
+        throw error;
+      });
     })
   );
   self.skipWaiting();
@@ -29,7 +33,10 @@ self.addEventListener('activate', (event) => {
       return Promise.all(
         cacheNames
           .filter((name) => name !== CACHE_NAME)
-          .map((name) => caches.delete(name))
+          .map((name) => {
+            console.log('[Service Worker] Deleting old cache:', name);
+            return caches.delete(name);
+          })
       );
     })
   );
@@ -48,16 +55,26 @@ self.addEventListener('fetch', (event) => {
           const responseToCache = response.clone();
           caches.open(CACHE_NAME).then((cache) => {
             cache.put(event.request, responseToCache);
+          }).catch((error) => {
+            console.warn('[Service Worker] Cache update failed:', error);
           });
         }
         return response;
-      }).catch(() => cachedResponse);
+      }).catch((error) => {
+        console.warn('[Service Worker] Fetch failed for:', event.request.url, error);
+        return cachedResponse;
+      });
 
       return cachedResponse || fetchPromise;
-    }).catch(() => {
+    }).catch((error) => {
+      console.error('[Service Worker] Cache match error:', error);
       if (event.request.destination === 'document') {
-        return caches.match('/index.html');
+        return caches.match(OFFLINE_PAGE) || new Response(
+          'Network error. Please try again later.',
+          { status: 503, statusText: 'Service Unavailable' }
+        );
       }
+      return new Response(null, { status: 404 });
     })
   );
 });
