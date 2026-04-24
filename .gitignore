@@ -13,4 +13,10 @@ generate-*.js
 generate-*.py
 test-form.js
 lighthouse-report.*
-seoreport.md
+seoreport.md# Lighthouse reports
+*-desktop.json
+*-mobile.json
+test*.json
+lighthouse-*.json
+final*.json
+
