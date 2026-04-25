@@ -352,66 +352,53 @@ body.dark-mode .theme-toggle {
   width: 100%;
 }
 
-.nav-phone {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 600;
-  font-size: 0.9375rem;
-  color: white;
-  padding: 10px 20px;
-  border-radius: var(--radius);
-  background: var(--accent);
-  transition: all var(--transition);
-  box-shadow: 0 2px 8px rgba(255, 108, 53, 0.3);
-}
-
-.nav-phone-hint {
-  font-size: 0.6875rem;
-  font-weight: 400;
-  opacity: 0.85;
-  letter-spacing: 0.02em;
-}
-
 .nav-quick-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
-.nav-email {
+.nav-action-btn {
   width: 44px;
   height: 44px;
-  border-radius: 14px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  background: var(--primary);
-  box-shadow: 0 2px 8px rgba(30, 58, 95, 0.25);
   transition: all var(--transition);
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  font-size: 0;
 }
 
-.nav-phone svg {
-  width: 18px;
-  height: 18px;
+.nav-action-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
 }
 
-.nav-email svg {
-  width: 18px;
-  height: 18px;
+.nav-phone {
+  background: linear-gradient(135deg, #8b1a0a, #a32a0a);
+  box-shadow: 0 2px 12px rgba(139, 26, 10, 0.3);
 }
 
 .nav-phone:hover {
-  background: var(--accent-light);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(163, 42, 10, 0.4);
+  background: linear-gradient(135deg, #a32a0a, #c23a0a);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(163, 42, 10, 0.4);
+}
+
+.nav-email {
+  background: linear-gradient(135deg, #1e3a5f, #2d5a87);
+  box-shadow: 0 2px 12px rgba(30, 58, 95, 0.3);
 }
 
 .nav-email:hover {
-  background: var(--primary-light);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(30, 58, 95, 0.32);
+  background: linear-gradient(135deg, #2d5a87, #3d7ab7);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(30, 58, 95, 0.4);
 }
 
 .mobile-menu-btn {
@@ -1903,7 +1890,12 @@ body.dark-mode .footer {
 
 @media (max-width: 1024px) {
   .nav-quick-actions {
-    display: none;
+    gap: 8px;
+  }
+
+  .nav-action-btn {
+    width: 40px;
+    height: 40px;
   }
 
   .nav,
