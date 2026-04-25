@@ -1889,8 +1889,30 @@ body.dark-mode .footer {
    =================================== */
 
 @media (max-width: 1024px) {
+  .nav {
+    height: 72px;
+    justify-content: space-between;
+    padding: 0 16px;
+  }
+
+  .logo {
+    gap: 8px;
+    font-size: 1.1rem;
+  }
+
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .logo-text {
+    display: none;
+  }
+
   .nav-quick-actions {
     gap: 8px;
+    display: flex;
+    order: 3;
   }
 
   .nav-action-btn {
@@ -1898,13 +1920,13 @@ body.dark-mode .footer {
     height: 40px;
   }
 
-  .nav,
   .nav-links {
     display: none;
   }
 
   .mobile-menu-btn {
     display: flex;
+    order: 2;
   }
 
   .mobile-menu-btn.active span:nth-child(1) {
