@@ -2105,6 +2105,34 @@ body.dark-mode .footer {
     padding: 0 16px;
   }
 
+  .nav {
+    height: 72px;
+  }
+
+  .nav-quick-actions {
+    gap: 6px;
+  }
+
+  .nav-action-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  .nav-action-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .nav-phone {
+    box-shadow: 0 2px 12px rgba(139, 26, 10, 0.25);
+  }
+
+  .nav-email {
+    box-shadow: 0 2px 12px rgba(30, 58, 95, 0.25);
+  }
+
   .hero {
     padding: 96px 0 56px;
   }
@@ -2143,6 +2171,26 @@ body.dark-mode .footer {
   .nav-links {
     top: 72px;
     padding: 20px 16px 24px;
+  }
+  
+  .nav-quick-actions {
+    gap: 6px;
+  }
+
+  .nav-action-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 11px;
+  }
+
+  .nav-action-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .nav-phone:hover,
+  .nav-email:hover {
+    transform: translateY(-2px);
   }
   
   .floating-actions {
