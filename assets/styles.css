@@ -1898,6 +1898,13 @@ body.dark-mode .footer {
   .logo {
     gap: 8px;
     font-size: 1.1rem;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .logo:hover {
+    opacity: 0.8;
+    transition: opacity var(--transition);
   }
 
   .logo-icon {
@@ -1925,8 +1932,7 @@ body.dark-mode .footer {
   }
 
   .mobile-menu-btn {
-    display: flex;
-    order: 2;
+    display: none !important;
   }
 
   .mobile-menu-btn.active span:nth-child(1) {
