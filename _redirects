@@ -1,8 +1,16 @@
-# Redirect all HTTP traffic to HTTPS
+# HTTP to HTTPS (Cloudflare handles this at edge, but explicit is better)
 http://* https://:splat 301
 
-# Redirect non-www to www
-https://zionappliance.com/* https://www.zionappliance.com/:splat 301
+# Ensure .html extensions redirect to clean URLs
+/washer-repair.html /washer-repair 301
+/dryer-repair.html /dryer-repair 301
+/refrigerator-repair.html /refrigerator-repair 301
+/oven-repair.html /oven-repair 301
+/dishwasher-repair.html /dishwasher-repair 301
+/freezer-repair.html /freezer-repair 301
+/ice-maker-repair.html /ice-maker-repair 301
+/privacy-policy.html /privacy-policy 301
+/terms.html /terms 301
 
-# Catch any remaining non-www variants
-https://zionappliance.com https://www.zionappliance.com/ 301
+# 404 fallback
+/404.html 404
