@@ -331,6 +331,9 @@ body.dark-mode .theme-toggle {
   transition: color var(--transition);
   position: relative;
   padding: 8px 4px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
 }
 
 .nav-link::after {
