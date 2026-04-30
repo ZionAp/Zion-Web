@@ -1140,6 +1140,28 @@ body.dark-mode .section-tag {
   font-size: 1.125rem;
 }
 
+.section-desc {
+  color: var(--text-secondary);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+#about .feature-card[style*="grid-column"] p {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+#about .feature-card[style*="grid-column"] p + p {
+  margin-top: 1rem;
+}
+
+#about .feature-card[style*="grid-column"] strong {
+  color: var(--primary);
+}
+
 .section-alt {
   background: var(--bg-alt);
 }
