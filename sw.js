@@ -1,4 +1,4 @@
-const CACHE_NAME = 'zion-appliance-v23';
+const CACHE_NAME = 'zion-appliance-v24';
 const OFFLINE_PAGE = '/index.html';
 const STATIC_ASSETS = [
   '/',
